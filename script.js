@@ -203,34 +203,6 @@ function initLazyImages() {
   });
 }
 
-
-function initQuestionRotator() {
-  const el = document.getElementById('question-rotator');
-  if (!el) return;
-
-  const questions = [
-    'Am I investing enough every month?',
-    'What if the market falls right after I invest?',
-    'How much should I keep liquid vs invested?',
-    'Am I overexposed to one asset class?',
-    'Will my child\'s education goal stay on track?',
-    'Am I protecting my family if income stops?',
-    'Can I retire without compromising lifestyle?',
-    'How do I balance growth and peace of mind?'
-  ];
-
-  let idx = 0;
-  setInterval(() => {
-    idx = (idx + 1) % questions.length;
-    el.classList.remove('active');
-    setTimeout(() => {
-      el.textContent = questions[idx];
-      el.classList.add('active');
-    }, 250);
-  }, 3200);
-}
-
-
 document.addEventListener('DOMContentLoaded', () => {
   initScrollEffects();
   initScrollReveal();
@@ -240,5 +212,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initContactForm();
   initLazyImages();
-  initQuestionRotator();
 });
