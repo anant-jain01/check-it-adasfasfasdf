@@ -1431,7 +1431,7 @@ body {
 .btn-primary,
 .btn-outline,
 .cta-btn {
-  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease, background-color 0.35s ease;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, filter 0.35s ease, background-color 0.35s ease, color 0.35s ease;
 }
 
 .btn-primary:hover,
