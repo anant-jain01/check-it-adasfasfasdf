@@ -20,6 +20,8 @@ body {
   background-image: url('https://www.transparenttextures.com/patterns/cream-paper.png');
   color: var(--forest); 
   font-family: 'Crimson Pro', serif;
+  text-align: justify;
+  text-justify: inter-word;
   overflow-x: hidden; 
   -webkit-font-smoothing: antialiased;
 }
