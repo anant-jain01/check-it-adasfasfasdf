@@ -339,3 +339,56 @@ document.addEventListener('DOMContentLoaded', () => {
   initLazyImages();
   initMobileNav();
 });
+// ===== STOCK TICKER (YAHOO) =====
+
+async function fetchStock(symbol){
+  const res = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbol}`);
+  const data = await res.json();
+  return data.quoteResponse.result[0];
+}
+
+const symbols = [
+  { name: "Reliance", symbol: "RELIANCE.NS" },
+  { name: "TCS", symbol: "TCS.NS" },
+  { name: "HDFC Bank", symbol: "HDFCBANK.NS" },
+  { name: "Infosys", symbol: "INFY.NS" }
+];
+
+function createTickerItem(name,data){
+  const price = data?.regularMarketPrice || 0;
+  const change = data?.regularMarketChange || 0;
+  const percent = data?.regularMarketChangePercent || 0;
+
+  const direction = change >= 0 ? "up" : "dn";
+  const arrow = change >= 0 ? "▲" : "▼";
+
+  return `<span class="ticker-item">
+    <span class="t-name">${name}</span>
+    <span class="t-val">${price.toFixed(2)}</span>
+    <span class="t-arrow ${direction}">${arrow}</span>
+    <span class="t-chg ${direction}">
+      ${change.toFixed(2)} (${percent.toFixed(2)}%)
+    </span>
+  </span>`;
+}
+
+async function loadTicker(){
+  const track = document.getElementById("tickerTrack");
+  if(!track) return;
+
+  let html = "";
+
+  for(const s of symbols){
+    try{
+      const data = await fetchStock(s.symbol);
+      html += createTickerItem(s.name,data);
+    }catch(e){
+      html += `<span class="ticker-item"><span class="t-name">${s.name}</span><span class="t-val">Error</span></span>`;
+    }
+  }
+
+  track.innerHTML = html + html; // loop effect
+}
+
+loadTicker();
+setInterval(loadTicker,60000);
