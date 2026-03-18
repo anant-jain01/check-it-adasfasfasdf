@@ -240,7 +240,104 @@ function initMobileNav() {
   });
 }
 
+function initLiveTicker() {
+  const tickerTrack = document.getElementById('tickerTrack');
+  if (!tickerTrack) return;
+
+  const marketItems = [
+    { id: 'bitcoin', label: 'Bitcoin' },
+    { id: 'ethereum', label: 'Ethereum' },
+    { id: 'solana', label: 'Solana' },
+    { id: 'binancecoin', label: 'BNB' },
+    { id: 'ripple', label: 'XRP' },
+    { id: 'tether', label: 'Tether' },
+  ];
+
+  const serviceItems = [
+    { name: 'Financial Blueprint', text: '— Personalized Roadmap to Wealth' },
+    { name: 'Portfolio Advisory', text: '— Risk-Calibrated Asset Allocation' },
+    { name: 'Insurance Planning', text: '— Protect What Matters Most' },
+    { name: 'Tax Optimization', text: '— Legal & Smart Tax Strategies' },
+    { name: 'Education Planning', text: "— Secure Your Child's Future" },
+    { name: 'Wealth Management', text: '— Equity · Debt · Gold · Global' },
+  ];
+
+  const formatInr = (value) =>
+    Number(value).toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: value < 100 ? 2 : 0 });
+
+  const renderTicker = (items) => {
+    const marketMarkup = items
+      .map((item) => {
+        const isUp = Number(item.change) >= 0;
+        const directionClass = isUp ? 'up' : 'dn';
+        const arrow = isUp ? '▲' : '▼';
+        const formattedChange = `${isUp ? '+' : ''}${Number(item.change).toFixed(2)}%`;
+
+        return `<span class="ticker-item">
+          <span class="t-name">${item.label}</span>
+          <span class="t-val">${formatInr(item.price)}</span>
+          <span class="t-arrow ${directionClass}">${arrow}</span>
+          <span class="t-chg ${directionClass}">${formattedChange}</span>
+        </span>`;
+      })
+      .join('');
+
+    const servicesMarkup = serviceItems
+      .map(
+        (item) => `<span class="ticker-item svc">
+          <span class="t-dot"></span><span class="t-name">${item.name}</span><span class="t-val">${item.text}</span>
+        </span>`
+      )
+      .join('');
+
+    const separator = '<span class="ticker-item" style="opacity:0.4">✦</span>';
+    const block = `${marketMarkup}${separator}${servicesMarkup}${separator}`;
+
+    tickerTrack.innerHTML = block + block;
+    tickerTrack.style.animation = 'none';
+    requestAnimationFrame(() => {
+      tickerTrack.style.animation = '';
+    });
+  };
+
+  const renderUnavailable = () => {
+    tickerTrack.innerHTML =
+      '<span class="ticker-item"><span class="t-name">Market Feed</span><span class="t-val">Live data unavailable right now</span></span>';
+  };
+
+  async function updateTickerData() {
+    const ids = marketItems.map((item) => item.id).join(',');
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(
+      ids
+    )}&vs_currencies=inr&include_24hr_change=true`;
+
+    try {
+      const response = await fetch(url, { cache: 'no-store' });
+      if (!response.ok) throw new Error(`Ticker API error ${response.status}`);
+
+      const payload = await response.json();
+      const rows = marketItems
+        .map((item) => ({
+          label: item.label,
+          price: payload[item.id]?.inr,
+          change: payload[item.id]?.inr_24h_change,
+        }))
+        .filter((item) => Number.isFinite(item.price) && Number.isFinite(item.change));
+
+      if (!rows.length) throw new Error('Ticker API returned empty data');
+      renderTicker(rows);
+    } catch (error) {
+      console.error('Failed to load live ticker data:', error);
+      renderUnavailable();
+    }
+  }
+
+  updateTickerData();
+  window.setInterval(updateTickerData, 60_000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initLiveTicker();
   initScrollEffects();
   initScrollReveal();
   initSmoothScroll();
