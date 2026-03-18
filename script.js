@@ -240,7 +240,132 @@ function initMobileNav() {
   });
 }
 
+function initLiveTicker() {
+  const tickerTrack = document.getElementById('tickerTrack');
+  if (!tickerTrack) return;
+
+  const marketItems = [
+    { symbol: '^NSEI', label: 'Nifty 50', format: 'number' },
+    { symbol: '^BSESN', label: 'Sensex', format: 'number' },
+    { symbol: '^NSEBANK', label: 'Bank Nifty', format: 'number' },
+    { symbol: '^CNXIT', label: 'Nifty IT', format: 'number' },
+    { symbol: 'RELIANCE.NS', label: 'Reliance', format: 'inr' },
+    { symbol: 'TCS.NS', label: 'TCS', format: 'inr' },
+    { symbol: 'HDFCBANK.NS', label: 'HDFC Bank', format: 'inr' },
+    { symbol: 'USDINR=X', label: 'USD/INR', format: 'number' },
+  ];
+
+  const serviceItems = [
+    { name: 'Financial Blueprint', text: '— Personalized Roadmap to Wealth' },
+    { name: 'Portfolio Advisory', text: '— Risk-Calibrated Asset Allocation' },
+    { name: 'Insurance Planning', text: '— Protect What Matters Most' },
+    { name: 'Tax Optimization', text: '— Legal & Smart Tax Strategies' },
+    { name: 'Education Planning', text: "— Secure Your Child's Future" },
+    { name: 'Wealth Management', text: '— Equity · Debt · Gold · Global' },
+  ];
+
+  const formatNumber = (value) =>
+    Number(value).toLocaleString('en-IN', {
+      maximumFractionDigits: value < 100 ? 4 : 2,
+    });
+
+  const formatInr = (value) =>
+    Number(value).toLocaleString('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: value < 100 ? 2 : 0,
+    });
+
+  const formatUpdatedTime = (timestampMs) =>
+    new Date(timestampMs).toLocaleString('en-IN', {
+      hour: '2-digit',
+      minute: '2-digit',
+      day: '2-digit',
+      month: 'short',
+      timeZoneName: 'short',
+    });
+
+  const renderTicker = (items, updatedAtMs) => {
+    const marketMarkup = items
+      .map((item) => {
+        const isUp = Number(item.change) >= 0;
+        const directionClass = isUp ? 'up' : 'dn';
+        const arrow = isUp ? '▲' : '▼';
+        const formattedChange = `${isUp ? '+' : ''}${Number(item.change).toFixed(2)}%`;
+
+        return `<span class="ticker-item">
+          <span class="t-name">${item.label}</span>
+          <span class="t-val">${item.format === 'inr' ? formatInr(item.price) : formatNumber(item.price)}</span>
+          <span class="t-arrow ${directionClass}">${arrow}</span>
+          <span class="t-chg ${directionClass}">${formattedChange}</span>
+        </span>`;
+      })
+      .join('');
+
+    const servicesMarkup = serviceItems
+      .map(
+        (item) => `<span class="ticker-item svc">
+          <span class="t-dot"></span><span class="t-name">${item.name}</span><span class="t-val">${item.text}</span>
+        </span>`
+      )
+      .join('');
+
+    const separator = '<span class="ticker-item" style="opacity:0.4">✦</span>';
+    const updatedMarkup = `<span class="ticker-item"><span class="t-name">Updated</span><span class="t-val">${formatUpdatedTime(updatedAtMs)}</span></span>`;
+    const block = `${marketMarkup}${separator}${updatedMarkup}${separator}${servicesMarkup}${separator}`;
+
+    tickerTrack.innerHTML = block + block;
+    tickerTrack.style.animation = 'none';
+    requestAnimationFrame(() => {
+      tickerTrack.style.animation = '';
+    });
+  };
+
+  const renderUnavailable = () => {
+    tickerTrack.innerHTML =
+      '<span class="ticker-item"><span class="t-name">Market Feed</span><span class="t-val">Live data unavailable right now</span></span>';
+  };
+
+  async function updateTickerData() {
+    try {
+      const symbolsCsv = marketItems.map((item) => item.symbol).join(',');
+      const yahooUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(symbolsCsv)}`;
+      let response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(yahooUrl)}`, { cache: 'no-store' });
+      if (!response.ok) {
+        response = await fetch(yahooUrl, { cache: 'no-store' });
+      }
+      if (!response.ok) throw new Error(`Ticker API error ${response.status}`);
+
+      const payload = await response.json();
+      const quoteResults = payload?.quoteResponse?.result;
+      if (!Array.isArray(quoteResults)) throw new Error('Unexpected ticker payload');
+
+      const rows = marketItems
+        .map((item) => ({
+          label: item.label,
+          format: item.format,
+          price: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketPrice),
+          change: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketChangePercent),
+          marketTime: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketTime),
+        }))
+        .filter((item) => Number.isFinite(item.price) && Number.isFinite(item.change));
+
+      if (!rows.length) throw new Error('Ticker API returned empty data');
+      const latestMarketTimeSec = Math.max(...rows.map((row) => row.marketTime).filter(Number.isFinite));
+      const updatedAtMs = Number.isFinite(latestMarketTimeSec) ? latestMarketTimeSec * 1000 : Date.now();
+      renderTicker(rows, updatedAtMs);
+    } catch (error) {
+      console.error('Failed to load live ticker data:', error);
+      renderUnavailable();
+    }
+  }
+
+  updateTickerData();
+  window.setInterval(updateTickerData, 60_000);
+}
+
 document.addEventListener('DOMContentLoaded', () => {
+  initLiveTicker();
   initScrollEffects();
   initScrollReveal();
   initSmoothScroll();
