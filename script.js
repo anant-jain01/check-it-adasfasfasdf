@@ -203,6 +203,43 @@ function initLazyImages() {
   });
 }
 
+function initMobileNav() {
+  const hamburger = document.getElementById('hamburger');
+  const overlay = document.getElementById('mobileOverlay');
+  const panel = document.getElementById('mobilePanel');
+  const closeBtn = document.getElementById('mobileClose');
+
+  if (!hamburger || !overlay || !panel) return;
+
+  function openNav() {
+    hamburger.classList.add('open');
+    overlay.classList.add('open');
+    panel.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+
+  function closeNav() {
+    hamburger.classList.remove('open');
+    overlay.classList.remove('open');
+    panel.classList.remove('open');
+    document.body.style.overflow = '';
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+
+  hamburger.addEventListener('click', () => {
+    if (panel.classList.contains('open')) closeNav();
+    else openNav();
+  });
+
+  overlay.addEventListener('click', closeNav);
+  if (closeBtn) closeBtn.addEventListener('click', closeNav);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && panel.classList.contains('open')) closeNav();
+  });
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   initScrollEffects();
   initScrollReveal();
@@ -212,4 +249,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initContactForm();
   initLazyImages();
+  initMobileNav();
 });

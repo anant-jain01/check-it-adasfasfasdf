@@ -10,6 +10,11 @@
 </head>
 <body>
 
+<!-- DISCLAIMER BANNER -->
+<div class="disclaimer-banner">
+  ⚠ Investments involve market risk. Information on this site is for educational purposes only and does not constitute financial advice. Past performance is not indicative of future results.
+</div>
+
 <!-- HEADER -->
 <header class="main-header" id="header">
   <div class="header-inner">
@@ -22,8 +27,34 @@
       <div class="dropdown"><a href="#">Login ▾</a><div class="dropdown-menu"><a href="https://www.camsonline.com/" target="_blank">MF Login</a><a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a><a href="https://www.cdslindia.com/" target="_blank">Demat</a><a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a><a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a><a href="https://jiraaf.com/" target="_blank">Jiraaf</a><a href="https://www.finzy.com/" target="_blank">Finzy</a></div></div>
     </nav>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav-panel" id="mobilePanel">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <span class="mobile-nav-section">Services</span>
+  <a href="services.html" class="mobile-nav-sub active">All Services</a>
+  <a href="services.html#financial-blueprint" class="mobile-nav-sub">Financial Blueprint</a>
+  <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
+  <a href="services.html#tax-planning" class="mobile-nav-sub">Tax Planning</a>
+  <a href="services.html#wealth-management" class="mobile-nav-sub">Wealth Management</a>
+  <span class="mobile-nav-section">Products</span>
+  <a href="products.html" class="mobile-nav-sub">All Products</a>
+  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+  <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
+  <a href="products.html#life-insurance" class="mobile-nav-sub">Life Insurance</a>
+  <span class="mobile-nav-section">More</span>
+  <a href="insights.html" class="mobile-nav-link">Insights</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
+</nav>
 
 <!-- PAGE HERO -->
 <section class="page-hero container">
@@ -324,38 +355,36 @@
             </tr>
           </tbody>
         </table>
-        <p style="font-size:0.85rem;font-style:italic;opacity:0.6;margin-top:1rem;">*Assuming 8% annual education inflation</p>
-      </div>
-    </div>
-    
-    <div class="reveal-right">
+        <p style="font-size:0.85rem;font-style:italic;opacity:0.6;margin-top:1rem;">*Assuming 8% annual educati    <div class="reveal-right">
       <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:0.3em;color:var(--gold);display:block;margin-bottom:1rem;">SERVICE 05</span>
       <h2 style="font-size:3.5rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">Family Education Planning</h2>
       <div class="gold-bar" style="margin-bottom:2rem;"></div>
       <p style="font-size:1.2rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">
-        Education costs in India are rising at 8-10% annually. We help you build dedicated education corpuses aligned with your child’s future milestones.
+        Education costs in India are rising rapidly. We help you build dedicated education corpuses aligned with your child's future milestones, keeping pace with inflation.
       </p>
       <p style="font-size:1.1rem;line-height:1.7;opacity:0.85;margin-bottom:2rem;">
-        Whether it's IIT/IIM aspirations or international universities, we create goal-based portfolios that grow with your child's educational journey.
+        Whether it's IIT/IIM aspirations or international universities, we work with you to create goal-based plans that grow alongside your child's educational journey.
       </p>
       
       <div style="background:var(--gold-light);padding:2rem;border-left:4px solid var(--gold);margin-top:2.5rem;">
-        <h4 style="font-size:1.3rem;font-weight:700;margin-bottom:1rem;color:var(--forest);">Recommended Investment Mix</h4>
+        <h4 style="font-size:1.3rem;font-weight:700;margin-bottom:1rem;color:var(--forest);">Illustrative Investment Mix*</h4>
         <div style="display:grid;gap:1rem;margin-top:1.5rem;">
           <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:white;border-radius:4px;">
             <span style="font-weight:600;">Equity Mutual Funds</span>
-            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">60%</span>
+            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">~60%</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:white;border-radius:4px;">
             <span style="font-weight:600;">Debt Instruments</span>
-            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">30%</span>
+            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">~30%</span>
           </div>
           <div style="display:flex;justify-content:space-between;align-items:center;padding:0.8rem;background:white;border-radius:4px;">
             <span style="font-weight:600;">Liquid/PPF</span>
-            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">10%</span>
+            <span style="font-size:1.2rem;font-weight:700;color:var(--gold);">~10%</span>
           </div>
         </div>
-        <p style="font-size:0.9rem;font-style:italic;opacity:0.7;margin-top:1rem;">*Allocation adjusted based on time horizon to education milestone</p>
+        <p style="font-size:0.9rem;font-style:italic;opacity:0.7;margin-top:1rem;">*Indicative allocation only. Actual mix varies based on your timeline, risk profile, and prevailing market conditions. Not investment advice.</p>
+      </div>
+    </div>to education milestone</p>
       </div>
     </div>
   </div>
@@ -365,8 +394,8 @@
 <section class="forest-section" style="padding:6rem 0;text-align:center;">
   <div class="container" style="position:relative;z-index:1;">
     <div class="reveal-up">
-      <h2 style="font-size:3.2rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;color:var(--cream);">Ready to Transform Your Financial Future?</h2>
-      <p style="font-size:1.25rem;opacity:.8;margin-bottom:3rem;font-style:italic;color:var(--cream);max-width:700px;margin-left:auto;margin-right:auto;">Let's create a comprehensive financial plan tailored to your life goals</p>
+      <h2 style="font-size:3.2rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;color:var(--cream);">Ready to Discuss Your Financial Options?</h2>
+      <p style="font-size:1.25rem;opacity:.8;margin-bottom:3rem;font-style:italic;color:var(--cream);max-width:700px;margin-left:auto;margin-right:auto;">Let's explore a financial plan aligned to your life goals. No obligations, no unrealistic promises.</p>
       <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="btn-primary btn-magnetic" style="background:var(--gold);font-size:.95rem;padding:1.4rem 3.5rem;display:inline-flex;align-items:center;gap:0.8rem;">
         <span>Book Free Consultation</span>
         <span class="material-symbols-outlined">calendar_month</span>

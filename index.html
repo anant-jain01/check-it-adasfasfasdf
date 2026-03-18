@@ -3,16 +3,69 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
   <title>3K Investment Partners | Heritage Ledger</title>
   <meta name="description" content="3K Investment Partners LLP — Structured Wealth Advisory for Long-Term Financial Stability. Research-Driven Wealth Advisory.">
   <link rel="icon" href="logo.png" type="image/png">
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="style.css">
+  <!-- Font Awesome deferred to avoid render-block -->
+  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 </head>
 <body>
+
+<!-- STOCK TICKER -->
+<div class="ticker-wrap" aria-label="Market ticker">
+  <span class="ticker-label">Live Market</span>
+  <div class="ticker-track" id="tickerTrack">
+    <!-- Stocks & Indices -->
+    <span class="ticker-item"><span class="t-name">Nifty 50</span><span class="t-val">22,419.95</span><span class="t-arrow up">▲</span><span class="t-chg up">+148.10 (+0.66%)</span></span>
+    <span class="ticker-item"><span class="t-name">Sensex</span><span class="t-val">73,828.43</span><span class="t-arrow up">▲</span><span class="t-chg up">+462.30 (+0.63%)</span></span>
+    <span class="ticker-item"><span class="t-name">Bank Nifty</span><span class="t-val">49,102.55</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-89.40 (-0.18%)</span></span>
+    <span class="ticker-item"><span class="t-name">Nifty Midcap</span><span class="t-val">47,682.10</span><span class="t-arrow up">▲</span><span class="t-chg up">+210.60 (+0.44%)</span></span>
+    <span class="ticker-item"><span class="t-name">Gold (MCX)</span><span class="t-val">₹87,340/10g</span><span class="t-arrow up">▲</span><span class="t-chg up">+520 (+0.60%)</span></span>
+    <span class="ticker-item"><span class="t-name">USD/INR</span><span class="t-val">83.84</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-0.12 (-0.14%)</span></span>
+    <span class="ticker-item"><span class="t-name">Nifty IT</span><span class="t-val">35,280.70</span><span class="t-arrow up">▲</span><span class="t-chg up">+315.40 (+0.90%)</span></span>
+    <span class="ticker-item"><span class="t-name">Crude Oil</span><span class="t-val">₹6,842/bbl</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-38 (-0.55%)</span></span>
+    <!-- Separator -->
+    <span class="ticker-item" style="opacity:0.4">✦</span>
+    <!-- 3KIP Services -->
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Financial Blueprint</span><span class="t-val">— Personalized Roadmap to Wealth</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Portfolio Advisory</span><span class="t-val">— Risk-Calibrated Asset Allocation</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Insurance Planning</span><span class="t-val">— Protect What Matters Most</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Tax Optimization</span><span class="t-val">— Legal &amp; Smart Tax Strategies</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Education Planning</span><span class="t-val">— Secure Your Child's Future</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Wealth Management</span><span class="t-val">— Equity · Debt · Gold · Global</span></span>
+    <!-- Separator + duplicate for seamless loop -->
+    <span class="ticker-item" style="opacity:0.4">✦</span>
+    <!-- DUPLICATE SET for seamless loop -->
+    <span class="ticker-item"><span class="t-name">Nifty 50</span><span class="t-val">22,419.95</span><span class="t-arrow up">▲</span><span class="t-chg up">+148.10 (+0.66%)</span></span>
+    <span class="ticker-item"><span class="t-name">Sensex</span><span class="t-val">73,828.43</span><span class="t-arrow up">▲</span><span class="t-chg up">+462.30 (+0.63%)</span></span>
+    <span class="ticker-item"><span class="t-name">Bank Nifty</span><span class="t-val">49,102.55</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-89.40 (-0.18%)</span></span>
+    <span class="ticker-item"><span class="t-name">Nifty Midcap</span><span class="t-val">47,682.10</span><span class="t-arrow up">▲</span><span class="t-chg up">+210.60 (+0.44%)</span></span>
+    <span class="ticker-item"><span class="t-name">Gold (MCX)</span><span class="t-val">₹87,340/10g</span><span class="t-arrow up">▲</span><span class="t-chg up">+520 (+0.60%)</span></span>
+    <span class="ticker-item"><span class="t-name">USD/INR</span><span class="t-val">83.84</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-0.12 (-0.14%)</span></span>
+    <span class="ticker-item"><span class="t-name">Nifty IT</span><span class="t-val">35,280.70</span><span class="t-arrow up">▲</span><span class="t-chg up">+315.40 (+0.90%)</span></span>
+    <span class="ticker-item"><span class="t-name">Crude Oil</span><span class="t-val">₹6,842/bbl</span><span class="t-arrow dn">▼</span><span class="t-chg dn">-38 (-0.55%)</span></span>
+    <span class="ticker-item" style="opacity:0.4">✦</span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Financial Blueprint</span><span class="t-val">— Personalized Roadmap to Wealth</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Portfolio Advisory</span><span class="t-val">— Risk-Calibrated Asset Allocation</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Insurance Planning</span><span class="t-val">— Protect What Matters Most</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Tax Optimization</span><span class="t-val">— Legal &amp; Smart Tax Strategies</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Education Planning</span><span class="t-val">— Secure Your Child's Future</span></span>
+    <span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">Wealth Management</span><span class="t-val">— Equity · Debt · Gold · Global</span></span>
+    <span class="ticker-item" style="opacity:0.4">✦</span>
+  </div>
+</div>
+
+<!-- DISCLAIMER BANNER -->
+<div class="disclaimer-banner">
+  ⚠ Investments involve market risk. Information on this site is for educational purposes only and does not constitute financial advice. Past performance is not indicative of future results.
+</div>
+
 
 <!-- HEADER -->
 <header class="main-header" id="header">
@@ -26,8 +79,34 @@
       <div class="dropdown"><a href="#">Login ▾</a><div class="dropdown-menu"><a href="https://www.camsonline.com/" target="_blank">MF Login</a><a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a><a href="https://www.cdslindia.com/" target="_blank">Demat</a><a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a><a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a><a href="https://jiraaf.com/" target="_blank">Jiraaf</a><a href="https://www.finzy.com/" target="_blank">Finzy</a></div></div>
     </nav>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav-panel" id="mobilePanel">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html" class="mobile-nav-link active">Home</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <span class="mobile-nav-section">Services</span>
+  <a href="services.html" class="mobile-nav-sub">All Services</a>
+  <a href="services.html#financial-blueprint" class="mobile-nav-sub">Financial Blueprint</a>
+  <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
+  <a href="services.html#tax-planning" class="mobile-nav-sub">Tax Planning</a>
+  <a href="services.html#wealth-management" class="mobile-nav-sub">Wealth Management</a>
+  <span class="mobile-nav-section">Products</span>
+  <a href="products.html" class="mobile-nav-sub">All Products</a>
+  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+  <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
+  <a href="products.html#life-insurance" class="mobile-nav-sub">Life Insurance</a>
+  <span class="mobile-nav-section">More</span>
+  <a href="insights.html" class="mobile-nav-link">Insights</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
+</nav>
 
 <!-- HERO -->
 <section class="section container" style="min-height:85vh;display:flex;align-items:center;position:relative;overflow:hidden;">
@@ -42,10 +121,10 @@
         <span style="font-size:.8rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);">Volume XXIV &bull; Established MMXXIII</span>
       </div>
       <h1 style="font-size:clamp(3.2rem,6.5vw,6rem);font-weight:900;line-height:1.05;font-style:italic;margin-bottom:2.8rem;animation:fadeInUp 1s .4s both;">
-        Structured Wealth Advisory for Long-Term <span class="hl" style="color:var(--gold);text-decoration:underline;text-decoration-style:double;text-underline-offset:10px;text-decoration-thickness:3px;">Financial Stability</span>
+        Structured Wealth Advisory for Long-Term <span class="hl" style="color:var(--gold);text-decoration:underline;text-decoration-style:double;text-underline-offset:10px;text-decoration-thickness:3px;">Financial Clarity</span>
       </h1>
       <p class="dropcap" style="font-size:1.4rem;line-height:1.75;font-style:italic;opacity:.9;animation:fadeInUp 1s .6s both;margin-bottom:3.5rem;">
-        Disciplined portfolio structuring and strategic asset allocation designed for multi-generational wealth preservation. We serve families with an institutional mindset built for India's evolving financial aspirations.
+        Disciplined portfolio structuring and thoughtful asset allocation guidance designed for multi-generational wealth planning. We work alongside families who seek an institutional mindset aligned with India's evolving financial landscape.
       </p>
       <div style="display:flex;gap:1.5rem;margin-top:3.5rem;animation:fadeInUp 1s .8s both;flex-wrap:wrap;">
         <a href="services.html" class="btn-primary" style="display:inline-flex;align-items:center;gap:0.8rem;">
@@ -68,9 +147,9 @@
       <div style="position:absolute;bottom:-3rem;left:-3rem;background:var(--parchment);padding:2rem 2.5rem;border:3px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.15);max-width:280px;animation:float 4s ease-in-out infinite;z-index:10;">
         <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
           <span class="material-symbols-outlined" style="color:var(--saffron);font-size:1.8rem;">trending_up</span>
-          <span style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);">Market Performance</span>
+          <span style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);">Market Perspective</span>
         </div>
-        <p style="font-size:.95rem;font-style:italic;line-height:1.6;color:var(--heritage);">Consistent alpha generation through disciplined asset allocation strategies in Indian markets.</p>
+        <p style="font-size:.95rem;font-style:italic;line-height:1.6;color:var(--heritage);">Thoughtful asset allocation strategies aimed at long-term wealth building in Indian markets. Results may vary.</p>
       </div>
     </div>
   </div>
@@ -102,10 +181,10 @@
     <div class="reveal-left">
       <h2 style="font-size:3.2rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">The Power of Compounding</h2>
       <div class="gold-bar" style="margin-bottom:2rem;"></div>
-      <p style="font-size:1.2rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">Building wealth in the Indian market requires discipline and time. Even small, consistent SIPs (Systematic Investment Plans) can generate massive generational wealth when given a long runway.</p>
-      <p style="font-size:1.15rem;line-height:1.75;opacity:0.75;font-style:italic;">Assuming a conservative 12% annualized return—historic Indian equity markets have often delivered more over 15+ year periods.</p>
+      <p style="font-size:1.2rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">Building wealth in the Indian market may benefit from discipline and time. Small, consistent SIPs (Systematic Investment Plans) can potentially grow meaningfully when invested over a long horizon — though outcomes will vary based on market conditions and individual circumstances.</p>
+      <p style="font-size:1.15rem;line-height:1.75;opacity:0.75;font-style:italic;">The table below uses an illustrative 12% annualized return for demonstration only. Historical equity market returns in India have varied significantly across periods.</p>
       <div style="margin-top:2.5rem;padding:2rem;background:var(--gold-light);border-left:4px solid var(--gold);">
-        <p style="font-size:1rem;font-style:italic;line-height:1.7;"><strong>Pro Tip:</strong> Starting your SIP journey early, even with modest amounts, creates exponential wealth through the magic of compounding—India's middle class to crorepati pathway.</p>
+        <p style="font-size:1rem;font-style:italic;line-height:1.7;"><strong>Perspective:</strong> Starting an SIP early, even with modest amounts, may create meaningful wealth through compounding over time. All projections are hypothetical and subject to market risk.</p>
       </div>
     </div>
     <div class="reveal-right">
@@ -116,7 +195,7 @@
               <th>Monthly SIP (₹)</th>
               <th>Investment Period</th>
               <th>Total Invested</th>
-              <th>Est. Wealth Created</th>
+              <th>Illustrative Value*</th>
             </tr>
           </thead>
           <tbody>
@@ -124,30 +203,30 @@
               <td>₹ 10,000</td>
               <td>10 Years</td>
               <td>₹ 12 Lakhs</td>
-              <td class="positive">₹ 23 Lakhs</td>
+              <td class="positive">~₹ 23 Lakhs</td>
             </tr>
             <tr>
               <td>₹ 10,000</td>
               <td>15 Years</td>
               <td>₹ 18 Lakhs</td>
-              <td class="positive">₹ 50 Lakhs</td>
+              <td class="positive">~₹ 50 Lakhs</td>
             </tr>
             <tr class="highlight-col">
               <td class="highlight-col">₹ 25,000</td>
               <td class="highlight-col">20 Years</td>
               <td class="highlight-col">₹ 60 Lakhs</td>
-              <td class="highlight-col positive">₹ 2.5 Crores</td>
+              <td class="highlight-col positive">~₹ 2.5 Crores</td>
             </tr>
             <tr>
               <td>₹ 50,000</td>
               <td>25 Years</td>
               <td>₹ 1.5 Crores</td>
-              <td class="positive">₹ 9.5 Crores</td>
+              <td class="positive">~₹ 9.5 Crores</td>
             </tr>
           </tbody>
         </table>
       </div>
-      <div class="table-caption">*Indicative compounding at 12% CAGR. Mutual fund investments are subject to market risk.</div>
+      <div class="table-caption">*Illustrative only at 12% CAGR. Actual returns may be higher or lower. Mutual fund investments are subject to market risk. Please read all scheme-related documents carefully.</div>
     </div>
   </div>
 </section>
@@ -238,11 +317,11 @@
     <div class="reveal-left">
       <h2 style="font-size:3.5rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">The 3K Advantage</h2>
       <p class="dropcap" style="font-size:1.3rem;line-height:1.75;margin-bottom:2.5rem;">
-        We believe that true wealth management goes beyond simple investment advice. It requires a holistic understanding of your life goals, risk tolerance, legacy aspirations, and the unique dynamics of the Indian financial landscape.
+        We believe that meaningful wealth management goes beyond simple investment advice. It requires a thoughtful understanding of your life goals, risk appetite, legacy aspirations, and the unique dynamics of the Indian financial landscape — without making promises we cannot keep.
       </p>
       <div class="quote-box">
         <span class="material-symbols-outlined">format_quote</span>
-        <p>"Our work is meaningful only when families feel financially well, emotionally at ease, and confident enough to make life decisions without money anxiety."</p>
+        <p>"Our work is meaningful only when families feel financially aware, emotionally at ease, and confident enough to make life decisions without money anxiety."</p>
         <div class="author">— 3K Investment Partners LLP</div>
       </div>
     </div>
@@ -250,22 +329,22 @@
       <div class="value-item reveal d1">
         <span class="material-symbols-outlined">psychology</span>
         <h3>Unbiased Advice</h3>
-        <p>Fee-based model with 100% interest alignment, free from conflict and commission-driven recommendations.</p>
+        <p>Fee-based model with aligned interests, free from commission-driven conflicts. We aim to recommend what's right for you, not what pays us more.</p>
       </div>
       <div class="value-item reveal d2">
         <span class="material-symbols-outlined">candlestick_chart</span>
-        <h3>Data-Driven</h3>
-        <p>Every recommendation backed by rigorous quantitative analysis and market research from leading Indian financial institutions.</p>
+        <h3>Research-Informed</h3>
+        <p>Every recommendation is backed by rigorous analysis and market research. We never stop updating our knowledge as markets evolve.</p>
       </div>
       <div class="value-item reveal d3">
         <span class="material-symbols-outlined">lock</span>
         <h3>Security & Privacy</h3>
-        <p>Bank-grade security for your financial data with complete confidentiality in all client interactions.</p>
+        <p>Your financial data is handled with strict confidentiality and professional standards at every stage of the engagement.</p>
       </div>
       <div class="value-item reveal d4">
         <span class="material-symbols-outlined">diversity_3</span>
         <h3>Personalized Service</h3>
-        <p>Limited client intake ensuring bespoke, white-glove service customized for each family's unique financial journey.</p>
+        <p>Limited client intake ensuring attentive, tailored service customized for each family's unique financial situation and goals.</p>
       </div>
     </div>
   </div>
@@ -572,8 +651,8 @@
 <section class="forest-section" style="padding:6rem 0;text-align:center;position:relative;">
   <div class="container" style="position:relative;z-index:1;">
     <div class="reveal-up">
-      <h2 style="font-size:3rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;color:var(--cream);">Ready to Build Generational Wealth?</h2>
-      <p style="font-size:1.25rem;opacity:.8;margin-bottom:3rem;font-style:italic;color:var(--cream);max-width:650px;margin-left:auto;margin-right:auto;line-height:1.75;">Join hundreds of Indian families who trust us with their financial future. Start your journey toward financial independence today.</p>
+      <h2 style="font-size:3rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;color:var(--cream);">Ready to Explore Your Financial Options?</h2>
+      <p style="font-size:1.25rem;opacity:.8;margin-bottom:3rem;font-style:italic;color:var(--cream);max-width:650px;margin-left:auto;margin-right:auto;line-height:1.75;">Connect with us to discuss your financial goals. We'll share our perspective — with no obligations and no unrealistic promises.</p>
       <div style="display:flex;gap:1.5rem;justify-content:center;flex-wrap:wrap;">
         <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="btn-primary btn-magnetic" style="background:var(--gold);font-size:.95rem;padding:1.4rem 3.5rem;display:inline-flex;align-items:center;gap:0.8rem;">
           <span>Book Consultation</span>
