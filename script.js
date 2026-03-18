@@ -244,18 +244,7 @@ function initLiveTicker() {
   const tickerTrack = document.getElementById('tickerTrack');
   if (!tickerTrack) return;
 
-  const marketItems = [
-    { symbol: '^NSEI', label: 'Nifty 50', format: 'number' },
-    { symbol: '^BSESN', label: 'Sensex', format: 'number' },
-    { symbol: '^NSEBANK', label: 'Bank Nifty', format: 'number' },
-    { symbol: '^CNXIT', label: 'Nifty IT', format: 'number' },
-    { symbol: 'RELIANCE.NS', label: 'Reliance', format: 'inr' },
-    { symbol: 'TCS.NS', label: 'TCS', format: 'inr' },
-    { symbol: 'HDFCBANK.NS', label: 'HDFC Bank', format: 'inr' },
-    { symbol: 'USDINR=X', label: 'USD/INR', format: 'number' },
-  ];
-
-  const serviceItems = [
+/*  const serviceItems = [
     { name: 'Financial Blueprint', text: '— Personalized Roadmap to Wealth' },
     { name: 'Portfolio Advisory', text: '— Risk-Calibrated Asset Allocation' },
     { name: 'Insurance Planning', text: '— Protect What Matters Most' },
@@ -263,29 +252,11 @@ function initLiveTicker() {
     { name: 'Education Planning', text: "— Secure Your Child's Future" },
     { name: 'Wealth Management', text: '— Equity · Debt · Gold · Global' },
   ];
-
-  const formatNumber = (value) =>
-    Number(value).toLocaleString('en-IN', {
-      maximumFractionDigits: value < 100 ? 4 : 2,
-    });
-
+*/
   const formatInr = (value) =>
-    Number(value).toLocaleString('en-IN', {
-      style: 'currency',
-      currency: 'INR',
-      maximumFractionDigits: value < 100 ? 2 : 0,
-    });
+    Number(value).toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: value < 100 ? 2 : 0 });
 
-  const formatUpdatedTime = (timestampMs) =>
-    new Date(timestampMs).toLocaleString('en-IN', {
-      hour: '2-digit',
-      minute: '2-digit',
-      day: '2-digit',
-      month: 'short',
-      timeZoneName: 'short',
-    });
-
-  const renderTicker = (items, updatedAtMs) => {
+  const renderTicker = (items) => {
     const marketMarkup = items
       .map((item) => {
         const isUp = Number(item.change) >= 0;
@@ -295,7 +266,7 @@ function initLiveTicker() {
 
         return `<span class="ticker-item">
           <span class="t-name">${item.label}</span>
-          <span class="t-val">${item.format === 'inr' ? formatInr(item.price) : formatNumber(item.price)}</span>
+          <span class="t-val">${formatInr(item.price)}</span>
           <span class="t-arrow ${directionClass}">${arrow}</span>
           <span class="t-chg ${directionClass}">${formattedChange}</span>
         </span>`;
@@ -311,8 +282,7 @@ function initLiveTicker() {
       .join('');
 
     const separator = '<span class="ticker-item" style="opacity:0.4">✦</span>';
-    const updatedMarkup = `<span class="ticker-item"><span class="t-name">Updated</span><span class="t-val">${formatUpdatedTime(updatedAtMs)}</span></span>`;
-    const block = `${marketMarkup}${separator}${updatedMarkup}${separator}${servicesMarkup}${separator}`;
+    const block = `${marketMarkup}${separator}${servicesMarkup}${separator}`;
 
     tickerTrack.innerHTML = block + block;
     tickerTrack.style.animation = 'none';
@@ -327,33 +297,26 @@ function initLiveTicker() {
   };
 
   async function updateTickerData() {
+    const ids = marketItems.map((item) => item.id).join(',');
+    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(
+      ids
+    )}&vs_currencies=inr&include_24hr_change=true`;
+
     try {
-      const symbolsCsv = marketItems.map((item) => item.symbol).join(',');
-      const yahooUrl = `https://query1.finance.yahoo.com/v7/finance/quote?symbols=${encodeURIComponent(symbolsCsv)}`;
-      let response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(yahooUrl)}`, { cache: 'no-store' });
-      if (!response.ok) {
-        response = await fetch(yahooUrl, { cache: 'no-store' });
-      }
+      const response = await fetch(url, { cache: 'no-store' });
       if (!response.ok) throw new Error(`Ticker API error ${response.status}`);
 
       const payload = await response.json();
-      const quoteResults = payload?.quoteResponse?.result;
-      if (!Array.isArray(quoteResults)) throw new Error('Unexpected ticker payload');
-
       const rows = marketItems
         .map((item) => ({
           label: item.label,
-          format: item.format,
-          price: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketPrice),
-          change: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketChangePercent),
-          marketTime: Number(quoteResults.find((row) => row.symbol === item.symbol)?.regularMarketTime),
+          price: payload[item.id]?.inr,
+          change: payload[item.id]?.inr_24h_change,
         }))
         .filter((item) => Number.isFinite(item.price) && Number.isFinite(item.change));
 
       if (!rows.length) throw new Error('Ticker API returned empty data');
-      const latestMarketTimeSec = Math.max(...rows.map((row) => row.marketTime).filter(Number.isFinite));
-      const updatedAtMs = Number.isFinite(latestMarketTimeSec) ? latestMarketTimeSec * 1000 : Date.now();
-      renderTicker(rows, updatedAtMs);
+      renderTicker(rows);
     } catch (error) {
       console.error('Failed to load live ticker data:', error);
       renderUnavailable();
