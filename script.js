@@ -244,16 +244,7 @@ function initLiveTicker() {
   const tickerTrack = document.getElementById('tickerTrack');
   if (!tickerTrack) return;
 
-  const marketItems = [
-    { id: 'bitcoin', label: 'Bitcoin' },
-    { id: 'ethereum', label: 'Ethereum' },
-    { id: 'solana', label: 'Solana' },
-    { id: 'binancecoin', label: 'BNB' },
-    { id: 'ripple', label: 'XRP' },
-    { id: 'tether', label: 'Tether' },
-  ];
-
-  const serviceItems = [
+/*  const serviceItems = [
     { name: 'Financial Blueprint', text: '— Personalized Roadmap to Wealth' },
     { name: 'Portfolio Advisory', text: '— Risk-Calibrated Asset Allocation' },
     { name: 'Insurance Planning', text: '— Protect What Matters Most' },
@@ -261,7 +252,7 @@ function initLiveTicker() {
     { name: 'Education Planning', text: "— Secure Your Child's Future" },
     { name: 'Wealth Management', text: '— Equity · Debt · Gold · Global' },
   ];
-
+*/
   const formatInr = (value) =>
     Number(value).toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: value < 100 ? 2 : 0 });
 
