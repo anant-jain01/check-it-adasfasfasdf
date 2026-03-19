@@ -240,91 +240,61 @@ function initMobileNav() {
   });
 }
 
+// ── LIVE TICKER ──────────────────────────────────────────────────────────────
 function initLiveTicker() {
-  const tickerTrack = document.getElementById('tickerTrack');
-  if (!tickerTrack) return;
+  const track = document.getElementById('tickerTrack');
+  if (!track) return;
 
-/*  const serviceItems = [
-    { name: 'Financial Blueprint', text: '— Personalized Roadmap to Wealth' },
-    { name: 'Portfolio Advisory', text: '— Risk-Calibrated Asset Allocation' },
-    { name: 'Insurance Planning', text: '— Protect What Matters Most' },
-    { name: 'Tax Optimization', text: '— Legal & Smart Tax Strategies' },
-    { name: 'Education Planning', text: "— Secure Your Child's Future" },
-    { name: 'Wealth Management', text: '— Equity · Debt · Gold · Global' },
+  // Ticker renders instantly from HTML (services marquee).
+  // After 1.5s we call our own /api/quotes Vercel function (no CORS ever).
+
+  const SERVICE = [
+    { name: 'FINANCIAL BLUEPRINT', desc: '— Personalized Roadmap to Wealth'  },
+    { name: 'PORTFOLIO ADVISORY',  desc: '— Risk-Calibrated Asset Allocation' },
+    { name: 'INSURANCE PLANNING',  desc: '— Protect What Matters Most'        },
+    { name: 'TAX OPTIMIZATION',    desc: '— Legal & Smart Tax Strategies'     },
+    { name: 'EDUCATION PLANNING',  desc: "— Secure Your Child's Future"       },
+    { name: 'WEALTH MANAGEMENT',   desc: '— Equity · Debt · Gold · Global'    },
   ];
-*/
-  const formatInr = (value) =>
-    Number(value).toLocaleString('en-IN', { style: 'currency', currency: 'INR', maximumFractionDigits: value < 100 ? 2 : 0 });
 
-  const renderTicker = (items) => {
-    const marketMarkup = items
-      .map((item) => {
-        const isUp = Number(item.change) >= 0;
-        const directionClass = isUp ? 'up' : 'dn';
-        const arrow = isUp ? '▲' : '▼';
-        const formattedChange = `${isUp ? '+' : ''}${Number(item.change).toFixed(2)}%`;
+  const fmt = (v) => Number(v).toLocaleString('en-IN', {
+    style: 'currency', currency: 'INR',
+    maximumFractionDigits: v < 100 ? 2 : 0,
+  });
 
-        return `<span class="ticker-item">
-          <span class="t-name">${item.label}</span>
-          <span class="t-val">${formatInr(item.price)}</span>
-          <span class="t-arrow ${directionClass}">${arrow}</span>
-          <span class="t-chg ${directionClass}">${formattedChange}</span>
-        </span>`;
-      })
-      .join('');
+  function marketPill({ label, price, change }) {
+    const up  = change >= 0;
+    const cls = up ? 'up' : 'dn';
+    const arr = up ? '▲' : '▼';
+    const pct = `${up ? '+' : ''}${change.toFixed(2)}%`;
+    return `<span class="ticker-item"><span class="t-dot"></span><span class="t-name">${label}</span><span class="t-val">${fmt(price)}</span><span class="t-arrow ${cls}">${arr}</span><span class="t-chg ${cls}">${pct}</span></span>`;
+  }
 
-    const servicesMarkup = serviceItems
-      .map(
-        (item) => `<span class="ticker-item svc">
-          <span class="t-dot"></span><span class="t-name">${item.name}</span><span class="t-val">${item.text}</span>
-        </span>`
-      )
-      .join('');
+  function servicePill({ name, desc }) {
+    return `<span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">${name}</span><span class="t-val">${desc}</span></span>`;
+  }
 
-    const separator = '<span class="ticker-item" style="opacity:0.4">✦</span>';
-    const block = `${marketMarkup}${separator}${servicesMarkup}${separator}`;
+  function paint(quotes) {
+    const block = quotes.map(marketPill).join('') + SERVICE.map(servicePill).join('');
+    track.innerHTML = block + block;
+    track.style.animation = 'none';
+    void track.offsetWidth;
+    track.style.animation = '';
+  }
 
-    tickerTrack.innerHTML = block + block;
-    tickerTrack.style.animation = 'none';
-    requestAnimationFrame(() => {
-      tickerTrack.style.animation = '';
-    });
-  };
-
-  const renderUnavailable = () => {
-    tickerTrack.innerHTML =
-      '<span class="ticker-item"><span class="t-name">Market Feed</span><span class="t-val">Live data unavailable right now</span></span>';
-  };
-
-  async function updateTickerData() {
-    const ids = marketItems.map((item) => item.id).join(',');
-    const url = `https://api.coingecko.com/api/v3/simple/price?ids=${encodeURIComponent(
-      ids
-    )}&vs_currencies=inr&include_24hr_change=true`;
-
+  async function refresh() {
     try {
-      const response = await fetch(url, { cache: 'no-store' });
-      if (!response.ok) throw new Error(`Ticker API error ${response.status}`);
-
-      const payload = await response.json();
-      const rows = marketItems
-        .map((item) => ({
-          label: item.label,
-          price: payload[item.id]?.inr,
-          change: payload[item.id]?.inr_24h_change,
-        }))
-        .filter((item) => Number.isFinite(item.price) && Number.isFinite(item.change));
-
-      if (!rows.length) throw new Error('Ticker API returned empty data');
-      renderTicker(rows);
-    } catch (error) {
-      console.error('Failed to load live ticker data:', error);
-      renderUnavailable();
+      const r = await fetch('/api/quotes', { cache: 'no-store' });
+      if (!r.ok) throw new Error(`API ${r.status}`);
+      const { quotes } = await r.json();
+      if (quotes && quotes.length >= 3) paint(quotes);
+    } catch (err) {
+      console.warn('Ticker: /api/quotes unavailable, keeping services marquee.', err.message);
     }
   }
 
-  updateTickerData();
-  window.setInterval(updateTickerData, 60_000);
+  setTimeout(refresh, 1500);
+  setInterval(refresh, 60_000);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -339,56 +309,3 @@ document.addEventListener('DOMContentLoaded', () => {
   initLazyImages();
   initMobileNav();
 });
-// ===== STOCK TICKER (YAHOO) =====
-
-async function fetchStock(symbol){
-  const res = await fetch(`https://query1.finance.yahoo.com/v7/finance/quote?symbols=${symbol}`);
-  const data = await res.json();
-  return data.quoteResponse.result[0];
-}
-
-const symbols = [
-  { name: "Reliance", symbol: "RELIANCE.NS" },
-  { name: "TCS", symbol: "TCS.NS" },
-  { name: "HDFC Bank", symbol: "HDFCBANK.NS" },
-  { name: "Infosys", symbol: "INFY.NS" }
-];
-
-function createTickerItem(name,data){
-  const price = data?.regularMarketPrice || 0;
-  const change = data?.regularMarketChange || 0;
-  const percent = data?.regularMarketChangePercent || 0;
-
-  const direction = change >= 0 ? "up" : "dn";
-  const arrow = change >= 0 ? "▲" : "▼";
-
-  return `<span class="ticker-item">
-    <span class="t-name">${name}</span>
-    <span class="t-val">${price.toFixed(2)}</span>
-    <span class="t-arrow ${direction}">${arrow}</span>
-    <span class="t-chg ${direction}">
-      ${change.toFixed(2)} (${percent.toFixed(2)}%)
-    </span>
-  </span>`;
-}
-
-async function loadTicker(){
-  const track = document.getElementById("tickerTrack");
-  if(!track) return;
-
-  let html = "";
-
-  for(const s of symbols){
-    try{
-      const data = await fetchStock(s.symbol);
-      html += createTickerItem(s.name,data);
-    }catch(e){
-      html += `<span class="ticker-item"><span class="t-name">${s.name}</span><span class="t-val">Error</span></span>`;
-    }
-  }
-
-  track.innerHTML = html + html; // loop effect
-}
-
-loadTicker();
-setInterval(loadTicker,60000);

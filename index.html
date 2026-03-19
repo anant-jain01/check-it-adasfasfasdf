@@ -11,16 +11,126 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* ── Live Ticker — matches screenshot style ─────────────────────────── */
+    .ticker-wrap {
+      display: flex;
+      align-items: center;
+      background: #0f1f18;          /* very dark green, matches your bar    */
+      height: 38px;
+      overflow: hidden;
+      position: relative;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(197,160,75,0.25);
+    }
+    .ticker-label {
+      flex-shrink: 0;
+      padding: 0 1.1rem;
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+      color: #fff;
+      white-space: nowrap;
+      border-right: 1px solid rgba(255,255,255,.18);
+      height: 100%;
+      display: flex;
+      align-items: center;
+    }
+    .ticker-track {
+      display: flex;
+      align-items: center;
+      white-space: nowrap;
+      will-change: transform;
+      animation: ticker-scroll 55s linear infinite;
+    }
+    .ticker-track:hover { animation-play-state: paused; }
+    @keyframes ticker-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* Market item */
+    .ticker-item {
+      display: inline-flex;
+      align-items: center;
+      gap: .38rem;
+      padding: 0 .9rem;
+      font-size: .72rem;
+    }
+    .t-name {
+      font-weight: 800;
+      letter-spacing: .06em;
+      color: #c5a04b;               /* your gold colour                     */
+      text-transform: uppercase;
+    }
+    .t-val {
+      color: #f0ece2;               /* off-white                            */
+      font-weight: 500;
+    }
+    .t-arrow, .t-chg {
+      font-weight: 700;
+      font-size: .68rem;
+    }
+    .t-arrow.up, .t-chg.up { color: #4caf79; }
+    .t-arrow.dn, .t-chg.dn { color: #e05252; }
+
+    /* Service item — matches bullet · GOLD NAME — white desc */
+    .ticker-item.svc .t-dot {
+      width: 5px; height: 5px;
+      border-radius: 50%;
+      background: #c5a04b;
+      flex-shrink: 0;
+    }
+    .ticker-item.svc .t-name { color: #c5a04b; }
+    .ticker-item.svc .t-val  { color: #d6cfc0; font-style: normal; font-weight: 400; }
+
+    /* Pipe separator */
+    .ticker-sep {
+      color: rgba(255,255,255,.2);
+      font-size: .9rem;
+      padding: 0 .2rem;
+      flex-shrink: 0;
+    }
+
+    /* Loading state */
+    .t-loading { color: rgba(255,255,255,.4); font-size: .72rem; padding: 0 1rem; }
+  </style>
   <!-- Font Awesome deferred to avoid render-block -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
 </head>
 <body>
 
-<!-- STOCK TICKER -->
-<div class="ticker-wrap" aria-label="Market ticker">
+<!-- STOCK TICKER — TradingView (guaranteed live data, no API key) -->
+<div class="ticker-wrap" aria-label="Market ticker" id="tickerWrap">
   <span class="ticker-label">Live Market</span>
-<div class="ticker-track" id="tickerTrack"></div>
+  <div class="tv-ticker-container">
+    <div class="tradingview-widget-container">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          { "proName": "BSE:SENSEX",    "title": "SENSEX"     },
+          { "proName": "NSE:NIFTY",     "title": "NIFTY 50"   },
+          { "proName": "NSE:BANKNIFTY", "title": "BANK NIFTY" },
+          { "proName": "NSE:RELIANCE",  "title": "RELIANCE"   },
+          { "proName": "NSE:TCS",       "title": "TCS"         },
+          { "proName": "NSE:HDFCBANK",  "title": "HDFC BANK"  },
+          { "proName": "NSE:INFY",      "title": "INFOSYS"    },
+          { "proName": "NSE:ICICIBANK", "title": "ICICI BANK" },
+          { "proName": "NSE:SBIN",      "title": "SBI"         },
+          { "proName": "NSE:WIPRO",     "title": "WIPRO"       }
+        ],
+        "showSymbolLogo": false,
+        "isTransparent": true,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "in"
+      }
+      </script>
+    </div>
+  </div>
 </div>
 
 <!-- DISCLAIMER BANNER -->
@@ -494,7 +604,7 @@
           <span class="material-symbols-outlined">mail</span>
           <div>
             <div class="lbl">Email</div>
-            <div class="val">support@3kip.in</div>
+            <div class="val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="20535550504f525460134b49500e494e">[email&#160;protected]</a></div>
           </div>
         </div>
         <div class="info-item">
@@ -639,11 +749,4 @@
     </div>
     <div class="footer-bottom">
       <p class="disclaimer"><strong>Risk:</strong> Investments are subject to market risks. Past performance ≠ future returns.</p>
-      <div class="copyright"><p>&copy; 2026 3K Investment Partners LLP.</p><p>Institutional Excellence.</p></div>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
-</body>
-</html>
+      <div class="copyright"><p>&copy; 2026 3K Investment Partners LLP.</p><p>Institu
