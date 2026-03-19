@@ -45,6 +45,22 @@
       animation: ticker-scroll 55s linear infinite;
     }
     .ticker-track:hover { animation-play-state: paused; }
+
+    /* TradingView ticker layout fix: consume remaining row width cleanly */
+    .tv-ticker-container {
+      flex: 1 1 auto;
+      min-width: 0;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .tradingview-widget-container,
+    .tradingview-widget-container__widget {
+      width: 100%;
+      height: 100%;
+    }
     @keyframes ticker-scroll {
       0%   { transform: translateX(0); }
       100% { transform: translateX(-50%); }
@@ -126,7 +142,7 @@
         "isTransparent": true,
         "displayMode": "adaptive",
         "colorTheme": "dark",
-        "locale": "in"
+        "locale": "en"
       }
       </script>
     </div>
