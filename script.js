@@ -240,65 +240,7 @@ function initMobileNav() {
   });
 }
 
-// ── LIVE TICKER ──────────────────────────────────────────────────────────────
-function initLiveTicker() {
-  const track = document.getElementById('tickerTrack');
-  if (!track) return;
-
-  // Ticker renders instantly from HTML (services marquee).
-  // After 1.5s we call our own /api/quotes Vercel function (no CORS ever).
-
-  const SERVICE = [
-    { name: 'FINANCIAL BLUEPRINT', desc: '— Personalized Roadmap to Wealth'  },
-    { name: 'PORTFOLIO ADVISORY',  desc: '— Risk-Calibrated Asset Allocation' },
-    { name: 'INSURANCE PLANNING',  desc: '— Protect What Matters Most'        },
-    { name: 'TAX OPTIMIZATION',    desc: '— Legal & Smart Tax Strategies'     },
-    { name: 'EDUCATION PLANNING',  desc: "— Secure Your Child's Future"       },
-    { name: 'WEALTH MANAGEMENT',   desc: '— Equity · Debt · Gold · Global'    },
-  ];
-
-  const fmt = (v) => Number(v).toLocaleString('en-IN', {
-    style: 'currency', currency: 'INR',
-    maximumFractionDigits: v < 100 ? 2 : 0,
-  });
-
-  function marketPill({ label, price, change }) {
-    const up  = change >= 0;
-    const cls = up ? 'up' : 'dn';
-    const arr = up ? '▲' : '▼';
-    const pct = `${up ? '+' : ''}${change.toFixed(2)}%`;
-    return `<span class="ticker-item"><span class="t-dot"></span><span class="t-name">${label}</span><span class="t-val">${fmt(price)}</span><span class="t-arrow ${cls}">${arr}</span><span class="t-chg ${cls}">${pct}</span></span>`;
-  }
-
-  function servicePill({ name, desc }) {
-    return `<span class="ticker-item svc"><span class="t-dot"></span><span class="t-name">${name}</span><span class="t-val">${desc}</span></span>`;
-  }
-
-  function paint(quotes) {
-    const block = quotes.map(marketPill).join('') + SERVICE.map(servicePill).join('');
-    track.innerHTML = block + block;
-    track.style.animation = 'none';
-    void track.offsetWidth;
-    track.style.animation = '';
-  }
-
-  async function refresh() {
-    try {
-      const r = await fetch('/api/quotes', { cache: 'no-store' });
-      if (!r.ok) throw new Error(`API ${r.status}`);
-      const { quotes } = await r.json();
-      if (quotes && quotes.length >= 3) paint(quotes);
-    } catch (err) {
-      console.warn('Ticker: /api/quotes unavailable, keeping services marquee.', err.message);
-    }
-  }
-
-  setTimeout(refresh, 1500);
-  setInterval(refresh, 60_000);
-}
-
 document.addEventListener('DOMContentLoaded', () => {
-  initLiveTicker();
   initScrollEffects();
   initScrollReveal();
   initSmoothScroll();
