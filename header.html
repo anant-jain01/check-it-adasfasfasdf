@@ -1,24 +1,24 @@
-<!DOCTYPE html>
 <header class="main-header" id="header">
   <div class="header-inner">
     <a href="index.html" class="logo-area">
       <img src="logo.png" alt="3K Investment Partners">
     </a>
     <nav class="nav-links">
-      <a href="index.html" class="nav-item">Home</a>
-      <a href="about.html" class="nav-item">About</a>
+      <a href="index.html" class="nav-item" data-page="index">Home</a>
+      <a href="about.html" class="nav-item" data-page="about">About</a>
       <div class="dropdown">
-        <a href="services.html" class="nav-item">Services ▾</a>
+        <a href="services.html" class="nav-item" data-page="services">Services ▾</a>
         <div class="dropdown-menu">
           <a href="services.html#financial-blueprint">Financial Blueprint</a>
           <a href="services.html#insurance-planning">Insurance Planning</a>
           <a href="services.html#tax-planning">Tax Planning</a>
           <a href="services.html#wealth-management">Wealth Management</a>
-          <a href="services.html#family-education">Family Education Planning</a>
+          <a href="services.html#family-education">Family Education</a>
+          <a href="services.html#will-writing">Will Writing</a>
         </div>
       </div>
       <div class="dropdown">
-        <a href="products.html" class="nav-item">Products ▾</a>
+        <a href="products.html" class="nav-item" data-page="products">Products ▾</a>
         <div class="dropdown-menu">
           <a href="products.html#mutual-fund">Mutual Fund</a>
           <a href="products.html#sif">SIF</a>
@@ -28,12 +28,13 @@
           <a href="products.html#health-insurance">Health Insurance</a>
           <a href="products.html#general-insurance">General Insurance</a>
           <a href="products.html#portfolio-management">Portfolio Management</a>
+          <a href="products.html#portfolio-review">Portfolio Review</a>
           <a href="products.html#aif">AIF</a>
           <a href="products.html#real-estate">Real Estate</a>
         </div>
       </div>
-      <a href="insights.html" class="nav-item">Insights</a>
-      <a href="contact.html" class="nav-item">Contact</a>
+      <a href="insights.html" class="nav-item" data-page="insights">Insights</a>
+      <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
       <div class="dropdown">
         <a href="#" class="nav-item">Login ▾</a>
         <div class="dropdown-menu">
@@ -48,5 +49,30 @@
       </div>
     </nav>
     <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav-panel" id="mobilePanel">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <span class="mobile-nav-section">Services</span>
+  <a href="services.html" class="mobile-nav-sub">All Services</a>
+  <a href="services.html#financial-blueprint" class="mobile-nav-sub">Financial Blueprint</a>
+  <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
+  <a href="services.html#will-writing" class="mobile-nav-sub">Will Writing</a>
+  <span class="mobile-nav-section">Products</span>
+  <a href="products.html" class="mobile-nav-sub">All Products</a>
+  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+  <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
+  <a href="products.html#portfolio-review" class="mobile-nav-sub">Portfolio Review</a>
+  <span class="mobile-nav-section">More</span>
+  <a href="insights.html" class="mobile-nav-link">Insights</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
+</nav>

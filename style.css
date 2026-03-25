@@ -24,6 +24,8 @@ body {
   text-justify: inter-word;
   overflow-x: hidden; 
   -webkit-font-smoothing: antialiased;
+  word-spacing: normal;
+  letter-spacing: normal;
 }
 
 h1,h2,h3,h4 { font-family: 'Lora', serif; }
@@ -220,12 +222,12 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 }
 
 .logo-area img {
-  height: 48px;
+  height: 68px;
   transition: all 0.3s ease;
 }
 
 .main-header.scrolled .logo-area img {
-  height: 40px;
+  height: 52px;
 }
 
 .nav-links {
@@ -238,7 +240,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 .mobile-menu-toggle { display: none; }
 
 .nav-links a.nav-item {
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.15em;
@@ -506,7 +508,7 @@ a { text-decoration: none; color: inherit; transition: all 0.3s ease; }
 .stats-bar {
   background: linear-gradient(135deg, var(--forest) 0%, var(--heritage) 100%);
   color: var(--cream);
-  padding: 4rem 0;
+  padding: 1.8rem 0;
   position: relative;
   overflow: hidden;
 }
@@ -1750,3 +1752,65 @@ img {
     scroll-behavior: auto !important;
   }
 }
+
+/* ===== ASSOCIATIONS GRID ===== */
+.associations-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 1.5rem;
+}
+
+.assoc-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 1rem;
+  background: white;
+  border: 2px solid var(--gold-light);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+}
+
+.assoc-tile:hover {
+  border-color: var(--gold);
+  transform: translateY(-6px);
+  box-shadow: 0 15px 40px rgba(180, 151, 90, 0.2);
+}
+
+.assoc-logo-placeholder {
+  width: 80px;
+  height: 60px;
+  background: var(--parchment);
+  border: 2px dashed var(--gold-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s;
+}
+
+.assoc-tile:hover .assoc-logo-placeholder {
+  border-color: var(--gold);
+}
+
+.assoc-name {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--heritage);
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .associations-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .associations-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
