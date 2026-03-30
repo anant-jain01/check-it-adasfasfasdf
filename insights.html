@@ -2,53 +2,35 @@
 <html lang="en">
 <head>
   <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  
+  <!-- SEO & SMO Meta Tags -->
   <title>Insights & Research | 3K Investment Partners</title>
   <meta name="description" content="Financial insights, market research, and investment education from 3K Investment Partners.">
-  <link rel="icon" href="logo.png"><link rel="stylesheet" href="style.css">
+  <meta name="theme-color" content="#1B3022" />
+  <link rel="canonical" href="https://3kip.in/insights.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://3kip.in/insights.html" />
+  <meta property="og:title" content="Insights & Research | 3K Investment Partners" />
+  <meta property="og:description" content="Read our latest curated financial insights, market research, and investment education." />
+  <meta property="og:image" content="https://3kip.in/images/logo.png" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://3kip.in/insights.html" />
+  <meta property="twitter:title" content="Insights & Research | 3K Investment Partners" />
+  <meta property="twitter:description" content="Read our latest curated financial insights, market research, and investment education." />
+  <meta property="twitter:image" content="https://3kip.in/images/logo.png" />
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="icon" href="logo.png" type="image/png">
+  <link rel="stylesheet" href="style.css">
+  <script src="components.js" defer></script>
 </head>
 <body>
-<!-- DISCLAIMER BANNER -->
-<div class="disclaimer-banner">
-  ⚠ Investments involve market risk. Information on this site is for educational purposes only and does not constitute financial advice. Past performance is not indicative of future results.
-</div>
-
-<header class="main-header" id="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-area"><img src="logo.png" alt="3KIP"></a>
-    <nav class="nav-links">
-      <a href="index.html">Home</a><a href="about.html">About</a>
-      <div class="dropdown"><a href="services.html">Services ▾</a><div class="dropdown-menu"><a href="services.html#financial-blueprint">Financial Blueprint</a><a href="services.html#insurance-planning">Insurance Planning</a><a href="services.html#tax-planning">Tax Planning</a><a href="services.html#wealth-management">Wealth Management</a><a href="services.html#family-education">Family Education</a></div></div>
-      <div class="dropdown"><a href="products.html">Products ▾</a><div class="dropdown-menu"><a href="products.html#mutual-fund">Mutual Fund</a><a href="products.html#sif">SIF</a><a href="products.html#equity">Equity</a><a href="products.html#global-investment">Global</a><a href="products.html#life-insurance">Life Insurance</a><a href="products.html#health-insurance">Health Insurance</a><a href="products.html#general-insurance">General Insurance</a><a href="products.html#portfolio-management">Portfolio Mgmt</a><a href="products.html#aif">AIF</a><a href="products.html#real-estate">Real Estate</a></div></div>
-      <a href="insights.html" class="active">Insights</a><a href="contact.html">Contact</a>
-      <div class="dropdown"><a href="#">Login ▾</a><div class="dropdown-menu"><a href="https://www.camsonline.com/" target="_blank">MF Login</a><a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a><a href="https://www.cdslindia.com/" target="_blank">Demat</a><a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a><a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a><a href="https://jiraaf.com/" target="_blank">Jiraaf</a><a href="https://www.finzy.com/" target="_blank">Finzy</a></div></div>
-    </nav>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
-    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</header>
-
-<!-- MOBILE NAV -->
-<div class="mobile-nav-overlay" id="mobileOverlay"></div>
-<nav class="mobile-nav-panel" id="mobilePanel">
-  <button class="mobile-nav-close" id="mobileClose">✕</button>
-  <a href="index.html" class="mobile-nav-link">Home</a>
-  <a href="about.html" class="mobile-nav-link">About</a>
-  <span class="mobile-nav-section">Services</span>
-  <a href="services.html" class="mobile-nav-sub">All Services</a>
-  <a href="services.html#financial-blueprint" class="mobile-nav-sub">Financial Blueprint</a>
-  <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
-  <span class="mobile-nav-section">Products</span>
-  <a href="products.html" class="mobile-nav-sub">All Products</a>
-  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
-  <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
-  <span class="mobile-nav-section">More</span>
-  <a href="insights.html" class="mobile-nav-link active">Insights</a>
-  <a href="contact.html" class="mobile-nav-link">Contact</a>
-  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
-</nav>
-
+<!-- HEADER (loaded by components.js) -->
+<div id="site-header"></div>
 <section class="page-hero container">
   <div class="tag"><span class="line"></span><span class="text">Knowledge Center</span><span class="line"></span></div>
   <h1>Insights &amp; <span class="hl">Research</span></h1>
@@ -149,19 +131,8 @@
   </div>
 </section>
 
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><div class="brand-row"><span class="material-symbols-outlined">account_balance</span><span>3K Investment Partners</span></div><p>Disciplined investment strategies for generational wealth.</p></div>
-      <div class="footer-col"><h4>Firm</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="insights.html">News</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">All Services</a></li><li><a href="products.html">Products</a></li></ul></div>
-      <div class="footer-col"><h4>Compliance</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Disclosures</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <div class="copyright"><p>&copy; 2026 3K Investment Partners LLP.</p><p>Institutional Excellence.</p></div>
-    </div>
-  </div>
-</footer>
+<!-- FOOTER (loaded by components.js) -->
+<div id="site-footer"></div>
 <script src="script.js"></script>
 </body>
 </html>

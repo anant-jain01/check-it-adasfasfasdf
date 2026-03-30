@@ -3,43 +3,83 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-  <title>3K Investment Partners | Heritage Ledger</title>
-  <meta name="description" content="3K Investment Partners LLP — Structured Wealth Advisory for Long-Term Financial Stability. Research-Driven Wealth Advisory.">
+  
+  <!-- SEO & SMO Meta Tags -->
+  <title>3K Investment Partners | Structured Wealth Advisory</title>
+  <meta name="description" content="3K Investment Partners LLP offers structured wealth advisory, financial planning, and portfolio management for multi-generational wealth preservation in India.">
+  <meta name="theme-color" content="#1B3022" />
+  <link rel="canonical" href="https://3kip.in/" />
+  
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://3kip.in/" />
+  <meta property="og:title" content="3K Investment Partners | Structured Wealth Advisory" />
+  <meta property="og:description" content="Disciplined portfolio structuring and strategic asset allocation designed for multi-generational wealth preservation in India." />
+  <meta property="og:image" content="https://3kip.in/images/logo.png" />
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://3kip.in/" />
+  <meta property="twitter:title" content="3K Investment Partners | Structured Wealth Advisory" />
+  <meta property="twitter:description" content="Disciplined portfolio structuring and strategic asset allocation designed for multi-generational wealth preservation in India." />
+  <meta property="twitter:image" content="https://3kip.in/images/logo.png" />
+
+  <!-- Structured Data JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FinancialService",
+    "name": "3K Investment Partners LLP",
+    "image": "https://3kip.in/images/logo.png",
+    "@id": "https://3kip.in/",
+    "url": "https://3kip.in/",
+    "telephone": "+91 93155 69603",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "B1/ H3 Mohan Co-Operative Industrial Area, Block-B, NH-19",
+      "addressLocality": "New Delhi",
+      "addressRegion": "Delhi",
+      "postalCode": "110014",
+      "addressCountry": "IN"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 28.5092147,
+      "longitude": 77.3150244
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": [
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday"
+      ],
+      "opens": "09:00",
+      "closes": "18:00"
+    }
+  }
+  </script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="icon" href="logo.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <script src="components.js" defer></script>
 </head>
 <body>
 
-<!-- HEADER -->
-<header class="main-header" id="header">
-  <div class="header-inner">
-    <a href="index.html" class="logo-area"><img src="logo.png" alt="3KIP"></a>
-    <nav class="nav-links">
-      <a href="index.html" class="active">Home</a><a href="about.html">About</a>
-      <div class="dropdown"><a href="services.html">Services ▾</a><div class="dropdown-menu"><a href="services.html#financial-blueprint">Financial Blueprint</a><a href="services.html#insurance-planning">Insurance Planning</a><a href="services.html#tax-planning">Tax Planning</a><a href="services.html#wealth-management">Wealth Management</a><a href="services.html#family-education">Family Education</a></div></div>
-      <div class="dropdown"><a href="products.html">Products ▾</a><div class="dropdown-menu"><a href="products.html#mutual-fund">Mutual Fund</a><a href="products.html#sif">SIF</a><a href="products.html#equity">Equity</a><a href="products.html#global-investment">Global</a><a href="products.html#life-insurance">Life Insurance</a><a href="products.html#health-insurance">Health Insurance</a><a href="products.html#general-insurance">General Insurance</a><a href="products.html#portfolio-management">Portfolio Mgmt</a><a href="products.html#aif">AIF</a><a href="products.html#real-estate">Real Estate</a></div></div>
-      <a href="insights.html">Insights</a><a href="contact.html">Contact</a>
-      <div class="dropdown"><a href="#">Login ▾</a><div class="dropdown-menu"><a href="https://www.camsonline.com/" target="_blank">MF Login</a><a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a><a href="https://www.cdslindia.com/" target="_blank">Demat</a><a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a><a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a><a href="https://jiraaf.com/" target="_blank">Jiraaf</a><a href="https://www.finzy.com/" target="_blank">Finzy</a></div></div>
-    </nav>
-    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
-  </div>
-</header>
+<!-- HEADER (loaded by components.js) -->
+<div id="site-header"></div>
 
+<main>
 <!-- HERO -->
-<section class="section container" style="min-height:85vh;display:flex;align-items:center;position:relative;overflow:hidden;">
+<section class="section container hero-section">
   <!-- Animated background elements -->
-  <div style="position:absolute;top:10%;right:10%;width:300px;height:300px;background:radial-gradient(circle, var(--gold-light) 0%, transparent 70%);border-radius:50%;opacity:0.3;animation:float 8s ease-in-out infinite;"></div>
-  <div style="position:absolute;bottom:15%;left:5%;width:200px;height:200px;background:radial-gradient(circle, var(--gold-light) 0%, transparent 70%);border-radius:50%;opacity:0.2;animation:float 10s ease-in-out infinite reverse;"></div>
+  <div class="hero-bg-anim-1"></div>
+  <div class="hero-bg-anim-2"></div>
   
-  <div style="display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start;width:100%;position:relative;z-index:1;">
+  <div class="hero-grid">
     <div>
       <div style="display:flex;align-items:center;gap:1.2rem;margin-bottom:2.5rem;animation:fadeInUp 1s .2s both;">
         <span style="height:2px;width:4rem;background:linear-gradient(90deg, var(--gold), var(--saffron));display:block;"></span>
-        <span style="font-size:.8rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);">Volume XXIV &bull; Established MMXXIII</span>
+        <span style="font-size:.8rem;font-weight:800;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);">Established MMXVIII</span>
       </div>
       <h1 style="font-size:clamp(3.2rem,6.5vw,6rem);font-weight:900;line-height:1.05;font-style:italic;margin-bottom:2.8rem;animation:fadeInUp 1s .4s both;">
         Structured Wealth Advisory for Long-Term <span class="hl" style="color:var(--gold);text-decoration:underline;text-decoration-style:double;text-underline-offset:10px;text-decoration-thickness:3px;">Financial Stability</span>
@@ -58,14 +98,14 @@
         </a>
       </div>
     </div>
-    <div style="position:relative;animation:slideRight 1s .5s both;">
+    <div class="hero-visual-col" style="animation:slideRight 1s .5s both;">
       <div class="double-border" style="padding:.6rem;box-shadow:0 25px 60px rgba(0,0,0,0.15);">
         <div style="position:relative;overflow:hidden;">
-          <img alt="Mumbai Financial District Skyline" class="parallax-img" data-speed="0.3" src="https://images.unsplash.com/photo-1707647070289-92ff4f2c76cd?q=80&w=735&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" style="width:100%;aspect-ratio:4/5;object-fit:cover;display:block;filter:grayscale(100%) contrast(1.2) brightness(.88);transition:.8s;">
-          <div style="position:absolute;inset:0;background:linear-gradient(180deg, rgba(26,46,38,.1) 0%, rgba(26,46,38,.4) 100%);mix-blend-mode:multiply;"></div>
+          <img alt="Mumbai Financial District Skyline" class="parallax-img hero-img" data-speed="0.3" src="https://images.unsplash.com/photo-1707647070289-92ff4f2c76cd?q=80&w=735&auto=format&fit=crop">
+          <div class="hero-img-overlay"></div>
         </div>
       </div>
-      <div style="position:absolute;bottom:-3rem;left:-3rem;background:var(--parchment);padding:2rem 2.5rem;border:3px solid var(--gold);box-shadow:0 20px 50px rgba(0,0,0,.15);max-width:280px;animation:float 4s ease-in-out infinite;z-index:10;">
+      <div class="hero-float-card card">
         <div style="display:flex;align-items:center;gap:.6rem;margin-bottom:.8rem;">
           <span class="material-symbols-outlined" style="color:var(--saffron);font-size:1.8rem;">trending_up</span>
           <span style="font-size:.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.12em;color:var(--forest);">Market Performance</span>
@@ -76,26 +116,78 @@
   </div>
 </section>
 
-<!-- STATS -->
-<section class="stats-bar">
-  <div class="container stats-grid">
-    <div class="stat reveal">
-      <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.5rem;">
-        <span class="num counter" data-target="25" style="margin-bottom:0;font-size:2.5rem;">0</span><span class="num" style="font-size:2rem;margin-left:0.3rem;">+</span>
-      </div>
-      <span class="lbl">Years of Advisory Experience</span>
+<!-- STATS BAR (loaded by components.js) -->
+<div id="site-stats-bar"></div>
+
+<!-- OUR CORE COMPETENCIES -->
+<section class="section container">
+  <div class="section-header">
+    <div class="reveal-left">
+      <h2>Our Core Competencies</h2>
+      <div class="gold-bar"></div>
     </div>
-    <div class="stat reveal d2">
-     <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.5rem;">
-        <span class="num counter" data-target="800" style="margin-bottom:0;font-size:2.5rem;">0</span><span class="num" style="font-size:2rem;margin-left:0.3rem;">+</span>
-      </div>
-      <span class="lbl">Clients Served</span>
+    <p class="reveal-right">Comprehensive financial solutions designed for ambitious individuals, families, and Business owners.</p>
+  </div>
+  <div class="card-grid cols-4">
+    <div class="card reveal d1">
+      <span class="num-label">01.</span>
+      <span class="material-symbols-outlined">flag</span>
+      <h3>Goal-Based Investing</h3>
+      <p>Every rupee is mapped to a purpose — retirement, education, lifestyle, or legacy — so investing stays meaningful and measurable. This structured approach keeps your investments aligned with life milestones and long-term financial priorities.</p>
+      <a href="services.html#financial-blueprint" class="link">Discover Details &rarr;</a>
     </div>
-    <div class="stat reveal d4">
-      <div style="display:flex;align-items:center;justify-content:center;gap:.6rem;margin-bottom:.5rem;">
-        <span class="num counter" data-target="400" style="margin-bottom:0;font-size:2.5rem;">0</span><span class="num" style="font-size:2rem;margin-left:0.3rem;">+</span>
+    <div class="card reveal d2">
+      <span class="num-label">02.</span>
+      <span class="material-symbols-outlined">account_balance_wallet</span>
+      <h3>Portfolio Structuring</h3>
+      <p>Bespoke investment portfolios with risk-adjusted returns, utilizing traditional and alternative assets across equity, debt, and hybrid instruments. Each portfolio is designed around individual goals, risk tolerance, and time horizon to support disciplined long-term wealth creation.</p>
+      <a href="services.html" class="link">Discover Details &rarr;</a>
+    </div>
+    <div class="card reveal d3">
+      <span class="num-label">03.</span>
+      <span class="material-symbols-outlined">shield</span>
+      <h3>Insurance Planning</h3>
+      <p>Comprehensive risk management to protect your wealth and legacy against unforeseen life events through term, health, and general insurance solutions. Our approach prioritizes adequate coverage, affordability, and alignment with your overall financial plan.</p>
+      <a href="services.html#insurance-planning" class="link">Discover Details &rarr;</a>
+    </div>
+    <div class="card reveal d4">
+      <span class="num-label">04.</span>
+      <span class="material-symbols-outlined">pie_chart</span>
+      <h3>Asset Allocation</h3>
+      <p>Strategic diversification across equity, debt, real estate, and commodities to navigate market cycles with confidence. Continuous monitoring and disciplined rebalancing help portfolios stay aligned with long-term financial goals.</p>
+      <a href="services.html#wealth-management" class="link">Discover Details &rarr;</a>
+    </div>
+  </div>
+</section>
+
+<!-- ASSOCIATION WITH -->
+<section class="parchment-section section">
+  <div class="container">
+    <div class="section-header" style="text-align:center;display:block;margin-bottom:3rem;">
+      <div class="reveal-up">
+        <h2 style="font-size:3rem;font-weight:900;font-style:italic;">Association With</h2>
+        <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+        <p style="font-size:1.1rem;font-style:italic;opacity:0.75;margin-top:1rem;">Our trusted network of partners and institutions</p>
       </div>
-      <span class="lbl">Financial Plans Built</span>
+    </div>
+    <div class="associations-grid">
+      <div class="assoc-tile reveal d1"><div class="assoc-logo-placeholder"><img src="images/mirae_asset.png" alt="" srcset=""></div><span class="assoc-name">Mirae Asset</span></div>
+      <div class="assoc-tile reveal d2"><div class="assoc-logo-placeholder"><img src="images/baroda.png" alt="" srcset=""></div><span class="assoc-name">Bank of Baroda</span></div>
+      <div class="assoc-tile reveal d3"><div class="assoc-logo-placeholder"><img src="images/birla.png" alt="" srcset=""></div><span class="assoc-name">Aditya Birla</span></div>
+      <div class="assoc-tile reveal d4"><div class="assoc-logo-placeholder"><img src="images/dsp.png" alt="" srcset=""></div><span class="assoc-name">DSP</span></div>
+      <div class="assoc-tile reveal d5"><div class="assoc-logo-placeholder"><img src="images/franklin.png" alt="" srcset=""></div><span class="assoc-name">Franklin Templeton</span></div>
+      <div class="assoc-tile reveal d1"><div class="assoc-logo-placeholder"><img src="images/Hdfc_mutual_fund.png" alt="" srcset=""></div><span class="assoc-name">HDFC</span></div>
+      <div class="assoc-tile reveal d2"><div class="assoc-logo-placeholder"><img src="images/icici.png" alt="" srcset=""></div><span class="assoc-name">ICICI</span></div>
+      <div class="assoc-tile reveal d3"><div class="assoc-logo-placeholder"><img src="images/nippon.png" alt="" srcset=""></div><span class="assoc-name">Nippon</span></div>
+      <div class="assoc-tile reveal d4"><div class="assoc-logo-placeholder"><img src="images/idfc.png" alt="" srcset=""></div><span class="assoc-name">IDFC</span></div>
+      <div class="assoc-tile reveal d5"><div class="assoc-logo-placeholder"><img src="images/invesco.png" alt="" srcset=""></div><span class="assoc-name">Invesco</span></div>
+      <div class="assoc-tile reveal d1"><div class="assoc-logo-placeholder"><img src="images/kotak.png" alt="" srcset=""></div><span class="assoc-name">Kotak</span></div>
+      <div class="assoc-tile reveal d2"><div class="assoc-logo-placeholder"><img src="images/lic.png" alt="" srcset=""></div><span class="assoc-name">LIC</span></div>
+      <div class="assoc-tile reveal d3"><div class="assoc-logo-placeholder"><img src="images/motilal.png" alt="" srcset=""></div><span class="assoc-name">Motilal</span></div>
+      <div class="assoc-tile reveal d4"><div class="assoc-logo-placeholder"><img src="images/ppfas.png"></div><span class="assoc-name">PPFAS</span></div>
+      <div class="assoc-tile reveal d5"><div class="assoc-logo-placeholder"><img src="images/shriram.png" alt="" srcset=""></div><span class="assoc-name">Shriram</span></div>
+      <div class="assoc-tile reveal d1"><div class="assoc-logo-placeholder"><img src="images/tata.png" alt="" srcset=""></div><span class="assoc-name">Tata</span></div>
+      <div class="assoc-tile reveal d2"><div class="assoc-logo-placeholder"><img src="images/uti.png" alt="" srcset=""></div><span class="assoc-name">UTI</span></div>
     </div>
   </div>
 </section>
@@ -107,9 +199,9 @@
       <h2 style="font-size:3.2rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">The Power of Compounding</h2>
       <div class="gold-bar" style="margin-bottom:2rem;"></div>
       <p style="font-size:1.2rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">Building wealth in the Indian market requires discipline and time. Even small, consistent SIPs (Systematic Investment Plans) can generate massive generational wealth when given a long runway.</p>
-      <p style="font-size:1.15rem;line-height:1.75;opacity:0.75;font-style:italic;">Assuming a conservative 12% annualized return—historic Indian equity markets have often delivered more over 15+ year periods.</p>
+      <p style="font-size:1.15rem;line-height:1.75;opacity:0.75;font-style:italic;">Assuming a conservative 12% annualized return historic Indian equity markets have often delivered more over 15+ year periods.</p>
       <div style="margin-top:2.5rem;padding:2rem;background:var(--gold-light);border-left:4px solid var(--gold);">
-        <p style="font-size:1rem;font-style:italic;line-height:1.7;"><strong>Pro Tip:</strong> Starting your SIP journey early, even with modest amounts, creates exponential wealth through the magic of compounding—India's middle class to crorepati pathway.</p>
+        <p style="font-size:1rem;font-style:italic;line-height:1.7;"><strong>Pro Tip:</strong> Starting your SIP journey early, even with modest amounts, creates exponential wealth through the magic of compounding — India's middle class to crorepati pathway.</p>
       </div>
     </div>
     <div class="reveal-right">
@@ -151,7 +243,7 @@
           </tbody>
         </table>
       </div>
-      <div class="table-caption">*Indicative compounding at 12% CAGR. Mutual fund investments are subject to market risk.</div>
+      <div class="table-caption">*Indicative compounding at 12% CAGR. Mutual fund investments are subject to market risk. Read the offer documents carefully before investing.</div>
     </div>
   </div>
 </section>
@@ -164,7 +256,7 @@
         <h2>Built for Long-Term Investors</h2>
         <div class="gold-bar"></div>
       </div>
-      <p class="reveal-right">From understanding tax regimes to navigating SEBI regulations—we speak your language.</p>
+      <p class="reveal-right">From understanding tax regimes to navigating SEBI regulations we speak your language.</p>
     </div>
     
     <div class="card-grid cols-3">
@@ -181,7 +273,7 @@
           <img src="https://images.unsplash.com/photo-1601597111158-2fceff292cdc?w=600&q=80" alt="Indian Rupee and Gold" style="width:100%;height:100%;object-fit:cover;filter:grayscale(40%);">
         </div>
         <h3>Gold & Sovereign Bonds</h3>
-        <p>Strategic allocation to traditional Indian safe havens—physical gold, digital gold, and government-backed sovereign gold bonds.</p>
+        <p>Strategic allocation to traditional Indian safe havensphysical gold, digital gold, and government-backed sovereign gold bonds.</p>
       </div>
       
       <div class="card reveal d3" style="text-align:center;">
@@ -195,59 +287,19 @@
   </div>
 </section>
 
-<!-- SERVICES PREVIEW -->
-<section class="section container">
-  <div class="section-header">
-    <div class="reveal-left">
-      <h2>Our Core Competencies</h2>
-      <div class="gold-bar"></div>
-    </div>
-    <p class="reveal-right">Comprehensive financial solutions designed for ambitious individuals, families, and institutions.</p>
-  </div>
-  <div class="card-grid cols-4">
-    <div class="card reveal d1">
-      <span class="num-label">01.</span>
-      <span class="material-symbols-outlined">flag</span>
-      <h3>Goal-Based Investing</h3>
-      <p><p>Every rupee is mapped to a purpose—retirement, education, lifestyle, or legacy—so investing stays meaningful and measurable. This structured approach keeps your investments aligned with life milestones and long-term financial priorities.</p></p>
-      <a href="services.html#financial-blueprint" class="link">Discover Details →</a>
-    </div>
-    <div class="card reveal d2">
-      <span class="num-label">02.</span>
-      <span class="material-symbols-outlined">account_balance_wallet</span>
-      <h3>Portfolio Structuring</h3>
-      <p>Bespoke investment portfolios with risk-adjusted returns, utilizing traditional and alternative assets across equity, debt, and hybrid instruments. Each portfolio is designed around individual goals, risk tolerance, and time horizon to support disciplined long-term wealth creation.</p>
-      <a href="services.html" class="link">Discover Details →</a>
-    </div>
-    <div class="card reveal d3">
-      <span class="num-label">03.</span>
-      <span class="material-symbols-outlined">shield</span>
-      <h3>Insurance Planning</h3>
-      <p>Comprehensive risk management to protect your wealth and legacy against unforeseen life events through term, health, and general insurance solutions. Our approach prioritizes adequate coverage, affordability, and alignment with your overall financial plan.</p>
-      <a href="services.html#insurance-planning" class="link">Discover Details →</a>
-    </div>
-    <div class="card reveal d4">
-      <span class="num-label">04.</span>
-      <span class="material-symbols-outlined">pie_chart</span>
-      <h3>Asset Allocation</h3>
-      <p>Strategic diversification across equity, debt, real estate, and commodities to navigate market cycles with confidence. Continuous monitoring and disciplined rebalancing help portfolios stay aligned with long-term financial goals.</p>
-      <a href="services.html#wealth-management" class="link">Discover Details →</a>
-    </div>
-  </div>
-</section>
-
 <!-- ADVANTAGE -->
 <section class="parchment-section section">
   <div class="container split">
     <div class="reveal-left">
-      <h2 style="font-size:3.5rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">The 3K Advantage</h2>
+      <h2 style="font-size:3.5rem;font-weight:900;font-style:italic;margin-bottom:0.5rem;">The &ldquo;3Kip&rdquo; Advantage</h2>
+      <p style="font-size:1rem;font-style:italic;color:var(--gold);margin-bottom:1.5rem;letter-spacing:0.05em;"><sub>3K &ndash; Smart logon ka smart paisa.</sub></p>
       <p class="dropcap" style="font-size:1.3rem;line-height:1.75;margin-bottom:2.5rem;">
         We believe that true wealth management goes beyond simple investment advice. It requires a holistic understanding of your life goals, risk tolerance, legacy aspirations, and the unique dynamics of the Indian financial landscape.
       </p>
       <div class="quote-box">
         <span class="material-symbols-outlined">format_quote</span>
-        <p>"Our work is meaningful only when families feel financially well, emotionally at ease, and confident enough to make life decisions without money anxiety."</p>
-        <div class="author">— 3K Investment Partners LLP</div>
+        <p>&ldquo;Our work is meaningful only when families feel financially well, emotionally at ease, and confident enough to make life decisions without money anxiety.&rdquo;</p>
+        <div class="author">3K Investment Partners LLP</div>
       </div>
     </div>
     <div class="card-grid cols-2" style="gap:2.5rem;">
@@ -279,9 +331,9 @@
 <section class="section container">
   <div class="split" style="align-items:center;gap:6rem;">
     <div class="reveal-left">
-      <div style="position:relative;">
-        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=900&q=80" alt="Taj Mahal - Symbol of Indian Heritage" style="width:100%;aspect-ratio:16/10;object-fit:cover;border:4px double var(--gold);box-shadow:0 20px 60px rgba(0,0,0,0.15);filter:grayscale(60%) contrast(1.15);">
-        <div style="position:absolute;bottom:-2rem;right:-2rem;background:var(--forest);color:var(--cream);padding:1.5rem 2rem;border:2px solid var(--gold);max-width:250px;">
+      <div class="heritage-visual-wrapper">
+        <img src="https://images.unsplash.com/photo-1582555172866-f73bb12a2ab3?w=900&q=80" alt="Taj Mahal - Symbol of Indian Heritage" class="heritage-img">
+        <div class="heritage-float-card card">
           <span style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:0.15em;color:var(--gold);display:block;margin-bottom:0.5rem;">Heritage Wealth</span>
           <p style="font-size:0.9rem;font-style:italic;line-height:1.5;">Building legacies that last generations, rooted in Indian values and global expertise.</p>
         </div>
@@ -291,7 +343,7 @@
       <h2 style="font-size:3rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">Rooted in Indian Values, Global in Expertise</h2>
       <div class="gold-bar" style="margin-bottom:2rem;"></div>
       <p style="font-size:1.15rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">
-        We understand the Indian investor's mindset—the importance of gold, the preference for fixed deposits, the cultural significance of real estate, and the growing appetite for equity markets.
+        We understand the Indian investor's mindset the importance of gold, the preference for fixed deposits, the cultural significance of real estate, and the growing appetite for equity markets.
       </p>
       <p style="font-size:1.1rem;line-height:1.75;opacity:0.8;">
         Our strategies blend time-tested Indian investment wisdom with modern portfolio theory, tax optimization under both Old and New regimes, and compliance with SEBI/AMFI regulations.
@@ -319,15 +371,6 @@
       <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);display:block;margin-bottom:1rem;">Financial Foundation</span>
       <h2 style="font-size:3rem;font-weight:900;font-style:italic;margin-bottom:1rem;">Emergency Fund First</h2>
       <div class="gold-bar" style="margin-bottom:1.5rem;"></div>
-
-      <p style="font-size:1.1rem;line-height:1.75;margin-bottom:1rem;">
-        Before chasing returns, we build resilience. We help you create a 6-12 month emergency corpus so job loss, medical surprises, or business slowdowns don’t force panic withdrawals.
-      </p>
-
-      <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
-        This safety layer is typically spread across liquid funds, high-quality savings buffers, and short-duration debt options for fast access and low volatility.
-      </p>
-
       <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
         An emergency reserve acts as the first shield of financial stability. When unforeseen circumstances arise, it prevents investors from disturbing long-term portfolios or redeeming investments at unfavorable market conditions.
       </p>
@@ -339,11 +382,6 @@
       <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
         Our approach keeps emergency funds accessible and separated from growth investments. This distinction allows long-term capital to remain invested while short-term needs are always protected.
       </p>
-
-      <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
-        Once this financial foundation is secured, investors can pursue equity, mutual funds, and long-term wealth strategies with far greater confidence and stability.
-      </p>
-
     </div>
 
     <div class="reveal-right">
@@ -376,7 +414,7 @@
       </div>
       <div class="reveal-right" style="padding:2rem;background:white;border-left:4px solid var(--gold);">
         <h3 style="margin-bottom:1rem;">A framework that builds confidence</h3>
-        <p style="line-height:1.8;opacity:.85;">We convert anxiety into an action plan: cashflow mapping, goal buckets, risk-calibrated allocation, and quarterly review checkpoints—so every decision has logic, not guesswork.</p>
+        <p style="line-height:1.8;opacity:.85;">We convert anxiety into an action plan: cashflow mapping, goal buckets, risk-calibrated allocation, and quarterly review checkpointsso every decision has logic, not guesswork.</p>
       </div>
     </div>
   </div>
@@ -385,10 +423,10 @@
 <!-- RISK MANAGEMENT SECTION -->
 <section class="section container">
   <div class="section-header">
-    <div class="reveal-left"><h2>Risk Management & Protection</h2><div class="gold-bar"></div></div>
+    <div class="reveal-left"><h2>Risk Management &amp; Protection</h2><div class="gold-bar"></div></div>
     <p class="reveal-right">Returns matter. Staying invested through uncertainty matters more.</p>
   </div>
-  <div class="card-grid cols-3" style="margin-top:2rem;">
+<div class="card-grid cols-3" style="margin-top:2rem;">
     <div class="card reveal d1"><span class="material-symbols-outlined">shield</span><h3>Portfolio Guardrails</h3><p>Diversification bands, drawdown thresholds, and disciplined rebalancing reduce concentration and emotional overreaction.</p></div>
     <div class="card reveal d2"><span class="material-symbols-outlined">monitoring</span><h3>Risk Monitoring</h3><p>We monitor volatility, valuation stretch, liquidity risk, and macro shifts to calibrate allocation before risk becomes damage.</p></div>
     <div class="card reveal d3"><span class="material-symbols-outlined">health_and_safety</span><h3>Insurance as Defense</h3><p>Term and health insurance are treated as wealth-protection tools that keep long-term plans intact during life’s unpredictable events.</p></div>
@@ -591,22 +629,9 @@
   </div>
 </section>
 
-<!-- FOOTER -->
-<footer class="main-footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand"><div class="brand-row"><span class="material-symbols-outlined">account_balance</span><span>3K Investment Partners</span></div><p>Disciplined investment strategies for generational wealth.</p></div>
-      <div class="footer-col"><h4>Firm</h4><ul><li><a href="about.html">Our Story</a></li><li><a href="insights.html">News</a></li></ul></div>
-      <div class="footer-col"><h4>Services</h4><ul><li><a href="services.html">All Services</a></li><li><a href="products.html">Products</a></li></ul></div>
-      <div class="footer-col"><h4>Compliance</h4><ul><li><a href="#">Privacy Policy</a></li><li><a href="#">Disclosures</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <p class="disclaimer"><strong>Risk:</strong> Investments are subject to market risks. Past performance ≠ future returns.</p>
-      <div class="copyright"><p>&copy; 2026 3K Investment Partners LLP.</p><p>Institutional Excellence.</p></div>
-    </div>
-  </div>
-</footer>
-
+<!-- FOOTER (loaded by components.js) -->
+<div id="site-footer"></div>
+</main>
 <script src="script.js"></script>
 </body>
 </html>

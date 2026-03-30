@@ -205,65 +205,8 @@ function initLazyImages() {
 
 
 function initMobileMenu() {
-  const headerInner = document.querySelector('.header-inner');
-  const nav = document.querySelector('.nav-links');
-  if (!headerInner || !nav) return;
-
-  let toggle = headerInner.querySelector('.mobile-menu-toggle');
-  if (!toggle) {
-    toggle = document.createElement('button');
-    toggle.type = 'button';
-    toggle.className = 'mobile-menu-toggle';
-    toggle.setAttribute('aria-label', 'Open navigation menu');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
-
-    const cta = headerInner.querySelector('.cta-btn');
-    if (cta) {
-      headerInner.insertBefore(toggle, cta);
-    } else {
-      headerInner.appendChild(toggle);
-    }
-  }
-
-  const closeMenu = () => {
-    headerInner.classList.remove('mobile-nav-open');
-    toggle.setAttribute('aria-expanded', 'false');
-    toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
-    nav.querySelectorAll('.dropdown.open').forEach((d) => d.classList.remove('open'));
-  };
-
-  toggle.addEventListener('click', () => {
-    const isOpen = headerInner.classList.toggle('mobile-nav-open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-    toggle.innerHTML = `<span class="material-symbols-outlined">${isOpen ? 'close' : 'menu'}</span>`;
-  });
-
-  nav.querySelectorAll('.dropdown > a').forEach((link) => {
-    link.addEventListener('click', (e) => {
-      if (window.innerWidth > 768) return;
-      e.preventDefault();
-      const parent = link.closest('.dropdown');
-      const isOpen = parent.classList.contains('open');
-      nav.querySelectorAll('.dropdown.open').forEach((d) => d.classList.remove('open'));
-      if (!isOpen) parent.classList.add('open');
-    });
-  });
-
-  nav.querySelectorAll('a').forEach((a) => {
-    a.addEventListener('click', () => {
-      if (window.innerWidth <= 768) closeMenu();
-    });
-  });
-
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 768) {
-      headerInner.classList.remove('mobile-nav-open');
-      nav.querySelectorAll('.dropdown.open').forEach((d) => d.classList.remove('open'));
-      toggle.setAttribute('aria-expanded', 'false');
-      toggle.innerHTML = '<span class="material-symbols-outlined">menu</span>';
-    }
-  });
+  // Mobile nav is handled by the slide-in panel in header.html via components.js
+  // This function is intentionally left empty to avoid conflicts.
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -275,5 +218,4 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initContactForm();
   initLazyImages();
-  initMobileMenu();
 });
