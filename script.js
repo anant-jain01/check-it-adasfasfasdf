@@ -204,12 +204,46 @@ function initLazyImages() {
 }
 
 
+/* ── Active nav link ───────────────────────────────────────────────────── */
+function setActiveNav() {
+  var path = window.location.pathname;
+  var file = path.split('/').pop() || 'index.html';
+  var page = file.replace('.html', '') || 'index';
+  document.querySelectorAll('.nav-links .nav-item[data-page]').forEach(function (link) {
+    link.classList.toggle('active', link.dataset.page === page);
+  });
+}
+
+/* ── Slide-in mobile nav panel ──────────────────────────────────────────── */
 function initMobileMenu() {
-  // Mobile nav is handled by the slide-in panel in header.html via components.js
-  // This function is intentionally left empty to avoid conflicts.
+  var hamburger = document.getElementById('hamburger');
+  var panel     = document.getElementById('mobilePanel');
+  var overlay   = document.getElementById('mobileOverlay');
+  var closeBtn  = document.getElementById('mobileClose');
+
+  if (!hamburger || !panel) return;
+
+  function openPanel()  {
+    panel.classList.add('open');
+    if (overlay) overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closePanel() {
+    panel.classList.remove('open');
+    if (overlay) overlay.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+
+  hamburger.addEventListener('click', openPanel);
+  if (closeBtn) closeBtn.addEventListener('click', closePanel);
+  if (overlay)  overlay.addEventListener('click',  closePanel);
+  if (panel) panel.querySelectorAll('a').forEach(function (a) {
+    a.addEventListener('click', closePanel);
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  setActiveNav();
   initScrollEffects();
   initScrollReveal();
   initSmoothScroll();
@@ -218,4 +252,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initMagneticButtons();
   initContactForm();
   initLazyImages();
+  initMobileMenu();
 });
