@@ -1,7 +1,4 @@
 bse amfi pics
-alignment issue
-products "classes" padding
-return table column
 sif content
 products content
 equity add things
