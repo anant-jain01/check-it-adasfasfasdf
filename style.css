@@ -14,6 +14,7 @@
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-pill: 9999px;
+  --black-gold: #3d321a;
 }
 
 * {
@@ -3023,6 +3024,17 @@ img {
 }
 
 /* Unified text color for white content boxes */
+
+
+.green-tint-section .value-item {
+  background: white;
+  border: 1px solid var(--gold-light);
+  color: var(--black-gold) !important;
+}
+
+.green-tint-section .value-item h3,
+.green-tint-section .value-item p {
+  color: var(--black-gold) !important;
 :root {
   --black-gold: #3d321a;
 }
