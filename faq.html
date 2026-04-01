@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>FAQs | 3K Investment Partners</title>
+  <meta name="description" content="Frequently Asked Questions about investments, SIPs, portfolio management, and financial planning at 3K Investment Partners."/>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="components.js" defer></script>
+</head>
+
+<body>
+
+<!-- HEADER -->
+<div id="site-header"></div>
+
+<!-- HERO -->
+<section class="page-hero container">
+  <div class="tag">
+    <span class="line"></span>
+    <span class="text">Support</span>
+    <span class="line"></span>
+  </div>
+  <h1>Frequently Asked Questions</h1>
+  <p>Clear answers to help you make informed financial decisions with confidence.</p>
+</section>
+
+<!-- FAQ SECTION -->
+<section class="container" style="padding-bottom:4rem;">
+
+  <!-- CATEGORY 1 -->
+  <div class="faq-category">
+    <h2>General & Firm</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What is 3K Investment Partners?</button>
+      <div class="faq-answer">
+        <p>We are a structured wealth advisory firm focused on disciplined investing, goal-based planning, and long-term wealth preservation for Indian investors.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Who should work with you?</button>
+      <div class="faq-answer">
+        <p>We work with professionals, families, and business owners seeking clarity, structure, and long-term wealth creation through disciplined financial planning.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 2 -->
+  <div class="faq-category">
+    <h2>Services & Planning</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What is a Financial Blueprint?</button>
+      <div class="faq-answer">
+        <p>A Financial Blueprint is a structured plan that aligns your goals, investments, insurance, tax strategy, and cash flows into one integrated framework.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How do you handle tax planning?</button>
+      <div class="faq-answer">
+        <p>We optimize across both Old and New tax regimes, focusing on long-term capital gains efficiency, tax harvesting, and smart allocation strategies.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you provide goal-based investing?</button>
+      <div class="faq-answer">
+        <p>Yes. Every investment is aligned with a specific goal such as retirement, education, or wealth creation, ensuring clarity and discipline in decision-making.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 3 -->
+  <div class="faq-category">
+    <h2>Investments & Products</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">What is the minimum investment?</button>
+      <div class="faq-answer">
+        <p>SIPs can start from ₹500/month. For structured portfolio advisory, we recommend starting from ₹10 Lakhs for optimal diversification.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you offer mutual funds and SIPs?</button>
+      <div class="faq-answer">
+        <p>Yes. We provide curated mutual fund portfolios and SIP strategies aligned with your goals, risk profile, and time horizon.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Can NRIs invest with you?</button>
+      <div class="faq-answer">
+        <p>Yes. We assist NRIs through NRE/NRO accounts with full compliance under FEMA and RBI guidelines.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you provide portfolio review services?</button>
+      <div class="faq-answer">
+        <p>Yes. We analyze your current investments for performance, risk exposure, and alignment with goals, and provide actionable recommendations.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CATEGORY 4 -->
+  <div class="faq-category">
+    <h2>Operations</h2>
+
+    <div class="faq-item">
+      <button class="faq-question">How often do you review portfolios?</button>
+      <div class="faq-answer">
+        <p>Portfolios are reviewed periodically based on market conditions and client needs, typically quarterly or semi-annually.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">Do you provide online access?</button>
+      <div class="faq-answer">
+        <p>Yes. Clients get access to digital dashboards to track investments, performance, and reports in real time.</p>
+      </div>
+    </div>
+
+    <div class="faq-item">
+      <button class="faq-question">How are your fees structured?</button>
+      <div class="faq-answer">
+        <p>Our fee structure is transparent and depends on the scope of services. We prioritize long-term alignment over transactional models.</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- CTA -->
+<section style="text-align:center;padding:3rem 1rem;">
+  <h2>Still have questions?</h2>
+  <p style="opacity:0.8;margin-bottom:1.5rem;">
+    Speak with our advisors and get clarity on your financial journey.
+  </p>
+  <a href="contact.html" class="btn-primary" style="padding:1rem 2rem;background:var(--gold);">
+    Book Consultation
+  </a>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer"></div>
+
+<!-- FAQ SCRIPT -->
+<script>
+document.querySelectorAll(".faq-question").forEach(btn=>{
+  btn.addEventListener("click",()=>{
+    const item=btn.parentElement;
+    item.classList.toggle("active");
+  });
+});
+</script>
+
+</body>
+</html>
