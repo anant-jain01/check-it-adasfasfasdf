@@ -25,7 +25,17 @@
 html {
   scroll-behavior: smooth;
 }
+.page-hero p {
+  text-align:center;
+  margin:0 auto;
+  max-width:900px;
+}
 
+@media (min-width:768px){
+  .page-hero p{
+    white-space:nowrap;
+  }
+}
 body {
   background: var(--cream);
   background-image: url("https://www.transparenttextures.com/patterns/cream-paper.png");

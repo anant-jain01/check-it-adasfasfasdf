@@ -10,8 +10,6 @@ portfolio review alignment
 faq where?
 
 
-
-qr code
 referral(partner)
 scroller
 process
