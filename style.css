@@ -14,6 +14,7 @@
   --radius-md: 1rem;
   --radius-lg: 1.5rem;
   --radius-pill: 9999px;
+  --black-gold: #3d321a;
 }
 
 * {
@@ -3020,4 +3021,32 @@ img {
   .horiz-card-body {
     padding: 1.8rem;
   }
+}
+
+/* Unified text color for white content boxes */
+
+
+.green-tint-section .value-item {
+  background: white;
+  border: 1px solid var(--gold-light);
+  color: var(--black-gold) !important;
+}
+
+.green-tint-section .value-item h3,
+.green-tint-section .value-item p {
+  color: var(--black-gold) !important;
+}
+
+[style*="background:white"],
+[style*="background: white"],
+[style*="background-color:white"],
+[style*="background-color: white"] {
+  color: var(--black-gold) !important;
+}
+
+[style*="background:white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background: white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background-color:white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background-color: white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small) {
+  color: inherit !important;
 }
