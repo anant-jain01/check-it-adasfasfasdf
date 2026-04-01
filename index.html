@@ -176,6 +176,48 @@
   });
 </script>
 
+<!-- CONTACT POPUP MODAL -->
+<div id="contact-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(27,48,34,0.75);backdrop-filter:blur(6px);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:var(--cream);max-width:540px;width:100%;position:relative;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:fadeInUp 0.5s ease both;">
+    <button onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="position:absolute;top:0.8rem;right:0.8rem;background:transparent;border:2px solid var(--gold);border-radius:50%;width:34px;height:34px;font-size:1.1rem;cursor:pointer;color:var(--forest);line-height:1;transition:all 0.2s;">&times;</button>
+    <div style="padding:2.5rem;">
+      <span style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Welcome to 3K Investment Partners</span>
+      <h2 style="font-size:1.8rem;font-weight:900;font-style:italic;margin-bottom:0.5rem;">Start Your Financial Journey</h2>
+      <p style="font-size:0.95rem;line-height:1.7;opacity:0.8;margin-bottom:1.5rem;">Schedule a complimentary consultation with our senior advisors and discover a personalised path to financial security.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">First Name</label>
+          <input type="text" id="popup-firstname" placeholder="Rajesh" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">Phone</label>
+          <input type="tel" id="popup-phone" placeholder="+91 98765 43210" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+        </div>
+      </div>
+      <div style="margin-bottom:1.2rem;">
+        <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">Email Address</label>
+        <input type="email" id="popup-email" placeholder="rajesh@company.com" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary" style="background:var(--gold);flex:1;text-align:center;padding:1rem;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#1B3022;font-weight:700;">Request Callback</span>
+        </a>
+        <button onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="background:transparent;border:2px solid var(--forest);padding:1rem 1.5rem;font-family:'Lora',serif;font-size:0.85rem;font-weight:700;cursor:pointer;color:var(--forest);text-transform:uppercase;letter-spacing:.1em;">Not Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      if (!sessionStorage.getItem('popupShown')) {
+        document.getElementById('contact-popup-overlay').style.display = 'flex';
+        sessionStorage.setItem('popupShown', '1');
+      }
+    }, 1500);
+  });
+</script>
+
 <!-- HEADER -->
 <div id="site-header">
 <header class="main-header" id="header">
