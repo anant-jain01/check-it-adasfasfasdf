@@ -313,9 +313,9 @@ a {
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(197, 160, 89, 0.08) inset;
   /* Sizing */
   margin: 0 auto;
-  padding: 0.4rem 2rem;
-  max-width: 1340px;
-  width: calc(100% - 3rem);
+  padding: 0.4rem 1.5rem;
+  max-width: 1540px;
+  width: calc(100% - 2rem);
   transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   animation: slideInFromBottom 0.8s cubic-bezier(0.16, 1, 0.3, 1);
 }
@@ -371,7 +371,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
+  gap: 1rem;
   width: 100%;
 }
 
@@ -403,7 +403,7 @@ a {
 
 .nav-links {
   display: flex;
-  gap: 2rem;
+  gap: 1.2rem;
   align-items: center;
   list-style: none;
   margin: 0 auto;
@@ -654,12 +654,12 @@ a {
 
 .cta-btn {
   border: 2px solid var(--forest);
-  padding: 0.8rem 1.8rem;
-  font-size: 0.85rem;
+  padding: 0.6rem 1.3rem;
+  font-size: 0.78rem;
   font-weight: 700;
   font-family: "Lora", serif;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
+  letter-spacing: 0.1em;
   background: transparent;
   color: var(--forest);
   cursor: pointer;
@@ -667,6 +667,8 @@ a {
   position: relative;
   overflow: hidden;
   border-radius: var(--radius-pill);
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .cta-btn::before {
