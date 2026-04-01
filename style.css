@@ -3045,6 +3045,7 @@ img {
 .green-tint-section .value-item h3,
 .green-tint-section .value-item p {
   color: var(--black-gold) !important;
+}
 :root {
   --black-gold: #3d321a;
 }
@@ -3061,4 +3062,93 @@ img {
 [style*="background-color:white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
 [style*="background-color: white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small) {
   color: inherit !important;
+}
+
+/* ===== FAQ ACCORDION ===== */
+.faq-category {
+  margin-top: 3.5rem;
+  margin-bottom: 2rem;
+}
+
+.faq-category h2 {
+  font-size: 2rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--forest);
+  border-bottom: 2px solid var(--gold);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.faq-item {
+  border: 1px solid var(--gold-light);
+  background: white;
+  margin-bottom: 1rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1.5rem;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--forest);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+  font-family: "Lora", serif;
+  transition: background 0.3s ease;
+}
+
+.faq-item.active .faq-question {
+  background: var(--gold-light);
+  color: var(--gold);
+}
+
+.faq-question::after {
+  content: "+";
+  font-family: inherit;
+  font-size: 1.8rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--gold);
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .faq-question::after {
+  content: "\2212"; /* Minus sign */
+  transform: rotate(180deg);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease-out, padding 0.4s ease;
+  background: white;
+  padding: 0 1.5rem;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 800px;
+  padding: 1.5rem;
+  border-top: 1px solid var(--gold-light);
+}
+
+.faq-answer p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--forest);
+  opacity: 0.85;
+  margin: 0;
 }
