@@ -3021,3 +3021,22 @@ img {
     padding: 1.8rem;
   }
 }
+
+/* Unified text color for white content boxes */
+:root {
+  --black-gold: #3d321a;
+}
+
+[style*="background:white"],
+[style*="background: white"],
+[style*="background-color:white"],
+[style*="background-color: white"] {
+  color: var(--black-gold) !important;
+}
+
+[style*="background:white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background: white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background-color:white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small),
+[style*="background-color: white"] :is(h1, h2, h3, h4, h5, h6, p, li, span, a, strong, em, small) {
+  color: inherit !important;
+}
