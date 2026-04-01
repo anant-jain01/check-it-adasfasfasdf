@@ -1,4 +1,3 @@
-services footer
 text on right of the heading
 many more associations 
 bse amfi pics
