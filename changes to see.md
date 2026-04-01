@@ -1,4 +1,3 @@
-faq where?
 referral(partner)
 scroller
 process
