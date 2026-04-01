@@ -134,6 +134,48 @@
 </head>
 <body>
 
+<!-- CONTACT POPUP MODAL -->
+<div id="contact-popup-overlay" style="display:none;position:fixed;inset:0;background:rgba(27,48,34,0.75);backdrop-filter:blur(6px);z-index:9999;align-items:center;justify-content:center;padding:1rem;">
+  <div style="background:var(--cream);max-width:540px;width:100%;position:relative;border:3px solid var(--gold);box-shadow:0 30px 80px rgba(0,0,0,0.4);animation:fadeInUp 0.5s ease both;">
+    <button onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="position:absolute;top:0.8rem;right:0.8rem;background:transparent;border:2px solid var(--gold);border-radius:50%;width:34px;height:34px;font-size:1.1rem;cursor:pointer;color:var(--forest);line-height:1;transition:all 0.2s;">&times;</button>
+    <div style="padding:2.5rem;">
+      <span style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Welcome to 3K Investment Partners</span>
+      <h2 style="font-size:1.8rem;font-weight:900;font-style:italic;margin-bottom:0.5rem;">Start Your Financial Journey</h2>
+      <p style="font-size:0.95rem;line-height:1.7;opacity:0.8;margin-bottom:1.5rem;">Schedule a complimentary consultation with our senior advisors and discover a personalised path to financial security.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
+        <div>
+          <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">First Name</label>
+          <input type="text" id="popup-firstname" placeholder="Rajesh" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+        </div>
+        <div>
+          <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">Phone</label>
+          <input type="tel" id="popup-phone" placeholder="+91 98765 43210" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+        </div>
+      </div>
+      <div style="margin-bottom:1.2rem;">
+        <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">Email Address</label>
+        <input type="email" id="popup-email" placeholder="rajesh@company.com" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
+      </div>
+      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+        <a href="contact.html" class="btn-primary" style="background:var(--gold);flex:1;text-align:center;padding:1rem;display:flex;align-items:center;justify-content:center;">
+          <span style="color:#1B3022;font-weight:700;">Request Callback</span>
+        </a>
+        <button onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="background:transparent;border:2px solid var(--forest);padding:1rem 1.5rem;font-family:'Lora',serif;font-size:0.85rem;font-weight:700;cursor:pointer;color:var(--forest);text-transform:uppercase;letter-spacing:.1em;">Not Now</button>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  window.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+      if (!sessionStorage.getItem('popupShown')) {
+        document.getElementById('contact-popup-overlay').style.display = 'flex';
+        sessionStorage.setItem('popupShown', '1');
+      }
+    }, 1500);
+  });
+</script>
+
 <!-- HEADER -->
 <div id="site-header">
 <header class="main-header" id="header">
@@ -145,33 +187,33 @@
       <a href="index.html" class="nav-item" data-page="index">Home</a>
       <a href="about.html" class="nav-item" data-page="about">About</a>
       <div class="dropdown">
-        <a href="services.html" class="nav-item" data-page="services">Services ▾</a>
+        <a href="services.html" class="nav-item" data-page="services">Our Services ▾</a>
         <div class="dropdown-menu">
           <a href="services.html#financial-blueprint">Financial Blueprint</a>
+          <a href="services.html#goal-based-investing">Goal Based Investing</a>
+          <a href="services.html#risk-management">Risk Management</a>
           <a href="services.html#insurance-planning">Insurance Planning</a>
           <a href="services.html#tax-planning">Tax Planning</a>
           <a href="services.html#wealth-management">Wealth Management</a>
-          <a href="services.html#family-education">Family Education</a>
-          <a href="services.html#will-writing">Will Writing</a>
+          <a href="services.html#childs-education">Child's Education Planning</a>
+          <a href="services.html#estate-planning">Estate Planning</a>
         </div>
       </div>
       <div class="dropdown">
         <a href="products.html" class="nav-item" data-page="products">Products ▾</a>
         <div class="dropdown-menu">
+          <a href="products.html#equity">Equity</a>
           <a href="products.html#mutual-fund">Mutual Fund</a>
           <a href="products.html#sif">SIF</a>
-          <a href="products.html#equity">Equity</a>
-          <a href="products.html#global-investment">Global Investment</a>
-          <a href="products.html#life-insurance">Life Insurance</a>
-          <a href="products.html#health-insurance">Health Insurance</a>
-          <a href="products.html#general-insurance">General Insurance</a>
-          <a href="products.html#portfolio-management">Portfolio Management</a>
-          <a href="products.html#portfolio-review">Portfolio Review</a>
+          <a href="products.html#portfolio-management">PMS (Portfolio Mgmt)</a>
           <a href="products.html#aif">AIF</a>
-          <a href="products.html#real-estate">Real Estate</a>
+          <a href="products.html#life-insurance">Insurance Products</a>
+          <a href="products.html#global-investment">Global Investment</a>
+          <a href="products.html#real-estate">Fractional Real Estate</a>
         </div>
       </div>
       <a href="insights.html" class="nav-item" data-page="insights">Insights</a>
+      <a href="career.html" class="nav-item" data-page="career">Careers</a>
       <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
       <div class="dropdown">
         <a href="#" class="nav-item">Login ▾</a>
@@ -199,18 +241,20 @@
   <button class="mobile-nav-close" id="mobileClose">✕</button>
   <a href="index.html" class="mobile-nav-link">Home</a>
   <a href="about.html" class="mobile-nav-link">About</a>
-  <span class="mobile-nav-section">Services</span>
+  <span class="mobile-nav-section">Our Services</span>
   <a href="services.html" class="mobile-nav-sub">All Services</a>
-  <a href="services.html#financial-blueprint" class="mobile-nav-sub">Financial Blueprint</a>
+  <a href="services.html#goal-based-investing" class="mobile-nav-sub">Goal Based Investing</a>
+  <a href="services.html#risk-management" class="mobile-nav-sub">Risk Management</a>
   <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
-  <a href="services.html#will-writing" class="mobile-nav-sub">Will Writing</a>
+  <a href="services.html#estate-planning" class="mobile-nav-sub">Estate Planning</a>
   <span class="mobile-nav-section">Products</span>
   <a href="products.html" class="mobile-nav-sub">All Products</a>
-  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
   <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
-  <a href="products.html#portfolio-review" class="mobile-nav-sub">Portfolio Review</a>
+  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+  <a href="products.html#portfolio-management" class="mobile-nav-sub">PMS</a>
   <span class="mobile-nav-section">More</span>
   <a href="insights.html" class="mobile-nav-link">Insights</a>
+  <a href="career.html" class="mobile-nav-link">Careers</a>
   <a href="contact.html" class="mobile-nav-link">Contact</a>
   <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
 </nav>
@@ -350,61 +394,7 @@
   </div>
 </section>
 
-<!-- POWER OF COMPOUNDING TABLE -->
-<section class="section container green-tint-section">
-  <div class="split" style="align-items:center;">
-    <div class="reveal-left">
-      <h2 style="font-size:3.2rem;font-weight:900;font-style:italic;margin-bottom:1.5rem;">The Power of Compounding</h2>
-      <div class="gold-bar" style="margin-bottom:2rem;"></div>
-      <p style="font-size:1.2rem;line-height:1.75;margin-bottom:1.5rem;color:var(--heritage);">Building wealth in the Indian market requires discipline and time. Even small, consistent SIPs (Systematic Investment Plans) can generate massive generational wealth when given a long runway.</p>
-      <p style="font-size:1.15rem;line-height:1.75;opacity:0.75;font-style:italic;">Assuming a conservative 12% annualized return historic Indian equity markets have often delivered more over 15+ year periods.</p>
-      <div style="margin-top:2.5rem;padding:2rem;background:var(--gold-light);border-left:4px solid var(--gold);">
-        <p style="font-size:1rem;font-style:italic;line-height:1.7;"><strong>Pro Tip:</strong> Starting your SIP journey early, even with modest amounts, creates exponential wealth through the magic of compounding — India's middle class to crorepati pathway.</p>
-      </div>
-    </div>
-    <div class="reveal-right">
-      <div class="data-table-wrapper">
-        <table class="data-table">
-          <thead>
-            <tr>
-              <th>Monthly SIP (₹)</th>
-              <th>Investment Period</th>
-              <th>Total Invested</th>
-              <th>Est. Wealth Created</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>₹ 10,000</td>
-              <td>10 Years</td>
-              <td>₹ 12 Lakhs</td>
-              <td class="positive">₹ 23 Lakhs</td>
-            </tr>
-            <tr>
-              <td>₹ 10,000</td>
-              <td>15 Years</td>
-              <td>₹ 18 Lakhs</td>
-              <td class="positive">₹ 50 Lakhs</td>
-            </tr>
-            <tr class="highlight-col">
-              <td class="highlight-col">₹ 25,000</td>
-              <td class="highlight-col">20 Years</td>
-              <td class="highlight-col">₹ 60 Lakhs</td>
-              <td class="highlight-col positive">₹ 2.5 Crores</td>
-            </tr>
-            <tr>
-              <td>₹ 50,000</td>
-              <td>25 Years</td>
-              <td>₹ 1.5 Crores</td>
-              <td class="positive">₹ 9.5 Crores</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <div class="table-caption">*Indicative compounding at 12% CAGR. Mutual fund investments are subject to market risk. Read the offer documents carefully before investing.</div>
-    </div>
-  </div>
-</section>
+
 
 <!-- INDIAN MARKET VISUALS -->
 <section class="parchment-section section">
@@ -496,8 +486,8 @@
       </div>
       <div class="value-item reveal d2">
         <span class="material-symbols-outlined">candlestick_chart</span>
-        <h3>Data-Driven</h3>
-        <p>Every recommendation backed by rigorous quantitative analysis and market research from leading Indian financial institutions.</p>
+        <h3>Research-Backed Decisions</h3>
+        <p>Every recommendation is based on sound research and clear market data — so you always know the <em>why</em> behind each decision we make for you.</p>
       </div>
       <div class="value-item reveal d3">
         <span class="material-symbols-outlined">lock</span>
@@ -548,74 +538,62 @@
   </div>
 </section>
 
-
-<!-- EMERGENCY FUND SECTION -->
-<!-- EMERGENCY FUND SECTION -->
-<section class="section container">
-  <div class="split" style="align-items:center;gap:5rem;">
-    <div class="reveal-left">
-      <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);display:block;margin-bottom:1rem;">Financial Foundation</span>
-      <h2 style="font-size:3rem;font-weight:900;font-style:italic;margin-bottom:1rem;">Emergency Fund First</h2>
-      <div class="gold-bar" style="margin-bottom:1.5rem;"></div>
-      <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
-        An emergency reserve acts as the first shield of financial stability. When unforeseen circumstances arise, it prevents investors from disturbing long-term portfolios or redeeming investments at unfavorable market conditions.
-      </p>
-
-      <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
-        Many investors underestimate the psychological advantage of having accessible liquidity. When markets fluctuate sharply, individuals with an emergency buffer remain calm and disciplined, allowing their investments to continue compounding.
-      </p>
-
-      <p style="font-size:1.05rem;line-height:1.7;opacity:.85;">
-        Our approach keeps emergency funds accessible and separated from growth investments. This distinction allows long-term capital to remain invested while short-term needs are always protected.
-      </p>
-    </div>
-
-    <div class="reveal-right">
-      <div class="card" style="padding:2rem;background:var(--parchment);border-left:4px solid var(--gold);">
-        <h3 style="margin-bottom:1rem;">Emergency Corpus Formula</h3>
-        <p style="line-height:1.7;margin-bottom:1rem;"><strong>Monthly Expenses × 6 to 12 = Emergency Corpus</strong></p>
-        <ul style="line-height:1.8;padding-left:1.2rem;opacity:.85;">
-          <li>Fixed EMI + rent + essentials</li>
-          <li>Medical reserve for family needs</li>
-          <li>Business continuity cash cushion</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- INVESTOR JOURNEY SECTION -->
-<section class="parchment-section section">
-  <div class="container">
-    <div class="section-header" style="display:block;text-align:center;margin-bottom:2.5rem;">
-      <div class="reveal-up">
-        <h2 style="font-size:3rem;font-weight:900;font-style:italic;">From Uncertainty to Clarity</h2>
-        <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
-      </div>
-    </div>
-    <div class="card-grid cols-2" style="gap:2rem;">
-      <div class="reveal-left" style="padding:2rem;background:white;border-left:4px solid var(--saffron);">
-        <h3 style="margin-bottom:1rem;">Questions that keep investors awake</h3>
-        <p style="line-height:1.8;opacity:.85;">“Am I investing enough?”, “What if markets crash after I enter?”, “How do I balance parents, kids, and retirement goals?”, “Am I taking too much risk without realizing it?”</p>
-      </div>
-      <div class="reveal-right" style="padding:2rem;background:white;border-left:4px solid var(--gold);">
-        <h3 style="margin-bottom:1rem;">A framework that builds confidence</h3>
-        <p style="line-height:1.8;opacity:.85;">We convert anxiety into an action plan: cashflow mapping, goal buckets, risk-calibrated allocation, and quarterly review checkpointsso every decision has logic, not guesswork.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- RISK MANAGEMENT SECTION -->
-<section class="section container green-tint-section">
-  <div class="section-header">
-    <div class="reveal-left"><h2>Risk Management &amp; Protection</h2><div class="gold-bar"></div></div>
-    <p class="reveal-right">Returns matter. Staying invested through uncertainty matters more.</p>
+<section class="section container" id="risk-management-home">
+  <div class="section-header" style="text-align:center;display:block;margin-bottom:3rem;">
+    <div class="reveal-up">
+      <span style="font-size:0.75rem;font-weight:800;text-transform:uppercase;letter-spacing:.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Comprehensive Coverage</span>
+      <h2 style="font-size:3rem;font-weight:900;font-style:italic;">Risk Management &amp; Protection</h2>
+      <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+      <p style="font-size:1.1rem;font-style:italic;opacity:0.75;margin-top:1rem;max-width:650px;margin-left:auto;margin-right:auto;">Protecting your wealth is as important as growing it. We build a complete safety net around your financial life.</p>
+    </div>
   </div>
-<div class="card-grid cols-3" style="margin-top:2rem;">
-    <div class="card reveal d1"><span class="material-symbols-outlined">shield</span><h3>Portfolio Guardrails</h3><p>Diversification bands, drawdown thresholds, and disciplined rebalancing reduce concentration and emotional overreaction.</p></div>
-    <div class="card reveal d2"><span class="material-symbols-outlined">monitoring</span><h3>Risk Monitoring</h3><p>We monitor volatility, valuation stretch, liquidity risk, and macro shifts to calibrate allocation before risk becomes damage.</p></div>
-    <div class="card reveal d3"><span class="material-symbols-outlined">health_and_safety</span><h3>Insurance as Defense</h3><p>Term and health insurance are treated as wealth-protection tools that keep long-term plans intact during life’s unpredictable events.</p></div>
+  <div class="card-grid cols-2" style="gap:2rem;margin-bottom:2rem;">
+    <div class="card reveal d1" style="border-top:4px solid var(--gold);">
+      <span class="material-symbols-outlined" style="color:var(--gold);">health_and_safety</span>
+      <h3>Insurance Planning</h3>
+      <p>Adequate coverage is the first line of defence. We help you get the right cover at the right cost — nothing more, nothing less.</p>
+      <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Term Life</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Health Insurance</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Critical Illness</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">General Insurance</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Accident Cover</span>
+      </div>
+      <a href="services.html#insurance-planning" class="link" style="margin-top:1.2rem;display:inline-block;">Explore Insurance &rarr;</a>
+    </div>
+    <div class="card reveal d2" style="border-top:4px solid var(--saffron);">
+      <span class="material-symbols-outlined" style="color:var(--saffron);">history_edu</span>
+      <h3>Estate Planning</h3>
+      <p>Ensure your wealth reaches the right people in the right way. We guide you through wills, trusts, nominations and inheritance structures.</p>
+      <div style="margin-top:1rem;display:flex;flex-wrap:wrap;gap:0.5rem;">
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Will Writing</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Trust Setup</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Nominations</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">REITs &amp; SM REITs</span>
+        <span style="padding:0.3rem 0.7rem;background:var(--gold-light);font-size:0.8rem;font-weight:700;border-radius:2px;">Succession Planning</span>
+      </div>
+      <a href="services.html#estate-planning" class="link" style="margin-top:1.2rem;display:inline-block;">Explore Estate Planning &rarr;</a>
+    </div>
+  </div>
+  <div class="card-grid cols-2" style="gap:2rem;">
+    <div class="card reveal d3" style="border-top:4px solid var(--gold);">
+      <span class="material-symbols-outlined" style="color:var(--gold);">savings</span>
+      <h3>Emergency Fund</h3>
+      <p>An emergency reserve is your first shield of financial stability — preventing you from disturbing long-term investments when life throws the unexpected.</p>
+      <div style="margin-top:1.2rem;padding:1rem;background:var(--gold-light);border-left:3px solid var(--gold);">
+        <p style="font-size:0.9rem;font-weight:700;margin-bottom:0.3rem;">Target Formula:</p>
+        <p style="font-size:0.95rem;">Monthly Expenses &times; <strong>6 to 12 months</strong> = Your Emergency Corpus</p>
+      </div>
+    </div>
+    <div class="card reveal d4" style="border-top:4px solid var(--saffron);">
+      <span class="material-symbols-outlined" style="color:var(--saffron);">lightbulb</span>
+      <h3>From Uncertainty to Clarity</h3>
+      <p>We convert your financial worries into a structured action plan — cashflow mapping, goal buckets, risk-calibrated allocation, and regular review checkpoints so every decision has logic, not guesswork.</p>
+      <div style="margin-top:1rem;">
+        <span style="font-size:0.9rem;font-style:italic;opacity:0.75;">"Am I investing enough?", "What if markets crash?", "Is my family protected?" — We answer these with clarity.</span>
+      </div>
+    </div>
   </div>
 </section>
 
