@@ -3035,6 +3035,8 @@ img {
 .green-tint-section .value-item h3,
 .green-tint-section .value-item p {
   color: var(--black-gold) !important;
+:root {
+  --black-gold: #3d321a;
 }
 
 [style*="background:white"],
