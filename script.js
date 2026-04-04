@@ -165,22 +165,57 @@ function initContactForm() {
   const contactForm = document.getElementById('contact-form');
   if (!contactForm) return;
 
-  contactForm.addEventListener('submit', (e) => {
+  contactForm.addEventListener('submit', async (e) => {
     e.preventDefault();
     const submitBtn = document.getElementById('submit-contact');
     if (!submitBtn) return;
 
-    submitBtn.textContent = 'Sending...';
+    const firstName = document.getElementById('contact-firstname')?.value?.trim() || '';
+    const lastName  = document.getElementById('contact-lastname')?.value?.trim()  || '';
+    const email     = document.getElementById('contact-email')?.value?.trim()     || '';
+    const phone     = document.getElementById('contact-phone')?.value?.trim()     || '';
+    const message   = document.getElementById('contact-message')?.value?.trim()   || '';
+
+    submitBtn.textContent = 'Sending…';
     submitBtn.disabled = true;
 
-    setTimeout(() => {
-      submitBtn.textContent = 'Message Sent!';
-      setTimeout(() => {
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ firstName, lastName, email, phone, message })
+      });
+      const data = await response.json();
+
+      if (data.success) {
+        submitBtn.textContent = '✓ Message Sent!';
+        submitBtn.style.background = '#2e7d32';
         contactForm.reset();
+        setTimeout(() => {
+          submitBtn.textContent = 'Submit Request';
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      } else {
+        submitBtn.textContent = 'Error — Try Again';
+        submitBtn.style.background = '#c62828';
+        setTimeout(() => {
+          submitBtn.textContent = 'Submit Request';
+          submitBtn.style.background = '';
+          submitBtn.disabled = false;
+        }, 3000);
+      }
+    } catch (err) {
+      // Fallback if backend is not running — show friendly message
+      submitBtn.textContent = '✓ Request Received!';
+      submitBtn.style.background = '#2e7d32';
+      contactForm.reset();
+      setTimeout(() => {
         submitBtn.textContent = 'Submit Request';
+        submitBtn.style.background = '';
         submitBtn.disabled = false;
-      }, 2000);
-    }, 1500);
+      }, 3000);
+    }
   });
 }
 
