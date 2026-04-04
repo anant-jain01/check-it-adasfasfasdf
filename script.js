@@ -289,6 +289,47 @@
     initMobileMenu();
     initFaqAccordion();
     initContactPopup();
+    initTestimonialSlider();
   });
 
 })();
+
+/* ── Testimonial Slider ──────────────────────────────────────────────────── */
+function initTestimonialSlider() {
+  var slider    = document.getElementById('testimonialSlider');
+  var prevBtn   = document.getElementById('testimonialPrev');
+  var nextBtn   = document.getElementById('testimonialNext');
+  var dots      = document.querySelectorAll('.testimonial-dot');
+
+  if (!slider || !prevBtn || !nextBtn) return;
+
+  var slides    = slider.querySelectorAll('.testimonial-slide');
+  var total     = slides.length;
+  var current   = 0;
+
+  function goTo(index) {
+    // Pause video on current slide
+    var activeVideo = slides[current].querySelector('video');
+    if (activeVideo && !activeVideo.paused) activeVideo.pause();
+
+    // Remove active from old slide
+    slides[current].classList.remove('active');
+    dots[current] && dots[current].classList.remove('active');
+
+    // Update index
+    current = (index + total) % total;
+
+    // Activate new slide
+    slides[current].classList.add('active');
+    dots[current] && dots[current].classList.add('active');
+  }
+
+  prevBtn.addEventListener('click', function () { goTo(current - 1); });
+  nextBtn.addEventListener('click', function () { goTo(current + 1); });
+
+  dots.forEach(function (dot) {
+    dot.addEventListener('click', function () {
+      goTo(parseInt(dot.getAttribute('data-slide'), 10));
+    });
+  });
+}
