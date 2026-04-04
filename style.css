@@ -3254,3 +3254,598 @@ img {
   margin: 0;
   text-align: left;
 }
+
+/* ================================================================
+   RESPONSIVE UTILITY CLASSES
+   Replaces inline style="" attributes across all HTML pages.
+   ================================================================ */
+
+/* ── Section spacing ── */
+.section       { padding: 6rem 0; }
+.section-sm    { padding: 3rem 0; }
+.section-lg    { padding: 9rem 0; }
+
+/* ── Text utilities ── */
+.text-center   { text-align: center; }
+.text-gold     { color: var(--gold); }
+.text-cream    { color: var(--cream); }
+.text-forest   { color: var(--forest); }
+.text-heritage { color: var(--heritage); }
+.text-italic   { font-style: italic; }
+.text-upper    { text-transform: uppercase; letter-spacing: .15em; }
+.label-tag {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .28em;
+  color: var(--gold);
+  display: block;
+  margin-bottom: 0.8rem;
+}
+
+/* ── Flex utilities ── */
+.flex         { display: flex; }
+.flex-center  { display: flex; align-items: center; justify-content: center; }
+.flex-between { display: flex; align-items: center; justify-content: space-between; }
+.flex-col     { display: flex; flex-direction: column; }
+.flex-wrap    { flex-wrap: wrap; }
+.gap-sm       { gap: 0.8rem; }
+.gap-md       { gap: 1.5rem; }
+.gap-lg       { gap: 3rem; }
+
+/* ── Grid utilities ── */
+.grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; }
+.grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+.grid-auto { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; }
+
+/* ── Contact Popup Modal ── */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(27,48,34,0.75);
+  backdrop-filter: blur(6px);
+  z-index: 9999;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.popup-overlay.open { display: flex; }
+
+.popup-box {
+  background: var(--cream);
+  max-width: 540px;
+  width: 100%;
+  position: relative;
+  border: 3px solid var(--gold);
+  box-shadow: 0 30px 80px rgba(0,0,0,0.4);
+  animation: fadeInUp 0.5s ease both;
+  border-radius: var(--radius-md);
+}
+.popup-body { padding: 2.5rem; }
+
+.popup-close {
+  position: absolute;
+  top: 0.8rem; right: 0.8rem;
+  background: transparent;
+  border: 2px solid var(--gold);
+  border-radius: 50%;
+  width: 34px; height: 34px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  color: var(--forest);
+  line-height: 1;
+  transition: all 0.2s;
+  display: flex; align-items: center; justify-content: center;
+}
+.popup-close:hover { background: var(--forest); color: var(--cream); }
+
+.popup-qr-wrap {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+.popup-qr-box {
+  width: 140px; height: 140px;
+  margin: 0 auto;
+  border: 2px dashed rgba(27,48,34,0.3);
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(0,0,0,0.03);
+}
+.popup-qr-box img { max-width: 100%; max-height: 100%; }
+
+.popup-form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.popup-input-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .1em;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.popup-input {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1.5px solid rgba(27,48,34,0.2);
+  font-family: 'Lora', serif;
+  font-size: 0.9rem;
+  outline: none;
+  border-radius: 3px;
+  transition: border-color 0.2s;
+}
+.popup-input:focus { border-color: var(--gold); }
+
+/* ── Trust Badge Strip ── */
+.trust-strip {
+  background: var(--cream);
+  border-top: 1px solid var(--gold-light);
+  border-bottom: 3px solid var(--gold);
+  padding: 2.2rem 0;
+}
+.trust-strip-label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  margin-bottom: 1.6rem;
+}
+.trust-strip-line {
+  height: 1.5px;
+  flex: 1;
+  max-width: 80px;
+  background: linear-gradient(90deg, transparent, var(--gold));
+}
+.trust-strip-line.right { background: linear-gradient(270deg, transparent, var(--gold)); }
+.trust-strip-text {
+  font-size: 0.68rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .3em;
+  color: var(--gold);
+}
+.trust-badges {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4rem;
+  flex-wrap: wrap;
+}
+.trust-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  text-decoration: none;
+  padding: 1.2rem 2rem;
+  border: 1.5px solid var(--gold-light);
+  border-radius: var(--radius-sm);
+  background: white;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+  min-width: 160px;
+}
+.trust-badge:hover {
+  box-shadow: 0 8px 24px rgba(197,160,89,0.18);
+  border-color: var(--gold);
+  transform: translateY(-3px);
+}
+.trust-badge img {
+  height: 52px;
+  width: auto;
+  object-fit: contain;
+  filter: grayscale(20%);
+}
+.trust-badge-name {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--forest);
+  text-align: center;
+}
+.trust-badge-sub {
+  font-size: 0.68rem;
+  color: var(--heritage);
+  opacity: 0.7;
+  margin-top: 0.2rem;
+  text-align: center;
+}
+.trust-badge-text { text-align: center; }
+
+/* ── Referral / Partner Section ── */
+.referral-section {
+  border-radius: var(--radius-lg);
+  margin-top: 2rem;
+  margin-bottom: 5rem;
+  padding: 4rem 3rem;
+}
+.referral-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 2.5rem 0;
+}
+.referral-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  font-size: 1.05rem;
+  color: var(--cream);
+}
+.referral-card-inner {
+  background: rgba(255,255,255,0.03);
+  border: 2px solid rgba(197, 160, 89, 0.25);
+  border-radius: var(--radius-md);
+  padding: 4rem 3rem;
+  text-align: center;
+}
+
+/* ── Policy / Disclosure pages specific responsive ── */
+.policy-body  { max-width: 860px;  margin: 4rem auto; padding: 0 clamp(1.5rem,5vw,3rem) 5rem; }
+.disclosure-body { max-width: 1000px; margin: 4rem auto; padding: 0 clamp(1.5rem,5vw,3rem) 5rem; }
+
+/* ── Section headings responsive override ── */
+.section-h2 {
+  font-size: clamp(2rem, 4.5vw, 3.5rem);
+  font-weight: 900;
+  font-style: italic;
+}
+
+/* ── Hero CTA buttons ── */
+.hero-cta-group {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Footer FAQ mini grid ── */
+.footer-faq-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem 2.5rem;
+}
+.footer-faq-item {
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(249,246,240,0.15);
+}
+.footer-faq-q {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--gold);
+  margin-bottom: 0.5rem;
+}
+.footer-faq-a {
+  font-size: 0.88rem;
+  opacity: 0.75;
+  line-height: 1.6;
+  color: var(--cream);
+}
+
+/* ================================================================
+   COMPREHENSIVE MOBILE RESPONSIVE — THE REAL FIX
+   Targets specifically the inline-style-heavy sections.
+   ================================================================ */
+
+/* ── ≤992px: Tablet ── */
+@media (max-width: 992px) {
+  .referral-section { padding: 3rem 2rem; margin-bottom: 3rem; }
+  .referral-card-inner { padding: 2.5rem 2rem; }
+  .trust-badges { gap: 2rem; }
+  .hero-cta-group { gap: 1rem; }
+}
+
+/* ── ≤768px: Mobile ── */
+@media (max-width: 768px) {
+  /* Trust badge strip */
+  .trust-badges { gap: 1.5rem; }
+  .trust-badge { min-width: 130px; padding: 1rem 1.5rem; }
+  .trust-divider { display: none !important; }
+
+  /* Referral section */
+  .referral-section { padding: 2.5rem 1.5rem; margin-bottom: 2rem; border-radius: var(--radius-md); }
+  .referral-card-inner { padding: 2rem 1.5rem; }
+
+  /* Contact popup */
+  .popup-form-row { grid-template-columns: 1fr; }
+  .popup-body { padding: 1.8rem 1.2rem; }
+
+  /* Hero CTA buttons */
+  .hero-cta-group { flex-direction: column; }
+  .hero-cta-group .btn-primary,
+  .hero-cta-group .btn-outline { width: 100%; justify-content: center; text-align: center; }
+
+  /* Footer FAQ grid */
+  .footer-faq-grid { grid-template-columns: 1fr; gap: 1rem; }
+
+  /* Policy / disclosure pages */
+  .policy-body, .disclosure-body { margin: 2rem auto; }
+
+  /* Grids */
+  .grid-2, .grid-3 { grid-template-columns: 1fr; }
+
+  /* Section heading sizes — inline style overrides */
+  [style*="font-size:3.8rem"], [style*="font-size: 3.8rem"],
+  [style*="font-size:3.5rem"], [style*="font-size: 3.5rem"],
+  [style*="font-size:3.2rem"], [style*="font-size: 3.2rem"],
+  [style*="font-size:3rem"],   [style*="font-size: 3rem"] {
+    font-size: clamp(1.8rem, 6vw, 2.5rem) !important;
+    line-height: 1.15 !important;
+  }
+
+  /* Inline gap overrides */
+  [style*="gap:4rem"], [style*="gap: 4rem"],
+  [style*="gap:3rem"], [style*="gap: 3rem"] {
+    gap: 2rem !important;
+  }
+
+  /* Inline padding overrides in green tint / referral sections */
+  [style*="padding:4rem 3rem"], [style*="padding: 4rem 3rem"] { padding: 2rem 1.2rem !important; }
+  [style*="padding:3rem 2rem"], [style*="padding: 3rem 2rem"] { padding: 1.5rem 1rem !important; }
+
+  /* Split layouts - force column */
+  .split { grid-template-columns: 1fr !important; gap: 2rem !important; }
+
+  /* Contact grid inside page */
+  .contact-grid { grid-template-columns: 1fr !important; }
+
+  /* Inline min-width overrides on trust badges */
+  .trust-badge { min-width: unset !important; width: 140px; }
+
+  /* Horiz cards become vertical on mobile */
+  .horiz-card { flex-direction: column !important; }
+  .horiz-card-img { width: 100% !important; height: 200px !important; flex: none !important; }
+}
+
+/* ── ≤576px: Small Mobile ── */
+@media (max-width: 576px) {
+  .trust-badges { gap: 1rem; }
+  .trust-badge { width: 120px; padding: 0.8rem 1rem; }
+  .trust-badge img { height: 40px; }
+
+  .referral-section { padding: 2rem 1.2rem; }
+  .referral-card-inner { padding: 1.5rem 1rem; }
+
+  .section-h2 { font-size: clamp(1.6rem, 7vw, 2rem); }
+
+  /* Inline font-size 2.5rem and below overrides */
+  [style*="font-size:2.5rem"], [style*="font-size: 2.5rem"],
+  [style*="font-size:2rem"],   [style*="font-size: 2rem"] {
+    font-size: clamp(1.5rem, 6.5vw, 2rem) !important;
+  }
+
+  /* Hero section inner padding */
+  [style*="padding:6rem 0"], [style*="padding: 6rem 0"] { padding: 3rem 0 !important; }
+
+  .popup-box { border-radius: var(--radius-sm); }
+  .popup-body { padding: 1.5rem 1rem; }
+
+  /* Footer FAQ */
+  .footer-faq-q { font-size: 0.88rem; }
+  .footer-faq-a { font-size: 0.82rem; }
+}
+
+/* ── ≤400px: Very small phones ── */
+@media (max-width: 400px) {
+  .trust-badges { flex-direction: column; align-items: center; }
+  .trust-divider { display: none !important; }
+  .trust-badge { width: 85%; max-width: 220px; }
+  .logo-area img { height: 50px !important; }
+  .stat .num { font-size: 1.6rem !important; }
+}
+
+/* ================================================================
+   DISCLOSURE PAGE STYLES (moved from disclosure.html <style>)
+   ================================================================ */
+.disclosure-hero {
+  background: var(--forest);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  color: var(--cream);
+}
+.disclosure-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.disclosure-hero p { font-size: 1rem; opacity: 0.7; color: var(--cream); }
+
+.disclosure-body {
+  max-width: 1000px;
+  margin: 4rem auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem) 5rem;
+}
+.disclosure-tag, .policy-tag {
+  display: inline-block;
+  padding: 0.3rem 0.8rem;
+  background: var(--gold-light);
+  border: 1px solid var(--gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--heritage);
+  margin-bottom: 1.5rem;
+}
+.disclosure-intro {
+  background: var(--gold-light);
+  border-left: 4px solid var(--gold);
+  padding: 1.5rem 2rem;
+  margin-bottom: 3rem;
+  border-radius: var(--radius-sm);
+}
+.disclosure-intro p { font-size: 1rem; line-height: 1.75; color: var(--forest); margin: 0; }
+
+.commission-table-wrapper {
+  overflow-x: auto;
+  border: 2px solid var(--gold-light);
+  border-radius: var(--radius-sm);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+}
+.commission-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: 'Lora', serif;
+  font-size: 0.95rem;
+}
+.commission-table thead tr { background: var(--forest); }
+.commission-table thead th {
+  padding: 1.1rem 1.4rem;
+  text-align: left;
+  color: var(--cream);
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  white-space: nowrap;
+}
+.commission-table thead th:first-child { border-right: 1px solid rgba(255,255,255,0.12); }
+.commission-table tbody tr {
+  border-bottom: 1px solid var(--gold-light);
+  transition: background 0.2s ease;
+}
+.commission-table tbody tr:hover { background: rgba(197,160,89,0.08); }
+.commission-table tbody tr:nth-child(even) { background: rgba(197,160,89,0.04); }
+.commission-table tbody tr:nth-child(even):hover { background: rgba(197,160,89,0.1); }
+.commission-table td {
+  padding: 1rem 1.4rem;
+  color: var(--forest);
+  vertical-align: middle;
+  line-height: 1.5;
+}
+.commission-table td:first-child {
+  font-weight: 700;
+  border-right: 1px solid var(--gold-light);
+  color: var(--heritage);
+}
+.commission-table td.rate-cell {
+  text-align: center;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+.nil-badge {
+  display: inline-block;
+  padding: 0.2rem 0.6rem;
+  background: rgba(197,160,89,0.12);
+  border: 1px solid var(--gold-light);
+  border-radius: 2px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--heritage);
+}
+.disclaimer-box {
+  margin-top: 3rem;
+  padding: 2rem;
+  background: var(--forest);
+  color: var(--cream);
+  border-radius: var(--radius-sm);
+}
+.disclaimer-box h3 { font-size: 1.1rem; font-weight: 700; color: var(--gold); margin-bottom: 1rem; }
+.disclaimer-box p {
+  font-size: 0.88rem;
+  line-height: 1.7;
+  color: var(--cream);
+  opacity: 0.8;
+  margin-bottom: 0.6rem;
+  text-align: left;
+}
+@media (max-width: 640px) {
+  .commission-table thead th,
+  .commission-table td { padding: 0.8rem 0.9rem; font-size: 0.85rem; }
+  .disclosure-body, .policy-body { margin: 2rem auto; }
+}
+
+/* ================================================================
+   PRIVACY POLICY PAGE STYLES (moved from privacy_policy.html <style>)
+   ================================================================ */
+.policy-hero {
+  background: var(--forest);
+  padding: 8rem 0 4rem;
+  text-align: center;
+  color: var(--cream);
+}
+.policy-hero h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 900;
+  font-style: italic;
+  color: var(--cream);
+  margin-bottom: 1rem;
+}
+.policy-hero p { font-size: 1rem; opacity: 0.7; color: var(--cream); }
+
+.policy-body {
+  max-width: 860px;
+  margin: 4rem auto;
+  padding: 0 clamp(1.5rem, 5vw, 3rem) 5rem;
+}
+.policy-section {
+  margin-bottom: 3rem;
+  padding-bottom: 3rem;
+  border-bottom: 1px solid var(--gold-light);
+}
+.policy-section:last-child { border-bottom: none; }
+.policy-section h2 {
+  font-size: 1.6rem;
+  font-weight: 900;
+  font-style: italic;
+  color: var(--forest);
+  margin-bottom: 1rem;
+  padding-bottom: 0.6rem;
+  border-bottom: 3px solid var(--gold);
+  display: inline-block;
+}
+.policy-section h3 { font-size: 1.15rem; font-weight: 700; color: var(--heritage); margin: 1.5rem 0 0.6rem; }
+.policy-section p { font-size: 1rem; line-height: 1.8; color: var(--forest); opacity: 0.9; margin-bottom: 1rem; }
+.policy-section ul { list-style: none; padding: 0; margin: 0.8rem 0 1rem; }
+.policy-section ul li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-size: 0.97rem;
+  line-height: 1.7;
+  color: var(--forest);
+  margin-bottom: 0.6rem;
+  padding: 0.5rem 0.8rem;
+  background: var(--gold-light);
+  border-left: 3px solid var(--gold);
+}
+.cookie-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0 1.5rem;
+  font-size: 0.92rem;
+}
+.cookie-table th {
+  background: var(--forest);
+  color: var(--cream);
+  padding: 0.8rem 1rem;
+  text-align: left;
+  font-weight: 700;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.cookie-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid var(--gold-light);
+  color: var(--forest);
+  vertical-align: top;
+  line-height: 1.5;
+}
+.cookie-table tr:nth-child(even) td { background: rgba(197,160,89,0.06); }
+
+.contact-box {
+  background: var(--forest);
+  color: var(--cream);
+  padding: 2rem 2.5rem;
+  border-radius: var(--radius-sm);
+  margin-top: 2rem;
+}
+.contact-box p { color: var(--cream); opacity: 0.85; margin-bottom: 0.6rem; }
+.contact-box a { color: var(--gold); }
