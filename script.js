@@ -180,9 +180,9 @@
           submitBtn.style.background = '#c62828';
         }
       } catch (err) {
-        submitBtn.textContent = '✓ Request Received!';
-        submitBtn.style.background = '#2e7d32';
-        contactForm.reset();
+        // Network failure — server is unreachable
+        submitBtn.textContent = 'Service unavailable — Try again';
+        submitBtn.style.background = '#c62828';
       }
       setTimeout(function () {
         submitBtn.textContent = 'Submit Request';
@@ -290,6 +290,7 @@
     initFaqAccordion();
     initContactPopup();
     initTestimonialSlider();
+    initPartnerForm();
   });
 
 })();
@@ -331,5 +332,63 @@ function initTestimonialSlider() {
     dot.addEventListener('click', function () {
       goTo(parseInt(dot.getAttribute('data-slide'), 10));
     });
+  });
+}
+
+/* ── Partner Enquiry Form ────────────────────────────────────────────────── */
+function initPartnerForm() {
+  var partnerForm = document.getElementById('partner-form');
+  if (!partnerForm) return;
+
+  partnerForm.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    var submitBtn = document.getElementById('submit-partner');
+    if (!submitBtn) return;
+
+    var name        = (document.getElementById('partner-name')    || {}).value?.trim() || '';
+    var email       = (document.getElementById('partner-email')   || {}).value?.trim() || '';
+    var phone       = (document.getElementById('partner-phone')   || {}).value?.trim() || '';
+    var partnerType = (document.getElementById('partner-type')    || {}).value || '';
+    var message     = (document.getElementById('partner-message') || {}).value?.trim() || '';
+
+    if (!name || !email || !phone) {
+      submitBtn.textContent = 'Please fill in all required fields';
+      submitBtn.style.background = '#c62828';
+      setTimeout(function () {
+        submitBtn.textContent = 'Submit Partnership Enquiry';
+        submitBtn.style.background = '';
+      }, 3000);
+      return;
+    }
+
+    submitBtn.textContent = 'Sending…';
+    submitBtn.disabled = true;
+
+    try {
+      var response = await fetch('/api/partner', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, phone, partnerType, message })
+      });
+      var data = await response.json();
+      if (data.success) {
+        submitBtn.textContent = '✓ Enquiry Sent!';
+        submitBtn.style.background = '#2e7d32';
+        partnerForm.reset();
+      } else {
+        submitBtn.textContent = data.message || 'Error — Try Again';
+        submitBtn.style.background = '#c62828';
+      }
+    } catch (err) {
+      // Network failure — server is unreachable
+      submitBtn.textContent = 'Service unavailable — Try again';
+      submitBtn.style.background = '#c62828';
+    }
+
+    setTimeout(function () {
+      submitBtn.textContent = 'Submit Partnership Enquiry';
+      submitBtn.style.background = '';
+      submitBtn.disabled = false;
+    }, 3500);
   });
 }

@@ -15,11 +15,34 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Serve static files (the website itself)
 app.use(express.static(path.join(__dirname)));
 
+// ── Shared file-save helper ───────────────────────────────────────────────────
+function saveToFile(filePath, newEntry) {
+  let entries = [];
+  try {
+    if (fs.existsSync(filePath)) {
+      const raw = fs.readFileSync(filePath, 'utf-8');
+      entries = JSON.parse(raw);
+    }
+  } catch (err) {
+    console.error(`Error reading ${filePath}:`, err.message);
+  }
+
+  entries.push(newEntry);
+
+  try {
+    fs.writeFileSync(filePath, JSON.stringify(entries, null, 2), 'utf-8');
+    console.log(`✅ Entry saved to ${path.basename(filePath)} (total: ${entries.length})`);
+    return true;
+  } catch (err) {
+    console.error(`Error writing ${filePath}:`, err.message);
+    return false;
+  }
+}
+
 // ── Contact Form Submission Endpoint ─────────────────────────────────────────
 app.post('/api/contact', (req, res) => {
   const { firstName, lastName, email, phone, message } = req.body;
 
-  // Basic validation
   if (!firstName || !email || !phone) {
     return res.status(400).json({
       success: false,
@@ -30,6 +53,7 @@ app.post('/api/contact', (req, res) => {
   const submission = {
     id: Date.now(),
     timestamp: new Date().toISOString(),
+    type: 'contact',
     firstName,
     lastName: lastName || '',
     email,
@@ -39,32 +63,51 @@ app.post('/api/contact', (req, res) => {
 
   console.log('📬 New contact submission:', submission);
 
-  // Save to submissions.json
-  const submissionsFile = path.join(__dirname, 'submissions.json');
-  let submissions = [];
+  const saved = saveToFile(path.join(__dirname, 'submissions.json'), submission);
 
-  try {
-    if (fs.existsSync(submissionsFile)) {
-      const raw = fs.readFileSync(submissionsFile, 'utf-8');
-      submissions = JSON.parse(raw);
-    }
-  } catch (err) {
-    console.error('Error reading submissions file:', err.message);
-  }
-
-  submissions.push(submission);
-
-  try {
-    fs.writeFileSync(submissionsFile, JSON.stringify(submissions, null, 2), 'utf-8');
-    console.log(`✅ Submission saved to submissions.json (total: ${submissions.length})`);
-  } catch (err) {
-    console.error('Error saving submission:', err.message);
+  if (!saved) {
     return res.status(500).json({ success: false, message: 'Server error. Please try again.' });
   }
 
   res.json({
     success: true,
     message: 'Thank you! Your message has been received. We will contact you within 24 business hours.'
+  });
+});
+
+// ── Partner Enquiry Endpoint ──────────────────────────────────────────────────
+app.post('/api/partner', (req, res) => {
+  const { name, email, phone, partnerType, message } = req.body;
+
+  if (!name || !email || !phone) {
+    return res.status(400).json({
+      success: false,
+      message: 'Please fill in all required fields: Name, Email, and Phone.'
+    });
+  }
+
+  const entry = {
+    id: Date.now(),
+    timestamp: new Date().toISOString(),
+    type: 'partnership',
+    name,
+    email,
+    phone,
+    partnerType: partnerType || 'not specified',
+    message: message || ''
+  };
+
+  console.log('🤝 New partnership enquiry:', entry);
+
+  const saved = saveToFile(path.join(__dirname, 'partners.json'), entry);
+
+  if (!saved) {
+    return res.status(500).json({ success: false, message: 'Server error. Please try again.' });
+  }
+
+  res.json({
+    success: true,
+    message: 'Thank you for your interest! Our partnership team will reach out within 24 business hours.'
   });
 });
 
@@ -77,5 +120,6 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`\n🌐 3K Investment Partners server running on http://localhost:${PORT}`);
   console.log(`📂 Serving static files from: ${__dirname}`);
-  console.log(`📬 Contact API: POST http://localhost:${PORT}/api/contact\n`);
+  console.log(`📬 Contact API:  POST http://localhost:${PORT}/api/contact`);
+  console.log(`🤝 Partner API:  POST http://localhost:${PORT}/api/partner\n`);
 });
