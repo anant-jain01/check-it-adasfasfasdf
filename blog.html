@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <!-- Primary SEO -->
+  <title>Investment Blog | Mutual Fund Tips, SIP Advice & Market Insights | 3K Investment Partners</title>
+  <meta name="description" content="Expert financial blog by 3K Investment Partners — insights on mutual funds, SIP strategy, tax planning, wealth management and market commentary for Indian investors."/>
+  <meta name="keywords" content="investment blog India, mutual fund tips, SIP advice, financial insights, wealth management blog, market commentary India, tax saving tips, financial education, 3K Investment Partners blog"/>
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"/>
+  <meta name="author" content="3K Investment Partners LLP"/>
+  <meta name="theme-color" content="#1B3022"/>
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://3kip.in/blog.html"/>
+
+  <!-- Hreflang -->
+  <link rel="alternate" hreflang="en-in" href="https://3kip.in/blog.html"/>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/logo.png"/>
+  <link rel="apple-touch-icon" href="images/logo.png"/>
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://3kip.in/blog.html"/>
+  <meta property="og:title" content="Investment Blog | Market Insights & Financial Tips | 3K Investment Partners"/>
+  <meta property="og:description" content="Expert financial blog with mutual fund research, SIP strategies, market commentary and investment education for disciplined Indian investors."/>
+  <meta property="og:image" content="https://3kip.in/images/og-banner.jpg"/>
+  <meta property="og:locale" content="en_IN"/>
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:url" content="https://3kip.in/blog.html"/>
+  <meta name="twitter:title" content="Investment Blog | 3K Investment Partners"/>
+  <meta name="twitter:description" content="Expert financial blog with mutual fund research, SIP strategies, and market commentary for Indian investors."/>
+  <meta name="twitter:image" content="https://3kip.in/images/og-banner.jpg"/>
+
+  <!-- Structured Data: Blog -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "name": "3K Investment Partners Blog",
+    "url": "https://3kip.in/blog.html",
+    "description": "Financial insights, market commentary, and investment education for disciplined Indian investors.",
+    "publisher": {
+      "@type": "Organization",
+      "name": "3K Investment Partners LLP",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://3kip.in/images/logo.png"
+      }
+    },
+    "blogPost": [
+      {
+        "@type": "BlogPosting",
+        "headline": "Why People Don't Make Money",
+        "url": "https://www.investopedia.com/articles/basics/06/invest1000.asp",
+        "author": { "@type": "Organization", "name": "3K Investment Partners LLP" },
+        "datePublished": "2025-01-01",
+        "description": "In India, despite a growing economy, many people still struggle to build wealth. Discipline, not income, is the differentiator."
+      },
+      {
+        "@type": "BlogPosting",
+        "headline": "Smart Retirement Planning",
+        "url": "https://www.forbes.com/advisor/retirement/",
+        "author": { "@type": "Organization", "name": "3K Investment Partners LLP" },
+        "datePublished": "2025-02-01",
+        "description": "Compounding is the 8th wonder of the world. Start early, retire comfortably with systematic investing."
+      }
+    ]
+  }
+  </script>
+
+  <!-- Structured Data: BreadcrumbList -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://3kip.in/" },
+      { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://3kip.in/blog.html" }
+    ]
+  }
+  </script>
+
+  <!-- Icons & Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Extra blog styles -->
+  <style>
+    .blog-hero {
+      background: linear-gradient(135deg, var(--forest) 0%, #0f2118 100%);
+      padding: 5rem 0 4rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .blog-hero::before {
+      content: '';
+      position: absolute;
+      width: 600px;
+      height: 600px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(197,160,89,0.08), transparent 70%);
+      top: -200px;
+      right: -200px;
+      pointer-events: none;
+    }
+    .blog-hero .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin-bottom: 1.5rem;
+    }
+    .blog-hero .tag .line { height: 1px; width: 40px; background: var(--gold); display: block; }
+    .blog-hero .tag .text { font-size: 0.72rem; font-weight: 800; text-transform: uppercase; letter-spacing: .3em; color: var(--gold); }
+    .blog-hero h1 { font-size: clamp(2rem, 5vw, 3.5rem); color: var(--cream); font-weight: 900; font-style: italic; margin-bottom: 1rem; }
+    .blog-hero h1 .hl { color: var(--gold); }
+    .blog-hero p { color: rgba(249,246,240,0.75); font-size: 1.1rem; max-width: 600px; margin: 0 auto; font-style: italic; line-height: 1.7; }
+
+    /* Featured post */
+    .blog-featured {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+      border: 1.5px solid var(--gold-light);
+      overflow: hidden;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      background: var(--cream);
+    }
+    .blog-featured:hover { box-shadow: 0 20px 50px rgba(27,48,34,0.15); transform: translateY(-4px); }
+    .blog-featured img { width: 100%; height: 100%; object-fit: cover; min-height: 320px; }
+    .blog-featured .featured-body { padding: 3rem; display: flex; flex-direction: column; justify-content: center; }
+    .blog-featured .featured-badge { font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: .25em; color: var(--gold); margin-bottom: 1rem; display: block; }
+    .blog-featured h2 { font-size: 1.9rem; font-weight: 900; font-style: italic; margin-bottom: 1rem; line-height: 1.3; }
+    .blog-featured p { font-size: 1rem; line-height: 1.75; opacity: 0.75; margin-bottom: 1.5rem; }
+    .blog-featured .meta { font-size: 0.75rem; opacity: 0.5; text-transform: uppercase; letter-spacing: .1em; margin-top: auto; }
+    .blog-featured .read-more { display: inline-flex; align-items: center; gap: 0.5rem; font-weight: 700; color: var(--gold); font-size: 0.9rem; text-transform: uppercase; letter-spacing: .1em; border-bottom: 2px solid var(--gold); padding-bottom: 0.2rem; width: fit-content; margin-top: 1rem; }
+
+    /* Card grid */
+    .blog-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+
+    /* Blog card */
+    .blog-article {
+      background: var(--cream);
+      border: 1.5px solid var(--gold-light);
+      display: flex;
+      flex-direction: column;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.3s ease, transform 0.3s ease;
+      overflow: hidden;
+    }
+    .blog-article:hover { box-shadow: 0 16px 40px rgba(27,48,34,0.12); transform: translateY(-4px); }
+    .blog-article img { width: 100%; height: 200px; object-fit: cover; display: block; }
+    .blog-article .article-body { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
+    .blog-article .article-cat {
+      display: inline-block;
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .18em;
+      color: var(--forest);
+      background: var(--gold-light);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: 0.75rem;
+      border-left: 3px solid var(--gold);
+    }
+    .blog-article h3 { font-size: 1.05rem; font-weight: 900; font-style: italic; margin-bottom: 0.7rem; line-height: 1.4; }
+    .blog-article p { font-size: 0.88rem; line-height: 1.65; opacity: 0.72; flex: 1; }
+    .blog-article .article-meta { display: flex; justify-content: space-between; align-items: center; margin-top: 1.2rem; padding-top: 1rem; border-top: 1px solid var(--gold-light); font-size: 0.72rem; opacity: 0.5; text-transform: uppercase; letter-spacing: .08em; }
+    .blog-article .article-meta .read-more-link { color: var(--gold); font-weight: 800; opacity: 1; border-bottom: 1px solid var(--gold); }
+
+    @media (max-width: 900px) {
+      .blog-featured { grid-template-columns: 1fr; }
+      .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .blog-grid { grid-template-columns: 1fr; }
+    }
+
+    .disclaimer-box-blog {
+      background: var(--parchment);
+      border-left: 4px solid var(--gold);
+      padding: 1.5rem 2rem;
+      max-width: 720px;
+      margin: 0 auto;
+      font-size: 0.85rem;
+      opacity: 0.65;
+      line-height: 1.7;
+      font-style: italic;
+    }
+  </style>
+
+  <script src="script.js" defer></script>
+</head>
+<body>
+
+<!-- HEADER -->
+<div id="site-header">
+<header class="main-header" id="header">
+  <div class="header-inner">
+    <a href="index.html" class="logo-area">
+      <img src="images/logo.png" alt="3K Investment Partners">
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-item" data-page="index">Home</a>
+      <a href="about.html" class="nav-item" data-page="about">About</a>
+      <div class="dropdown">
+        <a href="services.html" class="nav-item" data-page="services">Our Services ▾</a>
+        <div class="dropdown-menu">
+          <a href="services.html#financial-blueprint">Financial Blueprint</a>
+          <a href="services.html#goal-based-investing">Goal Based Investing</a>
+          <a href="services.html#risk-management">Risk Management</a>
+          <a href="services.html#insurance-planning">Insurance Planning</a>
+          <a href="services.html#tax-planning">Tax Planning</a>
+          <a href="services.html#wealth-management">Wealth Management</a>
+          <a href="services.html#childs-education">Child's Education Planning</a>
+          <a href="services.html#estate-planning">Estate Planning</a>
+        </div>
+      </div>
+      <div class="dropdown">
+        <a href="products.html" class="nav-item" data-page="products">Products ▾</a>
+        <div class="dropdown-menu">
+          <a href="products.html#equity">Equity</a>
+          <a href="products.html#mutual-fund">Mutual Fund</a>
+          <a href="products.html#sif">SIF</a>
+          <a href="products.html#portfolio-management">PMS (Portfolio Mgmt)</a>
+          <a href="products.html#aif">AIF</a>
+          <a href="products.html#life-insurance">Insurance Products</a>
+          <a href="products.html#global-investment">Global Investment</a>
+          <a href="products.html#real-estate">Fractional Real Estate</a>
+        </div>
+      </div>
+      <a href="blog.html" class="nav-item active" data-page="blog">Blog</a>
+      <a href="career.html" class="nav-item" data-page="career">Careers</a>
+      <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
+      <div class="dropdown">
+        <a href="#" class="nav-item">Login ▾</a>
+        <div class="dropdown-menu">
+          <a href="https://info3kip.wealthmagic.in/" target="_blank">MF Login</a>
+          <a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a>
+          <a href="https://ekyc.motilaloswal.com/Partner/?diyid=cc34db68-0db6-4724-a53b-601911870bc7" target="_blank">Demat</a>
+          <a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a>
+          <a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a>
+          <a href="https://jiraaf.com/" target="_blank">Jiraaf</a>
+          <a href="https://www.finzy.com/" target="_blank">Finzy</a>
+        </div>
+      </div>
+    </nav>
+    <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
+    <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- MOBILE NAV -->
+<div class="mobile-nav-overlay" id="mobileOverlay"></div>
+<nav class="mobile-nav-panel" id="mobilePanel">
+  <button class="mobile-nav-close" id="mobileClose">✕</button>
+  <a href="index.html" class="mobile-nav-link">Home</a>
+  <a href="about.html" class="mobile-nav-link">About</a>
+  <span class="mobile-nav-section">Our Services</span>
+  <a href="services.html" class="mobile-nav-sub">All Services</a>
+  <a href="services.html#goal-based-investing" class="mobile-nav-sub">Goal Based Investing</a>
+  <a href="services.html#risk-management" class="mobile-nav-sub">Risk Management</a>
+  <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
+  <a href="services.html#estate-planning" class="mobile-nav-sub">Estate Planning</a>
+  <span class="mobile-nav-section">Products</span>
+  <a href="products.html" class="mobile-nav-sub">All Products</a>
+  <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
+  <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+  <a href="products.html#portfolio-management" class="mobile-nav-sub">PMS</a>
+  <span class="mobile-nav-section">More</span>
+  <a href="blog.html" class="mobile-nav-link">Blog</a>
+  <a href="career.html" class="mobile-nav-link">Careers</a>
+  <a href="contact.html" class="mobile-nav-link">Contact</a>
+  <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
+</nav>
+</div>
+
+<!-- HERO -->
+<section class="blog-hero">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="tag reveal-up">
+      <span class="line"></span>
+      <span class="text">Knowledge Center</span>
+      <span class="line"></span>
+    </div>
+    <h1 class="reveal-up">Blog &amp; <span class="hl">Market Insights</span></h1>
+    <p class="reveal-up">Financial education, market commentary, and investment wisdom for disciplined long-term investors.</p>
+  </div>
+</section>
+
+<!-- BREADCRUMB -->
+<div style="background:var(--parchment);padding:0.8rem 0;border-bottom:1px solid var(--gold-light);">
+  <div class="container" style="font-size:0.78rem;opacity:0.6;">
+    <a href="index.html" style="color:var(--forest);text-decoration:none;">Home</a>
+    <span style="margin:0 0.5rem;">/</span>
+    <span style="color:var(--gold);font-weight:700;">Blog</span>
+  </div>
+</div>
+
+<!-- FEATURED POST -->
+<section class="section container">
+  <div style="margin-bottom:2rem;">
+    <span style="font-size:0.7rem;font-weight:800;text-transform:uppercase;letter-spacing:.25em;color:var(--gold);">Featured Article</span>
+    <div class="gold-bar" style="margin-top:0.5rem;"></div>
+  </div>
+  <a href="https://www.investopedia.com/articles/basics/06/invest1000.asp" target="_blank" rel="noopener" class="blog-featured reveal">
+    <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=900&q=80" alt="Why People Don't Make Money in India — Featured Article by 3K Investment Partners" loading="lazy" width="900" height="600">
+    <div class="featured-body">
+      <span class="featured-badge">&#9733; Editor's Pick &bull; Wealth Building</span>
+      <h2>Why Most People Don't Build Wealth in India</h2>
+      <p>Despite a growing economy and a rising middle class, millions of Indians still struggle to accumulate meaningful wealth. The differentiator isn't income — it's discipline, consistency, and informed decision-making. This article explores the behavioral and structural factors holding investors back.</p>
+      <div class="meta">support@3kip.in &bull; 4 min read &bull; Jan 2025</div>
+      <span class="read-more">Read Full Article <span class="material-symbols-outlined" style="font-size:1rem;">arrow_forward</span></span>
+    </div>
+  </a>
+</section>
+
+<!-- ALL ARTICLES -->
+<section class="section container green-tint-section">
+  <div class="section-header" style="margin-bottom:2.5rem;">
+    <div class="reveal-left">
+      <h2>All Articles</h2>
+      <div class="gold-bar"></div>
+    </div>
+    <p class="reveal-right">Curated financial research and education from our advisory team.</p>
+  </div>
+
+  <div class="blog-grid">
+
+    <!-- Article 1 -->
+    <a href="https://www.forbes.com/advisor/retirement/" target="_blank" rel="noopener" class="blog-article reveal d1">
+      <img src="https://images.unsplash.com/photo-1569025690938-a00729c9e1b9?w=600&q=75" alt="Smart Retirement Planning — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Retirement</span>
+        <h3>Smart Retirement Planning: Start Early</h3>
+        <p>Compounding is the 8th wonder of the world. Start early, retire comfortably with systematic investing. Learn how disciplined SIPs create long-term wealth.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 3 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 2 -->
+    <a href="https://www.morningstar.com/articles/1030891/why-global-diversification-matters" target="_blank" rel="noopener" class="blog-article reveal d2">
+      <img src="https://images.unsplash.com/photo-1556742031-c6961e8560b0?w=600&q=75" alt="Global Diversification Strategy — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Diversification</span>
+        <h3>Global Diversification Strategy</h3>
+        <p>Why investing outside India reduces risk and enhances portfolio stability. Geographic exposure provides a powerful hedge against domestic market volatility.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 3 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 3 -->
+    <a href="https://cleartax.in/s/elss" target="_blank" rel="noopener" class="blog-article reveal d3">
+      <img src="https://images.unsplash.com/photo-1518544887870-6d7b6d7b9a33?w=600&q=75" alt="Tax Saving with ELSS — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Tax Planning</span>
+        <h3>Tax Saving with ELSS Funds</h3>
+        <p>Save taxes under Section 80C and build long-term equity wealth simultaneously. ELSS funds offer the lowest lock-in period among all 80C instruments.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 2 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 4 -->
+    <a href="https://www.investopedia.com/terms/r/riskrewardratio.asp" target="_blank" rel="noopener" class="blog-article reveal d1">
+      <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&q=75" alt="Risk vs Reward — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Risk Management</span>
+        <h3>Risk vs Reward: The Investor's Compass</h3>
+        <p>Understanding volatility is key to becoming a confident investor. Learn how to evaluate risk-reward ratios to make informed, rational portfolio decisions.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 3 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 5 -->
+    <a href="https://www.businessinsider.com/personal-finance/build-generational-wealth" target="_blank" rel="noopener" class="blog-article reveal d2">
+      <img src="https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&q=75" alt="Building Generational Wealth — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Wealth Building</span>
+        <h3>Building Generational Wealth in India</h3>
+        <p>Wealth isn't income — it's assets that work for you. Discover how to build lasting prosperity across generations through disciplined investment and estate planning.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 4 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 6 -->
+    <a href="https://www.nerdwallet.com/article/investing/financial-independence" target="_blank" rel="noopener" class="blog-article reveal d3">
+      <img src="https://images.unsplash.com/photo-1508385082359-f38ae991e8f2?w=600&q=75" alt="Financial Freedom Blueprint — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Financial Freedom</span>
+        <h3>Financial Freedom Blueprint</h3>
+        <p>How structured portfolio allocation creates real independence. Learn the step-by-step framework that helps families achieve true financial freedom over time.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 3 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 7 -->
+    <a href="https://www.investopedia.com/terms/m/marketcycle.asp" target="_blank" rel="noopener" class="blog-article reveal d1">
+      <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=600&q=75" alt="Market Cycles Explained — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Market Analysis</span>
+        <h3>Market Cycles Explained</h3>
+        <p>Understanding economic cycles helps time portfolio rebalancing and macro positioning effectively. Learn to position your portfolio ahead of each cycle phase.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 3 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 8 -->
+    <a href="https://www.fidelity.com/viewpoints/investing-ideas/asset-allocation" target="_blank" rel="noopener" class="blog-article reveal d2">
+      <img src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?w=600&q=75" alt="Asset Allocation Basics — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Portfolio Strategy</span>
+        <h3>Asset Allocation Fundamentals</h3>
+        <p>Equity, debt, gold — balance is everything. A sound asset allocation strategy is the single biggest determinant of long-term portfolio performance.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 4 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Article 9 -->
+    <a href="https://www.sebi.gov.in/" target="_blank" rel="noopener" class="blog-article reveal d3">
+      <img src="https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=600&q=75" alt="Understanding SEBI Regulations — 3K Investment Partners Blog" loading="lazy" width="600" height="400">
+      <div class="article-body">
+        <span class="article-cat">Regulation</span>
+        <h3>Understanding SEBI Regulations for Investors</h3>
+        <p>SEBI protects Indian investors and maintains market integrity. Understanding the regulatory framework helps you invest with confidence and legal clarity.</p>
+        <div class="article-meta">
+          <span>support@3kip.in &bull; 2 min read</span>
+          <span class="read-more-link">Read →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="forest-section" style="padding:5rem 0;text-align:center;">
+  <div class="container" style="position:relative;z-index:1;">
+    <div class="reveal-up">
+      <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:.3em;color:var(--gold);display:block;margin-bottom:1rem;">Your Financial Journey Starts Here</span>
+      <h2 style="font-size:2.5rem;font-weight:900;font-style:italic;color:var(--cream);margin-bottom:1rem;">Put These Insights Into Action</h2>
+      <div class="gold-bar" style="margin:0 auto 1.5rem;"></div>
+      <p style="font-size:1.1rem;opacity:.8;color:var(--cream);max-width:550px;margin:0 auto 2.5rem;font-style:italic;line-height:1.7;">Book a free, no-obligation consultation with our senior advisors to build your personalised financial plan.</p>
+      <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="btn-primary btn-magnetic" style="background:var(--gold);padding:1.2rem 3rem;display:inline-flex;align-items:center;gap:0.8rem;font-size:0.95rem;">
+        <span>Book Free Consultation</span>
+        <span class="material-symbols-outlined">calendar_month</span>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- DISCLAIMER -->
+<section class="parchment-section" style="padding:3rem 0;text-align:center;">
+  <div class="container">
+    <div class="disclaimer-box-blog">
+      Mutual fund investments are subject to market risks. Please read the scheme information carefully before investing. Past performance is not indicative of future returns. The articles linked above are curated from trusted external sources for educational purposes only and do not constitute investment advice from 3K Investment Partners LLP.
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<div id="site-footer">
+<footer class="main-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="brand-row">
+          <span class="material-symbols-outlined">account_balance</span>
+          <span>3K Investment Partners</span>
+        </div>
+        <p>Disciplined investment strategies for generational wealth preservation in India.</p>
+        <p style="font-size:0.78rem;opacity:0.55;margin-top:0.5rem;">AMFI Registered Mutual Fund Distributor<br>ARN — Empanelled with SEBI/AMFI</p>
+      </div>
+      <div class="footer-col">
+        <h4>Firm</h4>
+        <ul>
+          <li><a href="about.html">Our Story</a></li>
+          <li><a href="about.html#founders">Team</a></li>
+          <li><a href="career.html">Careers</a></li>
+          <li><a href="blog.html">Blog &amp; Insights</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Our Services</h4>
+        <ul>
+          <li><a href="services.html#goal-based-investing">Goal Based Investing</a></li>
+          <li><a href="services.html#wealth-management">Wealth Planning</a></li>
+          <li><a href="services.html#tax-planning">Tax Planning</a></li>
+          <li><a href="services.html#insurance-planning">Insurance Planning</a></li>
+          <li><a href="services.html#estate-planning">Estate Planning</a></li>
+          <li><a href="products.html">Our Products</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Compliance</h4>
+        <ul>
+          <li><a href="privacy_policy.html">Privacy Policy</a></li>
+          <li><a href="disclosure.html">Commission Disclosure</a></li>
+          <li><a href="faq.html">FAQs</a></li>
+          <li><a href="#">Terms of Use</a></li>
+          <li><a href="https://www.amfiindia.com/" target="_blank" rel="noopener">AMFI India</a></li>
+          <li><a href="https://www.sebi.gov.in/" target="_blank" rel="noopener">SEBI</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="sebi-disclaimer">
+        <p class="disclaimer-heading">Regulatory Disclaimer — As Required by SEBI / AMFI</p>
+        <p class="disclaimer">
+          Mutual Fund investments are subject to market risks, read all scheme related documents carefully. The NAVs of the schemes may go up or down depending upon the factors and forces affecting the securities market including the fluctuations in the interest rates. The past performance of the mutual funds is not necessarily indicative of future performance of the schemes. The Mutual Fund is not guaranteeing or assuring any dividend under any of the schemes and the same is subject to the availability and adequacy of distributable surplus. Investors are requested to review the prospectus carefully and obtain expert professional advice with regard to specific legal, tax and financial implications of the investment/participation in the scheme.
+        </p>
+        <p class="disclaimer" style="margin-top:0.6rem;">
+          While all efforts have been taken to make this web site as authentic as possible, please refer to the print versions, notified Gazette copies of Acts/Rules/Regulations for authentic version or for use before any authority. We will not be responsible for any loss to any person/entity caused by any short-coming, defect or inaccuracy inadvertently or otherwise crept in the Mutual Funds Sahi Hai web site.
+        </p>
+      </div>
+      <div class="copyright">
+        <p>&copy; 2026 3K Investment Partners LLP. All rights reserved.</p>
+        <p>Designed for Institutional Excellence.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
