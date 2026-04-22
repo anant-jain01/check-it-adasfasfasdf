@@ -176,11 +176,12 @@
           background:rgba(0,0,0,0.03);
         ">
           <!-- 🔥 ADD YOUR QR IMAGE HERE -->
-          <img src="images/qr.png" alt="QR Code" style="max-width:100%;max-height:100%;">
+          <img src="qr%20codes/QR%20(demat).png" alt="Demat QR Code" style="max-width:100%;max-height:100%;">
         </div>
       </div>
 
       <!-- FORM -->
+      <form id="popup-form">
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1rem;">
         <div>
           <label style="font-size:0.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;display:block;margin-bottom:0.4rem;">
@@ -204,16 +205,15 @@
         <input type="email" id="popup-email" placeholder="rajesh@company.com" style="width:100%;padding:0.8rem 1rem;border:1.5px solid rgba(27,48,34,0.2);font-family:'Lora',serif;font-size:0.9rem;outline:none;">
       </div>
 
-      <!-- BUTTONS -->
-      <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
-        <a href="contact.html" class="btn-primary" style="background:var(--gold);flex:1;text-align:center;padding:1rem;display:flex;align-items:center;justify-content:center;">
-          <span style="color:#1B3022;font-weight:700;">Request Callback</span>
-        </a>
-
-        <button onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="background:transparent;border:2px solid var(--forest);padding:1rem 1.5rem;font-family:'Lora',serif;font-size:0.85rem;font-weight:700;cursor:pointer;color:var(--forest);text-transform:uppercase;letter-spacing:.1em;">
-          Not Now
-        </button>
-      </div>
+        <div style="display:flex;gap:0.8rem;flex-wrap:wrap;">
+          <button type="submit" id="submit-popup" style="background:var(--gold);flex:1;text-align:center;padding:1rem;border:none;cursor:pointer;font-family:'Lora',serif;font-size:0.9rem;display:flex;align-items:center;justify-content:center;">
+            <span style="color:#1B3022;font-weight:700;">Request Callback</span>
+          </button>
+          <button type="button" onclick="document.getElementById('contact-popup-overlay').style.display='none';" style="background:transparent;border:2px solid var(--forest);padding:1rem 1.5rem;font-family:'Lora',serif;font-size:0.85rem;font-weight:700;cursor:pointer;color:var(--forest);text-transform:uppercase;letter-spacing:.1em;">
+            Not Now
+          </button>
+        </div>
+      </form>
 
     </div>
   </div>
@@ -257,7 +257,6 @@
         <div class="dropdown-menu">
           <a href="products.html#equity">Equity</a>
           <a href="products.html#mutual-fund">Mutual Fund</a>
-          <a href="products.html#sif">SIF</a>
           <a href="products.html#portfolio-management">PMS (Portfolio Mgmt)</a>
           <a href="products.html#aif">AIF</a>
           <a href="products.html#life-insurance">Insurance Products</a>
@@ -265,6 +264,7 @@
           <a href="products.html#real-estate">Fractional Real Estate</a>
         </div>
       </div>
+      <a href="sif.html" class="nav-item" data-page="sif">SIF</a>
       <a href="blog.html" class="nav-item" data-page="blog">Blog</a>
       <a href="career.html" class="nav-item" data-page="career">Careers</a>
       <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
@@ -305,6 +305,7 @@
   <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
   <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
   <a href="products.html#portfolio-management" class="mobile-nav-sub">PMS</a>
+  <a href="sif.html" class="mobile-nav-link" style="font-weight:800;color:var(--gold);">SIF</a>
   <span class="mobile-nav-section">More</span>
   <a href="blog.html" class="mobile-nav-link">Blog</a>
   <a href="career.html" class="mobile-nav-link">Careers</a>
@@ -415,6 +416,73 @@
   </div>
 </section>
 
+<!-- BUILT FOR LONG-TERM INVESTORS -->
+<section class="parchment-section section">
+  <div class="container">
+    <div class="section-header">
+      <div class="reveal-left">
+        <h2>Built for Long-Term Investors</h2>
+        <div class="gold-bar"></div>
+      </div>
+      <p class="reveal-right">From understanding tax regimes to navigating SEBI regulations we speak your language.</p>
+    </div>
+    
+    <div class="card-grid cols-2" style="gap:2rem;">
+      <!-- CARD 1 -->
+      <div class="card reveal d1 horiz-card">
+        <div class="horiz-card-img">
+          <img src="images/man_fanincially_planning.png" alt="Market Analysis">
+        </div>
+        <div class="horiz-card-body">
+          <h3 class="horiz-card-title">Mutual Fund Distribution</h3>
+          <p class="horiz-card-subtitle">Deep market insights</p>
+          <p class="horiz-card-text">We provide extensive research and market analysis to ensure your portfolio adapts to changing economic conditions responsibly.</p>
+          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- CARD 2 -->
+      <div class="card reveal d2 horiz-card">
+        <div class="horiz-card-img">
+          <img src="images/sip_analysis.png" alt="Wealth Building">
+        </div>
+        <div class="horiz-card-body">
+          <h3 class="horiz-card-title">Wealth Building</h3>
+          <p class="horiz-card-subtitle">Grow your assets</p>
+          <p class="horiz-card-text">Strategic allocation tailored towards long-term wealth accumulation and sustainable growth for the future.</p>
+          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
+        </div>
+      </div>
+      
+      <!-- CARD 3 -->
+      <div class="card reveal d3 horiz-card">
+        <div class="horiz-card-img">
+          <img src="images/retirement_planning.png" alt="Retirement Planning">
+        </div>
+        <div class="horiz-card-body">
+          <h3 class="horiz-card-title">Retirement Planning</h3>
+          <p class="horiz-card-subtitle">Secure your future</p>
+          <p class="horiz-card-text">Goal-based strategies explicitly designed to build a reliable retirement corpus for long-term financial independence.</p>
+          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
+        </div>
+      </div>
+
+      <!-- CARD 4 -->
+      <div class="card reveal d4 horiz-card">
+        <div class="horiz-card-img">
+          <img src="images/child_care.png" alt="Legacy Planning">
+        </div>
+        <div class="horiz-card-body">
+          <h3 class="horiz-card-title">Legacy Planning</h3>
+          <p class="horiz-card-subtitle">Generational wealth</p>
+          <p class="horiz-card-text">Ensure smooth transition of your wealth across generations with comprehensive estate and legacy solutions.</p>
+          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- OUR CORE COMPETENCIES -->
 <section class="section container">
   <div class="section-header">
@@ -490,75 +558,6 @@
   </div>
 </section>
 
-
-
-<!-- INDIAN MARKET VISUALS -->
-<section class="parchment-section section">
-  <div class="container">
-    <div class="section-header">
-      <div class="reveal-left">
-        <h2>Built for Long-Term Investors</h2>
-        <div class="gold-bar"></div>
-      </div>
-      <p class="reveal-right">From understanding tax regimes to navigating SEBI regulations we speak your language.</p>
-    </div>
-    
-    <div class="card-grid cols-2" style="gap:2rem;">
-      <!-- CARD 1 -->
-      <div class="card reveal d1 horiz-card">
-        <div class="horiz-card-img">
-          <img src="images/man_fanincially_planning.png" alt="Market Analysis">
-        </div>
-        <div class="horiz-card-body">
-          <h3 class="horiz-card-title">Mutual Fund Distribution</h3>
-          <p class="horiz-card-subtitle">Deep market insights</p>
-          <p class="horiz-card-text">We provide extensive research and market analysis to ensure your portfolio adapts to changing economic conditions responsibly.</p>
-          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
-        </div>
-      </div>
-      
-      <!-- CARD 2 -->
-      <div class="card reveal d2 horiz-card">
-        <div class="horiz-card-img">
-          <img src="images/sip_analysis.png" alt="Wealth Building">
-        </div>
-        <div class="horiz-card-body">
-          <h3 class="horiz-card-title">Wealth Building</h3>
-          <p class="horiz-card-subtitle">Grow your assets</p>
-          <p class="horiz-card-text">Strategic allocation tailored towards long-term wealth accumulation and sustainable growth for the future.</p>
-          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
-        </div>
-      </div>
-      
-      <!-- CARD 3 -->
-      <div class="card reveal d3 horiz-card">
-        <div class="horiz-card-img">
-          <img src="images/retirement_planning.png" alt="Retirement Planning">
-        </div>
-        <div class="horiz-card-body">
-          <h3 class="horiz-card-title">Retirement Planning</h3>
-          <p class="horiz-card-subtitle">Secure your future</p>
-          <p class="horiz-card-text">Goal-based strategies explicitly designed to build a reliable retirement corpus for long-term financial independence.</p>
-          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
-        </div>
-      </div>
-
-      <!-- CARD 4 -->
-      <div class="card reveal d4 horiz-card">
-        <div class="horiz-card-img">
-          <img src="images/child_care.png" alt="Legacy Planning">
-        </div>
-        <div class="horiz-card-body">
-          <h3 class="horiz-card-title">Legacy Planning</h3>
-          <p class="horiz-card-subtitle">Generational wealth</p>
-          <p class="horiz-card-text">Ensure smooth transition of your wealth across generations with comprehensive estate and legacy solutions.</p>
-          <a href="contact.html" class="btn-outline" style="padding:0.6rem 1.2rem; font-size:0.85rem; margin-top:auto;">Learn More</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ADVANTAGE -->
 <section class="section container green-tint-section">
   <div class="split">
@@ -612,64 +611,39 @@
     </div>
 
     <div class="testimonial-slider" id="testimonialSlider">
-      <!-- SLIDE 1 -->
+      <!-- SLIDE 1 - Vishakha Kakkar -->
       <div class="testimonial-slide active" data-index="0">
         <div class="testimonial-video-wrap">
-          <video class="testimonial-video" controls preload="none" poster="images/testimonial_1_thumb.jpg">
-            <!-- Add your video source here -->
-            <!-- <source src="videos/testimonial_1.mp4" type="video/mp4"> -->
+          <video class="testimonial-video" controls preload="none" style="width:100%;display:block;">
+            <source src="testimonail%20videos/20230826_144848%20-%20Vishakha%20Kakkar.mp4" type="video/mp4">
           </video>
-          <div class="testimonial-video-placeholder">
-            <span class="material-symbols-outlined" style="font-size:4rem;color:var(--gold);">play_circle</span>
-            <p style="margin-top:1rem;font-weight:700;color:var(--cream);">Video Coming Soon</p>
-          </div>
-        </div>
-        <div class="testimonial-caption">
-          <blockquote class="testimonial-quote">&ldquo;3K helped us structure our retirement corpus in a way we never imagined was possible. Today we feel absolutely secure.&rdquo;</blockquote>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Ashok &amp; Meena Kapoor</span>
-            <span class="testimonial-role">Retired Government Officers · Clients since 2019</span>
-          </div>
         </div>
       </div>
 
-      <!-- SLIDE 2 -->
+      <!-- SLIDE 2 - Rakesh K Mathur -->
       <div class="testimonial-slide" data-index="1">
         <div class="testimonial-video-wrap">
-          <video class="testimonial-video" controls preload="none" poster="images/testimonial_2_thumb.jpg">
-            <!-- <source src="videos/testimonial_2.mp4" type="video/mp4"> -->
+          <video class="testimonial-video" controls preload="none" style="width:100%;display:block;">
+            <source src="testimonail%20videos/20250110_175900%20-%20Rakesh%20K%20Mathur.mp4" type="video/mp4">
           </video>
-          <div class="testimonial-video-placeholder">
-            <span class="material-symbols-outlined" style="font-size:4rem;color:var(--gold);">play_circle</span>
-            <p style="margin-top:1rem;font-weight:700;color:var(--cream);">Video Coming Soon</p>
-          </div>
-        </div>
-        <div class="testimonial-caption">
-          <blockquote class="testimonial-quote">&ldquo;Our children's education fund is fully on track thanks to the disciplined SIP strategy. I recommend 3K to every young professional.&rdquo;</blockquote>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Priya Sharma</span>
-            <span class="testimonial-role">Entrepreneur · Client since 2021</span>
-          </div>
         </div>
       </div>
 
       <!-- SLIDE 3 -->
       <div class="testimonial-slide" data-index="2">
         <div class="testimonial-video-wrap">
-          <video class="testimonial-video" controls preload="none" poster="images/testimonial_3_thumb.jpg">
-            <!-- <source src="videos/testimonial_3.mp4" type="video/mp4"> -->
+          <video class="testimonial-video" controls preload="none" style="width:100%;display:block;">
+            <source src="testimonail%20videos/WhatsApp%20Video%202024-06-12%20at%2011.22.05_de6e1e24.mp4" type="video/mp4">
           </video>
-          <div class="testimonial-video-placeholder">
-            <span class="material-symbols-outlined" style="font-size:4rem;color:var(--gold);">play_circle</span>
-            <p style="margin-top:1rem;font-weight:700;color:var(--cream);">Video Coming Soon</p>
-          </div>
         </div>
-        <div class="testimonial-caption">
-          <blockquote class="testimonial-quote">&ldquo;What impressed me most was the transparency. Every recommendation came with a clear rationale. That trust is invaluable in financial advisory.&rdquo;</blockquote>
-          <div class="testimonial-author">
-            <span class="testimonial-name">Vikram Malhotra</span>
-            <span class="testimonial-role">Senior Executive · Client since 2020</span>
-          </div>
+      </div>
+
+      <!-- SLIDE 4 -->
+      <div class="testimonial-slide" data-index="3">
+        <div class="testimonial-video-wrap">
+          <video class="testimonial-video" controls preload="none" style="width:100%;display:block;">
+            <source src="testimonail%20videos/WhatsApp%20Video%202024-11-21%20at%208.21.03%20PM.mp4" type="video/mp4">
+          </video>
         </div>
       </div>
     </div>
@@ -683,6 +657,7 @@
         <button class="testimonial-dot active" data-slide="0" aria-label="Testimonial 1"></button>
         <button class="testimonial-dot" data-slide="1" aria-label="Testimonial 2"></button>
         <button class="testimonial-dot" data-slide="2" aria-label="Testimonial 3"></button>
+        <button class="testimonial-dot" data-slide="3" aria-label="Testimonial 4"></button>
       </div>
       <button class="testimonial-btn testimonial-next" id="testimonialNext" aria-label="Next testimonial">
         <span class="material-symbols-outlined">chevron_right</span>
@@ -942,6 +917,25 @@
         </div>
         <button type="submit" class="submit-btn btn-magnetic" id="submit-contact">Submit Request</button>
       </form>
+
+      <!-- QR CODES — below the form -->
+      <div style="margin-top:2rem;padding-top:1.5rem;border-top:1px solid var(--gold-light);">
+        <p style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.14em;color:var(--heritage);margin-bottom:1rem;">
+          Or scan to connect instantly
+        </p>
+        <div style="display:flex;gap:1.2rem;flex-wrap:wrap;">
+          <div style="width:100px;height:100px;border:2px solid var(--gold-light);background:white;padding:5px;display:flex;align-items:center;justify-content:center;">
+            <img src="qr%20codes/QR%20(demat).png" alt="Demat QR" style="max-width:100%;max-height:100%;display:block;">
+          </div>
+          <div style="width:100px;height:100px;border:2px solid var(--gold-light);background:white;padding:5px;display:flex;align-items:center;justify-content:center;">
+            <img src="qr%20codes/QR%20(webinar).png" alt="Webinar QR" style="max-width:100%;max-height:100%;display:block;">
+          </div>
+          <div style="width:100px;height:100px;border:2px solid var(--gold-light);background:white;padding:5px;display:flex;align-items:center;justify-content:center;">
+            <img src="qr%20codes/QR%203.png" alt="QR Code" style="max-width:100%;max-height:100%;display:block;">
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="contact-info">
       <span class="material-symbols-outlined bg-icon">history_edu</span>
