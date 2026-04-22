@@ -1,0 +1,1009 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- SEO & SMO Meta Tags -->
+    <title>Specialized Investment Funds (SIF) | Alpha-Driven Investing | 3K Investment Partners</title>
+    <meta
+      name="description"
+      content="Explore Specialized Investment Funds (SIF) with 3K Investment Partners. Theme-based, sector-specific, and tactical allocation strategies designed to generate alpha for sophisticated investors."
+    />
+    <meta
+      name="keywords"
+      content="SIF India, Specialized Investment Funds, thematic investing, sector fund India, alpha generation, SEBI SIF, alternative investments Delhi"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="3K Investment Partners LLP" />
+    <meta name="theme-color" content="#1B3022" />
+    <link rel="canonical" href="https://3kip.in/sif.html" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://3kip.in/sif.html" />
+    <meta property="og:title" content="Specialized Investment Funds (SIF) | 3K Investment Partners" />
+    <meta
+      property="og:description"
+      content="Conviction-led, theme-based investment strategies with professional oversight. Designed for alpha generation and satellite portfolio allocation."
+    />
+    <meta property="og:image" content="https://3kip.in/images/sif_hero.png" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://3kip.in/sif.html" />
+    <meta property="twitter:title" content="Specialized Investment Funds (SIF) | 3K Investment Partners" />
+    <meta
+      property="twitter:description"
+      content="Conviction-led, theme-based investment strategies with professional oversight."
+    />
+    <meta property="twitter:image" content="https://3kip.in/images/sif_hero.png" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+
+    <style>
+      /* ── SIF-specific hero ─────────────────────────────────────────────── */
+      .sif-hero {
+        position: relative;
+        min-height: 80vh;
+        display: flex;
+        align-items: center;
+        background: var(--forest);
+        overflow: hidden;
+      }
+      .sif-hero-bg {
+        position: absolute;
+        inset: 0;
+        background-image: url('images/sif_hero.png');
+        background-size: cover;
+        background-position: center;
+        opacity: 0.35;
+        z-index: 0;
+      }
+      .sif-hero-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(120deg, rgba(27,48,34,0.95) 45%, rgba(27,48,34,0.3) 100%);
+        z-index: 1;
+      }
+      .sif-hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 6rem 2rem 5rem;
+        width: 100%;
+      }
+      .sif-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        padding: 0.5rem 1.2rem;
+        border: 1.5px solid var(--gold);
+        margin-bottom: 2rem;
+        animation: fadeInUp 0.8s 0.2s both;
+      }
+      .sif-badge span {
+        font-size: 0.72rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.28em;
+        color: var(--gold);
+      }
+      .sif-hero-title {
+        font-size: clamp(2.2rem, 5vw, 4rem);
+        font-weight: 900;
+        font-style: italic;
+        color: var(--cream);
+        line-height: 1.1;
+        margin-bottom: 1.5rem;
+        max-width: 700px;
+        animation: fadeInUp 0.8s 0.4s both;
+      }
+      .sif-hero-title span {
+        color: var(--gold);
+      }
+      .sif-hero-desc {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: rgba(237,232,224,0.85);
+        max-width: 600px;
+        margin-bottom: 2.5rem;
+        animation: fadeInUp 0.8s 0.6s both;
+      }
+      .sif-hero-stats {
+        display: flex;
+        gap: 2.5rem;
+        flex-wrap: wrap;
+        animation: fadeInUp 0.8s 0.8s both;
+      }
+      .sif-stat-pill {
+        text-align: center;
+        padding: 1.1rem 1.8rem;
+        background: rgba(197,160,89,0.12);
+        border: 1px solid rgba(197,160,89,0.35);
+        min-width: 130px;
+      }
+      .sif-stat-pill .num {
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--gold);
+        display: block;
+      }
+      .sif-stat-pill .lbl {
+        font-size: 0.72rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: rgba(237,232,224,0.75);
+        display: block;
+        margin-top: 0.3rem;
+      }
+
+      /* ── Overview split ────────────────────────────────────────────────── */
+      .sif-overview {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      @media (max-width: 900px) {
+        .sif-overview { grid-template-columns: 1fr; gap: 2rem; }
+        .sif-hero-stats { gap: 1rem; }
+      }
+      .sif-overview-img-wrap {
+        position: relative;
+        border-radius: 0;
+        overflow: hidden;
+      }
+      .sif-overview-img-wrap img {
+        width: 100%;
+        height: 420px;
+        object-fit: cover;
+        display: block;
+        border: 3px solid var(--gold-light);
+      }
+      .sif-overview-float {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 1.5rem;
+        background: rgba(27,48,34,0.92);
+        backdrop-filter: blur(8px);
+        padding: 1.2rem 1.5rem;
+        border-left: 4px solid var(--gold);
+      }
+      .sif-overview-float p {
+        font-size: 0.95rem;
+        font-style: italic;
+        color: var(--cream);
+        margin: 0;
+      }
+
+      /* ── Eligibility band ──────────────────────────────────────────────── */
+      .eligibility-band {
+        background: var(--forest);
+        color: var(--cream);
+        padding: 3rem 0;
+        border-top: 3px solid var(--gold);
+        border-bottom: 3px solid var(--gold);
+      }
+      .eligibility-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+      }
+      .eligibility-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 0.8rem;
+        padding: 1.5rem 1rem;
+        border: 1px solid rgba(197,160,89,0.25);
+        transition: all 0.3s ease;
+      }
+      .eligibility-item:hover {
+        border-color: var(--gold);
+        background: rgba(197,160,89,0.08);
+        transform: translateY(-4px);
+      }
+      .eligibility-item .material-symbols-outlined {
+        font-size: 2.2rem;
+        color: var(--gold);
+      }
+      .eligibility-item h4 {
+        font-size: 0.9rem;
+        font-weight: 800;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--cream);
+        margin: 0;
+      }
+      .eligibility-item p {
+        font-size: 0.85rem;
+        opacity: 0.75;
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      /* ── Strategy cards ────────────────────────────────────────────────── */
+      .strategy-card {
+        position: relative;
+        padding: 2.5rem;
+        background: var(--cream);
+        border-top: 5px solid var(--gold);
+        transition: all 0.3s ease;
+        overflow: hidden;
+      }
+      .strategy-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background: linear-gradient(135deg, rgba(197,160,89,0.06) 0%, transparent 60%);
+        pointer-events: none;
+      }
+      .strategy-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 50px rgba(27,48,34,0.15);
+      }
+      .strategy-number {
+        font-size: 5rem;
+        font-weight: 900;
+        font-style: italic;
+        color: rgba(197,160,89,0.12);
+        position: absolute;
+        top: -0.5rem;
+        right: 1rem;
+        line-height: 1;
+        user-select: none;
+      }
+      .strategy-card .material-symbols-outlined {
+        font-size: 2.2rem;
+        color: var(--gold);
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .strategy-card h3 {
+        font-size: 1.3rem;
+        font-weight: 800;
+        font-style: italic;
+        margin-bottom: 0.8rem;
+      }
+      .strategy-card p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        opacity: 0.8;
+        margin-bottom: 1.2rem;
+      }
+      .strategy-tag {
+        display: inline-block;
+        padding: 0.3rem 0.8rem;
+        background: var(--gold-light);
+        font-size: 0.78rem;
+        font-weight: 700;
+        margin: 0.2rem;
+        border-radius: 2px;
+      }
+
+      /* ── Process timeline ────────────────────────────────────────────── */
+      .process-timeline {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+      .process-step {
+        display: grid;
+        grid-template-columns: 80px 1fr;
+        gap: 2rem;
+        align-items: flex-start;
+        position: relative;
+      }
+      .process-step:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        left: 39px;
+        top: 80px;
+        bottom: -24px;
+        width: 2px;
+        background: linear-gradient(180deg, var(--gold), transparent);
+      }
+      .step-num-wrap {
+        width: 80px;
+        height: 80px;
+        border: 2px solid var(--gold);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--forest);
+        flex-shrink: 0;
+      }
+      .step-num-wrap .num {
+        font-size: 1.8rem;
+        font-weight: 900;
+        font-style: italic;
+        color: var(--gold);
+      }
+      .step-body {
+        padding: 1rem 0 3rem;
+      }
+      .step-body h3 {
+        font-size: 1.15rem;
+        font-weight: 800;
+        margin-bottom: 0.5rem;
+      }
+      .step-body p {
+        font-size: 0.95rem;
+        line-height: 1.7;
+        opacity: 0.8;
+      }
+
+      /* ── Comparison table ────────────────────────────────────────────── */
+      .compare-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+      }
+      .compare-table th {
+        background: var(--forest);
+        color: var(--cream);
+        padding: 1rem 1.2rem;
+        text-align: left;
+        font-weight: 800;
+        letter-spacing: 0.03em;
+      }
+      .compare-table th:first-child {
+        width: 220px;
+      }
+      .compare-table th.highlight-th {
+        background: var(--gold);
+        color: var(--forest);
+      }
+      .compare-table td {
+        padding: 0.9rem 1.2rem;
+        border-bottom: 1px solid rgba(27,48,34,0.1);
+        vertical-align: middle;
+      }
+      .compare-table tr:nth-child(even) td { background: rgba(27,48,34,0.03); }
+      .compare-table td.highlight-td {
+        background: rgba(197,160,89,0.08) !important;
+        font-weight: 700;
+        color: var(--forest);
+      }
+      .tick { color: #2e7d32; font-weight: 900; }
+      .cross { color: #c62828; font-weight: 900; }
+      .partial { color: #e65100; font-weight: 700; }
+
+      /* ── CTA band ────────────────────────────────────────────────────── */
+      .sif-cta-band {
+        background: linear-gradient(135deg, var(--forest) 0%, #0f2218 100%);
+        padding: 5rem 0;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .sif-cta-band::before {
+        content: 'SIF';
+        position: absolute;
+        font-size: 20rem;
+        font-weight: 900;
+        font-style: italic;
+        color: rgba(197,160,89,0.04);
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        letter-spacing: -0.05em;
+      }
+      .sif-cta-band h2 {
+        font-size: clamp(2rem, 4vw, 3.2rem);
+        color: var(--cream);
+        font-weight: 900;
+        font-style: italic;
+        margin-bottom: 1rem;
+        position: relative;
+      }
+      .sif-cta-band p {
+        font-size: 1.05rem;
+        color: rgba(237,232,224,0.75);
+        max-width: 580px;
+        margin: 0 auto 2.5rem;
+        line-height: 1.75;
+        position: relative;
+      }
+      .sif-cta-btns {
+        display: flex;
+        gap: 1rem;
+        justify-content: center;
+        flex-wrap: wrap;
+        position: relative;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- HEADER -->
+    <div id="site-header">
+      <header class="main-header" id="header">
+        <div class="header-inner">
+          <a href="index.html" class="logo-area">
+            <img src="images/logo.png" alt="3K Investment Partners" />
+          </a>
+          <nav class="nav-links">
+            <a href="index.html" class="nav-item" data-page="index">Home</a>
+            <a href="about.html" class="nav-item" data-page="about">About</a>
+            <div class="dropdown">
+              <a href="services.html" class="nav-item" data-page="services">Our Services ▾</a>
+              <div class="dropdown-menu">
+                <a href="services.html#financial-blueprint">Financial Blueprint</a>
+                <a href="services.html#goal-based-investing">Goal Based Investing</a>
+                <a href="services.html#risk-management">Risk Management</a>
+                <a href="services.html#insurance-planning">Insurance Planning</a>
+                <a href="services.html#tax-planning">Tax Planning</a>
+                <a href="services.html#wealth-management">Wealth Management</a>
+                <a href="services.html#childs-education">Child's Education Planning</a>
+                <a href="services.html#estate-planning">Estate Planning</a>
+              </div>
+            </div>
+            <div class="dropdown">
+              <a href="products.html" class="nav-item" data-page="products">Products ▾</a>
+              <div class="dropdown-menu">
+                <a href="products.html#equity">Equity</a>
+                <a href="products.html#mutual-fund">Mutual Fund</a>
+                <a href="products.html#portfolio-management">PMS (Portfolio Mgmt)</a>
+                <a href="products.html#aif">AIF</a>
+                <a href="products.html#life-insurance">Insurance Products</a>
+                <a href="products.html#global-investment">Global Investment</a>
+                <a href="products.html#real-estate">Fractional Real Estate</a>
+              </div>
+            </div>
+            <a href="sif.html" class="nav-item" data-page="sif">SIF</a>
+            <a href="blog.html" class="nav-item" data-page="blog">Blog</a>
+            <a href="career.html" class="nav-item" data-page="career">Careers</a>
+            <a href="contact.html" class="nav-item" data-page="contact">Contact</a>
+            <a href="partner.html" class="nav-item nav-item--partner" data-page="partner">Partner With Us</a>
+            <div class="dropdown">
+              <a href="#" class="nav-item">Login ▾</a>
+              <div class="dropdown-menu">
+                <a href="https://info3kip.wealthmagic.in/" target="_blank">MF Login</a>
+                <a href="https://www.npscra.nsdl.co.in/" target="_blank">NPS</a>
+                <a href="https://ekyc.motilaloswal.com/Partner/?diyid=cc34db68-0db6-4724-a53b-601911870bc7" target="_blank">Demat</a>
+                <a href="https://www.rbi.org.in/" target="_blank">Fixed Income</a>
+                <a href="https://www.nseindia.com/market-data/bonds-traded-in-capital-market" target="_blank">Bond Market</a>
+                <a href="https://jiraaf.com/" target="_blank">Jiraaf</a>
+                <a href="https://www.finzy.com/" target="_blank">Finzy</a>
+              </div>
+            </div>
+          </nav>
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="cta-btn">Book Consultation</a>
+          <button class="hamburger" id="hamburger" aria-label="Open navigation menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </header>
+
+      <!-- MOBILE NAV -->
+      <div class="mobile-nav-overlay" id="mobileOverlay"></div>
+      <nav class="mobile-nav-panel" id="mobilePanel">
+        <button class="mobile-nav-close" id="mobileClose">✕</button>
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="about.html" class="mobile-nav-link">About</a>
+        <span class="mobile-nav-section">Our Services</span>
+        <a href="services.html" class="mobile-nav-sub">All Services</a>
+        <a href="services.html#goal-based-investing" class="mobile-nav-sub">Goal Based Investing</a>
+        <a href="services.html#risk-management" class="mobile-nav-sub">Risk Management</a>
+        <a href="services.html#insurance-planning" class="mobile-nav-sub">Insurance Planning</a>
+        <a href="services.html#estate-planning" class="mobile-nav-sub">Estate Planning</a>
+        <span class="mobile-nav-section">Products</span>
+        <a href="products.html" class="mobile-nav-sub">All Products</a>
+        <a href="products.html#equity" class="mobile-nav-sub">Equity</a>
+        <a href="products.html#mutual-fund" class="mobile-nav-sub">Mutual Fund</a>
+        <a href="products.html#portfolio-management" class="mobile-nav-sub">PMS</a>
+        <a href="products.html#aif" class="mobile-nav-sub">AIF</a>
+        <a href="sif.html" class="mobile-nav-link" style="font-weight:800;color:var(--gold);">SIF</a>
+        <span class="mobile-nav-section">More</span>
+        <a href="blog.html" class="mobile-nav-link">Blog</a>
+        <a href="career.html" class="mobile-nav-link">Careers</a>
+        <a href="contact.html" class="mobile-nav-link">Contact</a>
+        <a href="partner.html" class="mobile-nav-link mobile-nav-link--partner">Partner With Us ✦</a>
+        <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="mobile-nav-cta" style="margin-top:2rem;">Book Free Consultation</a>
+      </nav>
+    </div>
+
+    <!-- HERO -->
+    <section class="sif-hero">
+      <div class="sif-hero-bg"></div>
+      <div class="sif-hero-overlay"></div>
+      <div class="sif-hero-content">
+        <div class="sif-badge">
+          <span>Specialized Investment Funds</span>
+        </div>
+        <h1 class="sif-hero-title">
+          Conviction-Led Investing<br>for <span>Exceptional Alpha</span>
+        </h1>
+        <p class="sif-hero-desc">
+          SIFs are professionally managed, theme-driven investment strategies that go beyond broad market participation. Designed for sophisticated investors seeking focused, differentiated exposure within a disciplined risk framework.
+        </p>
+        <div class="sif-hero-stats">
+          <div class="sif-stat-pill">
+            <span class="num">₹10L+</span>
+            <span class="lbl">Min. Ticket Size</span>
+          </div>
+          <div class="sif-stat-pill">
+            <span class="num">3+</span>
+            <span class="lbl">Strategy Types</span>
+          </div>
+          <div class="sif-stat-pill">
+            <span class="num">SEBI</span>
+            <span class="lbl">Regulated Framework</span>
+          </div>
+        </div>
+        <div style="display:flex;gap:1rem;margin-top:2.5rem;flex-wrap:wrap;animation:fadeInUp 0.8s 1s both;">
+          <a href="contact.html" class="btn-primary" style="background:var(--gold);padding:1.1rem 2rem;">
+            <span style="color:#1B3022;font-weight:700;">Explore SIF With Us</span>
+          </a>
+          <a href="#sif-strategies" class="btn-outline" style="border-color:rgba(237,232,224,0.5);color:var(--cream);padding:1.1rem 2rem;">
+            View Strategies
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT IS SIF -->
+    <section class="section container">
+      <div class="sif-overview">
+        <div class="reveal-left">
+          <div class="tag" style="margin-bottom:1.5rem;">
+            <span class="line"></span><span class="text">Understanding SIF</span><span class="line"></span>
+          </div>
+          <h2 style="font-size:2.5rem;font-weight:900;font-style:italic;margin-bottom:1rem;">
+            What are Specialized Investment Funds?
+          </h2>
+          <div class="gold-bar" style="margin-bottom:1.5rem;"></div>
+          <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1rem;">
+            Specialized Investment Funds (SIFs) are SEBI-regulated, professionally managed investment vehicles that pool capital around a <strong>focused theme, sector, or strategy</strong> — unlike broad-market mutual funds that track diversified indices.
+          </p>
+          <p style="font-size:1.05rem;line-height:1.8;margin-bottom:1rem;">
+            They are designed for investors with higher risk appetite who seek <strong>satellite allocations</strong> — a focused slice of their portfolio dedicated to capturing specific market opportunities with higher return potential.
+          </p>
+          <p style="font-size:1.05rem;line-height:1.8;margin-bottom:2rem;">
+            At 3K Investment Partners, we carefully integrate SIFs into your overall portfolio architecture — sizing each SIF allocation appropriately to maximize upside while containing downside risk.
+          </p>
+          <div style="display:flex;flex-wrap:wrap;gap:0.6rem;">
+            <span class="strategy-tag">Theme-Based</span>
+            <span class="strategy-tag">Sector-Specific</span>
+            <span class="strategy-tag">SEBI Regulated</span>
+            <span class="strategy-tag">Professional Management</span>
+            <span class="strategy-tag">Alpha Seeking</span>
+            <span class="strategy-tag">Satellite Allocation</span>
+          </div>
+        </div>
+        <div class="reveal-right">
+          <div class="sif-overview-img-wrap">
+            <img src="images/sif_sectors.png" alt="SIF Sector Visualization" />
+            <div class="sif-overview-float">
+              <p>"SIFs are not about replacing your core — they're about enhancing it with precision and purpose."</p>
+              <div style="font-size:0.78rem;font-weight:800;color:var(--gold);margin-top:0.5rem;letter-spacing:0.1em;">— 3K Investment Partners</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ELIGIBILITY BAND -->
+    <div class="eligibility-band">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:2.5rem;">
+          <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.5rem;">Who Can Invest</span>
+          <h2 style="font-size:1.8rem;font-weight:900;font-style:italic;color:var(--cream);">SIF Investor Profile</h2>
+        </div>
+        <div class="eligibility-grid">
+          <div class="eligibility-item reveal d1">
+            <span class="material-symbols-outlined">account_balance</span>
+            <h4>HNIs & UHNIs</h4>
+            <p>High net-worth individuals seeking enhanced returns beyond traditional asset classes.</p>
+          </div>
+          <div class="eligibility-item reveal d2">
+            <span class="material-symbols-outlined">business_center</span>
+            <h4>Business Owners</h4>
+            <p>Entrepreneurs with surplus capital looking for differentiated, high-conviction strategies.</p>
+          </div>
+          <div class="eligibility-item reveal d3">
+            <span class="material-symbols-outlined">trending_up</span>
+            <h4>Sophisticated Investors</h4>
+            <p>Investors who understand market cycles and are comfortable with theme-specific concentration risk.</p>
+          </div>
+          <div class="eligibility-item reveal d4">
+            <span class="material-symbols-outlined">pie_chart</span>
+            <h4>Portfolio Diversifiers</h4>
+            <p>Investors with established core portfolios seeking satellite exposures for alpha generation.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STRATEGIES -->
+    <section class="section container" id="sif-strategies">
+      <div style="text-align:center;margin-bottom:3.5rem;">
+        <div class="reveal-up">
+          <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Strategy Types</span>
+          <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;font-style:italic;">Three Core SIF Strategy Tracks</h2>
+          <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+          <p style="font-size:1.05rem;font-style:italic;opacity:0.75;margin-top:1rem;max-width:600px;margin-left:auto;margin-right:auto;">Each track is built around a distinct investment thesis with defined risk-return parameters.</p>
+        </div>
+      </div>
+
+      <div class="card-grid cols-3" style="gap:2rem;">
+        <!-- Sector Specific -->
+        <div class="strategy-card reveal d1">
+          <span class="strategy-number">01</span>
+          <span class="material-symbols-outlined">bar_chart</span>
+          <h3>Sector Specific</h3>
+          <p>Capitalize on defined industry tailwinds and secular growth trends by concentrating capital in high-conviction sectors poised for structural long-term expansion.</p>
+          <p style="font-size:0.9rem;"><strong>Best for:</strong> Investors with strong conviction in a specific sector's trajectory over a 5–10 year horizon.</p>
+          <div>
+            <span class="strategy-tag">Financials</span>
+            <span class="strategy-tag">Technology</span>
+            <span class="strategy-tag">Infrastructure</span>
+            <span class="strategy-tag">Healthcare</span>
+            <span class="strategy-tag">Energy Transition</span>
+          </div>
+          <div style="margin-top:1.5rem;padding:1rem;background:var(--gold-light);border-left:3px solid var(--gold);">
+            <p style="font-size:0.85rem;margin:0;"><strong>Concentration Risk:</strong> High — suitable as a satellite, not a core holding.</p>
+          </div>
+        </div>
+
+        <!-- Thematic Opportunities -->
+        <div class="strategy-card reveal d2">
+          <span class="strategy-number">02</span>
+          <span class="material-symbols-outlined">lightbulb</span>
+          <h3>Thematic Opportunities</h3>
+          <p>Participate in emerging macroeconomic shifts and cross-sector trends that don't fit neatly into traditional sector buckets — capturing transformative change early.</p>
+          <p style="font-size:0.9rem;"><strong>Best for:</strong> Forward-thinking investors who want to bet on megatrends before they become mainstream.</p>
+          <div>
+            <span class="strategy-tag">ESG</span>
+            <span class="strategy-tag">AI & Digitization</span>
+            <span class="strategy-tag">Make in India</span>
+            <span class="strategy-tag">Consumption</span>
+            <span class="strategy-tag">China+1</span>
+          </div>
+          <div style="margin-top:1.5rem;padding:1rem;background:var(--gold-light);border-left:3px solid var(--gold);">
+            <p style="font-size:0.85rem;margin:0;"><strong>Concentration Risk:</strong> Moderate to High — cross-sector but theme-driven.</p>
+          </div>
+        </div>
+
+        <!-- Tactical Allocation -->
+        <div class="strategy-card reveal d3">
+          <span class="strategy-number">03</span>
+          <span class="material-symbols-outlined">query_stats</span>
+          <h3>Tactical Allocation</h3>
+          <p>Exploit short-to-medium-term market mispricings, valuation gaps, and cyclical opportunities. Dynamic repositioning based on macroeconomic and earnings cycle analysis.</p>
+          <p style="font-size:0.9rem;"><strong>Best for:</strong> Investors comfortable with active monitoring and short-to-medium term strategy horizons.</p>
+          <div>
+            <span class="strategy-tag">Value Picks</span>
+            <span class="strategy-tag">Cyclical Plays</span>
+            <span class="strategy-tag">Event-Driven</span>
+            <span class="strategy-tag">Contrarian</span>
+          </div>
+          <div style="margin-top:1.5rem;padding:1rem;background:var(--gold-light);border-left:3px solid var(--gold);">
+            <p style="font-size:0.85rem;margin:0;"><strong>Concentration Risk:</strong> Moderate — time-bound with defined exit triggers.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- COMPARISON TABLE -->
+    <section class="section parchment-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <div class="reveal-up">
+            <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">How It Stacks Up</span>
+            <h2 style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-style:italic;">SIF vs. Other Investment Vehicles</h2>
+            <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+          </div>
+        </div>
+        <div class="data-table-wrapper reveal" style="overflow-x:auto;">
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th>Mutual Fund</th>
+                <th class="highlight-th">SIF ★</th>
+                <th>PMS</th>
+                <th>AIF</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Minimum Investment</strong></td>
+                <td>₹500</td>
+                <td class="highlight-td">₹10 Lakh</td>
+                <td>₹50 Lakh</td>
+                <td>₹1 Crore</td>
+              </tr>
+              <tr>
+                <td><strong>Strategy Type</strong></td>
+                <td>Diversified / Broad</td>
+                <td class="highlight-td">Focused / Thematic</td>
+                <td>Customised</td>
+                <td>Alternate / Complex</td>
+              </tr>
+              <tr>
+                <td><strong>Regulatory Framework</strong></td>
+                <td><span class="tick">✓</span> SEBI</td>
+                <td class="highlight-td"><span class="tick">✓</span> SEBI</td>
+                <td><span class="tick">✓</span> SEBI</td>
+                <td><span class="tick">✓</span> SEBI</td>
+              </tr>
+              <tr>
+                <td><strong>Portfolio Concentration</strong></td>
+                <td>Low</td>
+                <td class="highlight-td">High</td>
+                <td>Medium–High</td>
+                <td>High</td>
+              </tr>
+              <tr>
+                <td><strong>Alpha Potential</strong></td>
+                <td><span class="partial">Moderate</span></td>
+                <td class="highlight-td"><span class="tick">High</span></td>
+                <td><span class="tick">High</span></td>
+                <td><span class="tick">Very High</span></td>
+              </tr>
+              <tr>
+                <td><strong>Liquidity</strong></td>
+                <td><span class="tick">T+1/T+2</span></td>
+                <td class="highlight-td"><span class="partial">Moderate</span></td>
+                <td><span class="partial">Lower</span></td>
+                <td><span class="cross">Lock-in</span></td>
+              </tr>
+              <tr>
+                <td><strong>Professional Management</strong></td>
+                <td><span class="tick">✓</span></td>
+                <td class="highlight-td"><span class="tick">✓</span></td>
+                <td><span class="tick">✓</span></td>
+                <td><span class="tick">✓</span></td>
+              </tr>
+              <tr>
+                <td><strong>Ideal Portfolio Role</strong></td>
+                <td>Core</td>
+                <td class="highlight-td">Satellite</td>
+                <td>Core/Satellite</td>
+                <td>Alternative</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="table-caption" style="text-align:center;margin-top:1rem;">
+          ★ SIF offers the ideal balance between accessibility (vs AIF/PMS) and focused alpha-generation (vs Mutual Funds). All figures are indicative.
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE BENEFITS -->
+    <section class="section container green-tint-section">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div class="reveal-up">
+          <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Why Choose SIF</span>
+          <h2 style="font-size:clamp(2rem,4vw,3rem);font-weight:900;font-style:italic;">Key Benefits of SIF Investing</h2>
+          <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+        </div>
+      </div>
+      <div class="card-grid cols-3" style="gap:1.5rem;margin-bottom:3rem;">
+        <div class="card reveal d1">
+          <span class="material-symbols-outlined">track_changes</span>
+          <h3>Targeted Exposure</h3>
+          <p>Access niche themes and sector stories that broad index funds and diversified mutual funds simply cannot capture. Invest where you see real conviction.</p>
+        </div>
+        <div class="card reveal d2">
+          <span class="material-symbols-outlined">trending_up</span>
+          <h3>Alpha Generation</h3>
+          <p>Potential for outsized returns through high-conviction bets and concentrated positioning around structural market opportunities.</p>
+        </div>
+        <div class="card reveal d3">
+          <span class="material-symbols-outlined">shield_with_heart</span>
+          <h3>Risk Integration</h3>
+          <p>Each SIF allocation is carefully sized and positioned within your broader portfolio to contain downside while maximising upside potential.</p>
+        </div>
+        <div class="card reveal d4">
+          <span class="material-symbols-outlined">manage_accounts</span>
+          <h3>Professional Oversight</h3>
+          <p>Managed by seasoned fund professionals with deep domain expertise, rigorous research processes, and defined investment mandates.</p>
+        </div>
+        <div class="card reveal d5">
+          <span class="material-symbols-outlined">verified</span>
+          <h3>SEBI Regulated</h3>
+          <p>Operates within a clearly defined regulatory framework providing investor protections, transparency obligations, and compliance standards.</p>
+        </div>
+        <div class="card reveal d1">
+          <span class="material-symbols-outlined">account_tree</span>
+          <h3>Portfolio Diversification</h3>
+          <p>Adds a non-correlated return stream to your core portfolio — reducing reliance on broad market beta while maintaining disciplined overall allocation.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW WE INVEST: PROCESS -->
+    <section class="section container">
+      <div class="split" style="gap:6rem;align-items:flex-start;">
+        <div class="reveal-left" style="flex:1;">
+          <div class="tag" style="margin-bottom:1.5rem;">
+            <span class="line"></span><span class="text">Our Approach</span><span class="line"></span>
+          </div>
+          <h2 style="font-size:2.5rem;font-weight:900;font-style:italic;margin-bottom:1rem;">How We Manage SIF Allocations</h2>
+          <div class="gold-bar" style="margin-bottom:2rem;"></div>
+          <p style="font-size:1.05rem;line-height:1.8;margin-bottom:2rem;opacity:0.85;">
+            We follow a rigorous 5-step process to identify, select, size, and monitor SIF allocations within your portfolio. Our institutional-grade framework ensures every SIF investment is purposeful, right-sized, and continuously reviewed.
+          </p>
+          <div class="quote-box" style="color:var(--forest);">
+            <span class="material-symbols-outlined" style="color:var(--gold);">format_quote</span>
+            <p style="color:var(--forest);">"We never invest in a SIF because it's trending. We invest because the fundamental thesis is sound, the risk is understood, and the allocation fits the client's overall plan."</p>
+            <div class="author" style="color:var(--heritage);">3K Investment Partners LLP</div>
+          </div>
+        </div>
+        <div class="reveal-right" style="flex:1;">
+          <div class="process-timeline">
+            <div class="process-step">
+              <div class="step-num-wrap"><span class="num">01</span></div>
+              <div class="step-body">
+                <h3>Macro Opportunity Identification</h3>
+                <p>We begin with top-down macroeconomic analysis to identify thematic tailwinds, structural shifts, and sector-level opportunities with multi-year visibility.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num-wrap"><span class="num">02</span></div>
+              <div class="step-body">
+                <h3>Fund Manager Due Diligence</h3>
+                <p>Rigorous evaluation of fund manager track record, philosophy alignment, risk controls, portfolio concentration, and historical drawdown management.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num-wrap"><span class="num">03</span></div>
+              <div class="step-body">
+                <h3>Client Risk & Goal Alignment</h3>
+                <p>Each SIF is assessed against your overall risk profile, financial goals, existing portfolio exposures, and investment horizon before any recommendation.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num-wrap"><span class="num">04</span></div>
+              <div class="step-body">
+                <h3>Position Sizing & Entry Discipline</h3>
+                <p>We define the appropriate satellite allocation (typically 10–25% of total portfolio) and apply disciplined entry to avoid timing risk.</p>
+              </div>
+            </div>
+            <div class="process-step">
+              <div class="step-num-wrap"><span class="num">05</span></div>
+              <div class="step-body">
+                <h3>Continuous Monitoring & Exit Triggers</h3>
+                <p>Pre-defined exit criteria — thesis invalidation, valuation stretch, or portfolio rebalancing needs — are monitored quarterly to protect capital.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FUND THEMES TABLE -->
+    <section class="section parchment-section">
+      <div class="container">
+        <div style="text-align:center;margin-bottom:3rem;">
+          <div class="reveal-up">
+            <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Available Strategies</span>
+            <h2 style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-style:italic;">SIF Fund Theme Overview</h2>
+            <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+          </div>
+        </div>
+        <div class="data-table-wrapper reveal">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Fund Theme</th>
+                <th>Strategic Objective</th>
+                <th>Concentration Risk</th>
+                <th>Suggested Horizon</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="highlight-col"><strong>Sector Specific</strong></td>
+                <td>Capitalize on defined industry tailwinds and secular growth trends.</td>
+                <td class="highlight-col">High</td>
+                <td class="highlight-col">5–10 Years</td>
+              </tr>
+              <tr>
+                <td><strong>Thematic Opportunities</strong></td>
+                <td>Participate in emerging macroeconomic shifts (e.g., ESG, AI, technology).</td>
+                <td>Moderate to High</td>
+                <td>3–7 Years</td>
+              </tr>
+              <tr>
+                <td><strong>Tactical Allocation</strong></td>
+                <td>Exploit short-to-medium-term market mispricings and valuations.</td>
+                <td>Moderate</td>
+                <td>1–3 Years</td>
+              </tr>
+              <tr>
+                <td><strong>Make in India</strong></td>
+                <td>Participate in India's manufacturing renaissance and export growth story.</td>
+                <td>Moderate to High</td>
+                <td>5–10 Years</td>
+              </tr>
+              <tr>
+                <td><strong>ESG Driven</strong></td>
+                <td>Invest in companies meeting Environmental, Social and Governance benchmarks.</td>
+                <td>Moderate</td>
+                <td>5+ Years</td>
+              </tr>
+              <tr>
+                <td><strong>AI &amp; Digitization</strong></td>
+                <td>Exposure to companies driving or benefiting from India's digital transformation.</td>
+                <td>High</td>
+                <td>7–10 Years</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="table-caption">*Concentration risk and suggested horizon are indicative. Actual outcome depends on market cycles, fund manager decisions, and macroeconomic conditions. Not investment advice.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RISK FRAMEWORK -->
+    <section class="section container">
+      <div style="text-align:center;margin-bottom:3rem;">
+        <div class="reveal-up">
+          <span style="font-size:0.72rem;font-weight:800;text-transform:uppercase;letter-spacing:0.28em;color:var(--gold);display:block;margin-bottom:0.8rem;">Important</span>
+          <h2 style="font-size:clamp(2rem,4vw,2.8rem);font-weight:900;font-style:italic;">Understanding SIF Risks</h2>
+          <div class="gold-bar" style="margin:1.2rem auto 0;"></div>
+          <p style="font-size:1.05rem;font-style:italic;opacity:0.75;margin-top:1rem;max-width:650px;margin-left:auto;margin-right:auto;">We believe in full transparency. Every SIF investment carries distinct risk factors that must be understood before investing.</p>
+        </div>
+      </div>
+      <div class="card-grid cols-2" style="gap:2rem;">
+        <div class="card reveal d1" style="border-top:4px solid #c62828;">
+          <span class="material-symbols-outlined" style="color:#c62828;">warning</span>
+          <h3>Concentration Risk</h3>
+          <p>Unlike diversified mutual funds, SIFs concentrate capital in specific sectors or themes. Poor sector performance can lead to significant losses in this portion of the portfolio. This is why SIFs are sized as satellites, not core positions.</p>
+        </div>
+        <div class="card reveal d2" style="border-top:4px solid #e65100;">
+          <span class="material-symbols-outlined" style="color:#e65100;">timeline</span>
+          <h3>Timing Risk</h3>
+          <p>Thematic and sector strategies require a long-term commitment. Exiting early during a down-cycle can crystallize losses. We help you stay disciplined with pre-defined horizons and review points.</p>
+        </div>
+        <div class="card reveal d3" style="border-top:4px solid var(--gold);">
+          <span class="material-symbols-outlined" style="color:var(--gold);">water_drop</span>
+          <h3>Liquidity Considerations</h3>
+          <p>SIFs may have lock-in periods or redemption restrictions. Unlike liquid mutual funds, some strategies have defined exit windows. We map these constraints clearly before recommending any SIF.</p>
+        </div>
+        <div class="card reveal d4" style="border-top:4px solid var(--gold);">
+          <span class="material-symbols-outlined" style="color:var(--gold);">monitoring</span>
+          <h3>Manager Risk</h3>
+          <p>The performance of a SIF is heavily dependent on the fund manager's skill, conviction, and risk management discipline. Our due diligence process rigorously evaluates fund managers before selection.</p>
+        </div>
+      </div>
+      <div class="reveal" style="margin-top:2.5rem;padding:2rem;background:var(--forest);color:var(--cream);border-left:4px solid var(--gold);">
+        <p style="font-size:1rem;margin:0;"><strong style="color:var(--gold);">Our Risk Mitigation:</strong> We always size SIF allocations as a defined percentage of total portfolio, maintain stop-loss review triggers, and never recommend a SIF without first understanding its role in your broader financial plan.</p>
+      </div>
+    </section>
+
+    <!-- CTA BAND -->
+    <div class="sif-cta-band">
+      <div class="container">
+        <h2>Ready to Add Focused Alpha to Your Portfolio?</h2>
+        <p>Talk to our investment specialists to find out if a Specialized Investment Fund fits your financial goals, risk profile, and time horizon.</p>
+        <div class="sif-cta-btns">
+          <a href="https://calendar.google.com/calendar/u/0/appointments/schedules/AcZssZ31nh-JqEXVSRCJLqOdpH52d20dfSjBJt-J7Qmi1d1HwTndn4Yq8hfMK1nE9VMchI8eCSw7OXW0?gv=true" target="_blank" class="btn-primary" style="background:var(--gold);padding:1.2rem 2.5rem;">
+            <span style="color:#1B3022;font-weight:700;">Book Free Consultation</span>
+          </a>
+          <a href="contact.html" class="btn-outline" style="border-color:rgba(237,232,224,0.4);color:var(--cream);padding:1.2rem 2.5rem;">
+            Contact Our Advisors
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div id="site-footer"></div>
+  </body>
+</html>
